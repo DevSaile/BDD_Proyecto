@@ -1,0 +1,6 @@
+﻿Esta capa es la encargada de la comunicacion con la base de datos, aqui se ejecutaran las accion es CRUD
+
+-Create
+-Read
+-Update
+-Delete(solo si es necesario)

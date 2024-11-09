@@ -1,0 +1,1 @@
+﻿Esta capa es la encargada de recibir las peticiones solicitadas por el usuario desde la capa presentacion

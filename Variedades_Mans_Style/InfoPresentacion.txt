@@ -1,0 +1,2 @@
+﻿Esta capa es la encargada de interactuar con el usuario, es decir, son aquellas ventanas, mensajes, cuadros de dialogos, formularios, ect que el usuario 
+final utiliza para comunicarse con la aplicacion

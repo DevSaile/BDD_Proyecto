@@ -1,0 +1,4 @@
+﻿Esta capa tendra las clases con una estructura similar	a las tablas de nuestra base de datos. Esta se limita a ser un puente de transporte de datos
+con las demas clases
+
+Aqui basicamente creamos las clases como si fueran las tablas de la bdd :)
