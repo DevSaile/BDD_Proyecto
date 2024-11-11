@@ -67,6 +67,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WF_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WF_Proveedor.Designer.cs">
+      <DependentUpon>WF_Proveedor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarProveedor.resx">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
 	  <Compile Include="WF_Proveedor.cs">
 		  <SubType>Form</SubType>
 	  </Compile>
