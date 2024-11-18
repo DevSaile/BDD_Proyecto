@@ -32,12 +32,12 @@
             this.Label_CompraEntrada = new System.Windows.Forms.Label();
             this.btn_WF_CerrarProveedor = new System.Windows.Forms.Button();
             this.Panel_WF_Info_Proveedor = new System.Windows.Forms.Panel();
+            this.but = new System.Windows.Forms.Button();
+            this.label_Agregar = new System.Windows.Forms.Label();
+            this.Fecha2_CompraEntrada = new System.Windows.Forms.DateTimePicker();
+            this.Fecha1_CompraEntrada = new System.Windows.Forms.DateTimePicker();
             this.btn_BuscarCompraEntrada = new System.Windows.Forms.Button();
             this.DGV_WF_Proveedor = new System.Windows.Forms.DataGridView();
-            this.Fecha1_CompraEntrada = new System.Windows.Forms.DateTimePicker();
-            this.Fecha2_CompraEntrada = new System.Windows.Forms.DateTimePicker();
-            this.label_Agregar = new System.Windows.Forms.Label();
-            this.but = new System.Windows.Forms.Button();
             this.Panel_txtProveedor.SuspendLayout();
             this.Panel_WF_Info_Proveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_WF_Proveedor)).BeginInit();
@@ -83,17 +83,18 @@
             this.btn_WF_CerrarProveedor.TabIndex = 1;
             this.btn_WF_CerrarProveedor.Text = "X";
             this.btn_WF_CerrarProveedor.UseVisualStyleBackColor = false;
+            this.btn_WF_CerrarProveedor.Click += new System.EventHandler(this.btn_WF_CerrarProveedor_Click);
             // 
             // Panel_WF_Info_Proveedor
             // 
             this.Panel_WF_Info_Proveedor.BackColor = System.Drawing.Color.Snow;
             this.Panel_WF_Info_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Panel_WF_Info_Proveedor.Controls.Add(this.DGV_WF_Proveedor);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.but);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.label_Agregar);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.Fecha2_CompraEntrada);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.Fecha1_CompraEntrada);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.btn_BuscarCompraEntrada);
-            this.Panel_WF_Info_Proveedor.Controls.Add(this.DGV_WF_Proveedor);
             this.Panel_WF_Info_Proveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_WF_Info_Proveedor.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel_WF_Info_Proveedor.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -103,54 +104,23 @@
             this.Panel_WF_Info_Proveedor.TabIndex = 11;
             this.Panel_WF_Info_Proveedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_WF_Info_Proveedor_Paint);
             // 
-            // btn_BuscarCompraEntrada
+            // but
             // 
-            this.btn_BuscarCompraEntrada.BackColor = System.Drawing.Color.Navy;
-            this.btn_BuscarCompraEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_BuscarCompraEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_BuscarCompraEntrada.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_BuscarCompraEntrada.FlatAppearance.BorderSize = 2;
-            this.btn_BuscarCompraEntrada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btn_BuscarCompraEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BuscarCompraEntrada.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BuscarCompraEntrada.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_BuscarCompraEntrada.Location = new System.Drawing.Point(1010, 117);
-            this.btn_BuscarCompraEntrada.Name = "btn_BuscarCompraEntrada";
-            this.btn_BuscarCompraEntrada.Size = new System.Drawing.Size(149, 48);
-            this.btn_BuscarCompraEntrada.TabIndex = 8;
-            this.btn_BuscarCompraEntrada.Text = "Buscar";
-            this.btn_BuscarCompraEntrada.UseVisualStyleBackColor = false;
-            // 
-            // DGV_WF_Proveedor
-            // 
-            this.DGV_WF_Proveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_WF_Proveedor.Location = new System.Drawing.Point(22, 117);
-            this.DGV_WF_Proveedor.Name = "DGV_WF_Proveedor";
-            this.DGV_WF_Proveedor.RowHeadersWidth = 51;
-            this.DGV_WF_Proveedor.RowTemplate.Height = 24;
-            this.DGV_WF_Proveedor.Size = new System.Drawing.Size(965, 394);
-            this.DGV_WF_Proveedor.TabIndex = 0;
-            // 
-            // Fecha1_CompraEntrada
-            // 
-            this.Fecha1_CompraEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Fecha1_CompraEntrada.CalendarFont = new System.Drawing.Font("Yu Gothic", 12F);
-            this.Fecha1_CompraEntrada.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.Fecha1_CompraEntrada.Location = new System.Drawing.Point(22, 28);
-            this.Fecha1_CompraEntrada.Name = "Fecha1_CompraEntrada";
-            this.Fecha1_CompraEntrada.Size = new System.Drawing.Size(384, 40);
-            this.Fecha1_CompraEntrada.TabIndex = 9;
-            this.Fecha1_CompraEntrada.ValueChanged += new System.EventHandler(this.Fecha1_CompraEntrada_ValueChanged);
-            // 
-            // Fecha2_CompraEntrada
-            // 
-            this.Fecha2_CompraEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Fecha2_CompraEntrada.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.Fecha2_CompraEntrada.Location = new System.Drawing.Point(623, 28);
-            this.Fecha2_CompraEntrada.Name = "Fecha2_CompraEntrada";
-            this.Fecha2_CompraEntrada.Size = new System.Drawing.Size(384, 40);
-            this.Fecha2_CompraEntrada.TabIndex = 10;
-            this.Fecha2_CompraEntrada.ValueChanged += new System.EventHandler(this.Fecha2_CompraEntrada_ValueChanged);
+            this.but.BackColor = System.Drawing.Color.Navy;
+            this.but.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.but.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.but.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.but.FlatAppearance.BorderSize = 2;
+            this.but.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.but.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.but.Location = new System.Drawing.Point(959, 206);
+            this.but.Name = "but";
+            this.but.Size = new System.Drawing.Size(149, 48);
+            this.but.TabIndex = 13;
+            this.but.Text = "Modificar";
+            this.but.UseVisualStyleBackColor = false;
             // 
             // label_Agregar
             // 
@@ -166,23 +136,57 @@
             this.label_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Agregar.Click += new System.EventHandler(this.label_Agregar_Click);
             // 
-            // but
+            // Fecha2_CompraEntrada
             // 
-            this.but.BackColor = System.Drawing.Color.Navy;
-            this.but.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.but.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.but.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.but.FlatAppearance.BorderSize = 2;
-            this.but.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.but.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.but.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.but.Location = new System.Drawing.Point(1010, 195);
-            this.but.Name = "but";
-            this.but.Size = new System.Drawing.Size(149, 48);
-            this.but.TabIndex = 13;
-            this.but.Text = "Modificar";
-            this.but.UseVisualStyleBackColor = false;
+            this.Fecha2_CompraEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Fecha2_CompraEntrada.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.Fecha2_CompraEntrada.Location = new System.Drawing.Point(623, 28);
+            this.Fecha2_CompraEntrada.Name = "Fecha2_CompraEntrada";
+            this.Fecha2_CompraEntrada.Size = new System.Drawing.Size(384, 40);
+            this.Fecha2_CompraEntrada.TabIndex = 10;
+            this.Fecha2_CompraEntrada.ValueChanged += new System.EventHandler(this.Fecha2_CompraEntrada_ValueChanged);
+            // 
+            // Fecha1_CompraEntrada
+            // 
+            this.Fecha1_CompraEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Fecha1_CompraEntrada.CalendarFont = new System.Drawing.Font("Yu Gothic", 12F);
+            this.Fecha1_CompraEntrada.Font = new System.Drawing.Font("Yu Gothic", 12F);
+            this.Fecha1_CompraEntrada.Location = new System.Drawing.Point(22, 28);
+            this.Fecha1_CompraEntrada.Name = "Fecha1_CompraEntrada";
+            this.Fecha1_CompraEntrada.Size = new System.Drawing.Size(384, 40);
+            this.Fecha1_CompraEntrada.TabIndex = 9;
+            this.Fecha1_CompraEntrada.ValueChanged += new System.EventHandler(this.Fecha1_CompraEntrada_ValueChanged);
+            // 
+            // btn_BuscarCompraEntrada
+            // 
+            this.btn_BuscarCompraEntrada.BackColor = System.Drawing.Color.Navy;
+            this.btn_BuscarCompraEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_BuscarCompraEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_BuscarCompraEntrada.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_BuscarCompraEntrada.FlatAppearance.BorderSize = 2;
+            this.btn_BuscarCompraEntrada.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btn_BuscarCompraEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BuscarCompraEntrada.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BuscarCompraEntrada.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_BuscarCompraEntrada.Location = new System.Drawing.Point(959, 122);
+            this.btn_BuscarCompraEntrada.Name = "btn_BuscarCompraEntrada";
+            this.btn_BuscarCompraEntrada.Size = new System.Drawing.Size(149, 48);
+            this.btn_BuscarCompraEntrada.TabIndex = 8;
+            this.btn_BuscarCompraEntrada.Text = "Buscar";
+            this.btn_BuscarCompraEntrada.UseVisualStyleBackColor = false;
+            // 
+            // DGV_WF_Proveedor
+            // 
+            this.DGV_WF_Proveedor.BackgroundColor = System.Drawing.Color.Bisque;
+            this.DGV_WF_Proveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_WF_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGV_WF_Proveedor.GridColor = System.Drawing.SystemColors.ControlText;
+            this.DGV_WF_Proveedor.Location = new System.Drawing.Point(78, 103);
+            this.DGV_WF_Proveedor.Name = "DGV_WF_Proveedor";
+            this.DGV_WF_Proveedor.RowHeadersWidth = 51;
+            this.DGV_WF_Proveedor.RowTemplate.Height = 24;
+            this.DGV_WF_Proveedor.Size = new System.Drawing.Size(781, 394);
+            this.DGV_WF_Proveedor.TabIndex = 0;
             // 
             // WF_CompraEntrada
             // 
@@ -193,7 +197,9 @@
             this.Controls.Add(this.Panel_txtProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WF_CompraEntrada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WF_CompraEntrada";
+            this.Load += new System.EventHandler(this.WF_CompraEntrada_Load);
             this.Panel_txtProveedor.ResumeLayout(false);
             this.Panel_WF_Info_Proveedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_WF_Proveedor)).EndInit();

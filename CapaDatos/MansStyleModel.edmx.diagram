@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="593fbe4dc2f144059bf38ec8089cb00a" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Categoria" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Cliente" Width="1.5" PointX="9" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Compra_Entrada" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Producto" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Proveedor" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Rol" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Sucursal" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Vendedor" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDD_VariedadesMansStyleModel.Venta_Factura" Width="1.5" PointX="11.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Producto__ID_Cat__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Venta_Fac__ID_Cl__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Compra_En__ID_Pr__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Compra_En__ID_Pr__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Producto__ID_Suc__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Venta_Fac__ID_Pr__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Vendedor__ID_Rol__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Vendedor__ID_Suc__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="BDD_VariedadesMansStyleModel.FK__Venta_Fac__ID_Ve__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

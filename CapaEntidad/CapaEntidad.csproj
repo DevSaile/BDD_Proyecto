@@ -41,19 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Compra_Entrada.cs" />
-    <Compile Include="Producto.cs" />
-    <Compile Include="Proveedor.cs" />
-    <Compile Include="Rol.cs" />
-    <Compile Include="Sucursal.cs" />
-    <Compile Include="Vendedor.cs" />
+    <Compile Include="CategoriaDTO.cs" />
+    <Compile Include="ClienteDTO.cs" />
+    <Compile Include="Compra_EntradaDTO.cs" />
+    <Compile Include="ProductoDTO.cs" />
+    <Compile Include="ProveedorDTO.cs" />
+    <Compile Include="RolDTO.cs" />
+    <Compile Include="SucursalDTO.cs" />
+    <Compile Include="VendedorDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Venta_Factura.cs" />
+    <Compile Include="Venta_FacturaDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="InfoEntidad.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{92aa40d1-2754-4dc8-bbf3-857cbcdf2e8e}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
