@@ -106,8 +106,7 @@ namespace Variedades_Man_s_Style
 
         private void btn_WF_CerrarProveedor_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-
+            this.Close();
         }
 
         private void Panel_WF_Controles_Proveedor_Paint(object sender, PaintEventArgs e)
@@ -115,6 +114,37 @@ namespace Variedades_Man_s_Style
 
         }
 
+        private void btn_WF_Actualizar_Click(object sender, EventArgs e)
+        {
 
+            Actualizar_Agregar_Proveedor FormularioActualizar = new Actualizar_Agregar_Proveedor();
+            FormularioActualizar.Show();
+
+            FormularioActualizar.cambiarlabel.Text = "Actualizar Proveedor";
+            FormularioActualizar.cambiarboton.Text = "Actualizar";
+
+
+        }
+
+        private void btn_WF_Agregar_Click(object sender, EventArgs e)
+        {
+
+            Actualizar_Agregar_Proveedor FormularioAgregar = new Actualizar_Agregar_Proveedor();
+            FormularioAgregar.Show();
+
+            FormularioAgregar.cambiarlabel.Text = "Agregar Proveedor";
+
+            FormularioAgregar.cambiarboton.Text = "Agregar";
+
+        }
+
+        /*private void btn_WF_Buscar_Click(object sender, EventArgs e)
+        {
+
+            BuscarProovedor FormularioBuscar = new BuscarProovedor();
+            FormularioBuscar.Show();
+
+
+        }*/
     }
 }

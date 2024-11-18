@@ -46,6 +46,7 @@
     <Compile Include="Compra_Entrada.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="Rol.cs" />
     <Compile Include="Sucursal.cs" />
     <Compile Include="Vendedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

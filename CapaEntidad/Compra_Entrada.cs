@@ -10,6 +10,7 @@ namespace CapaEntidad
     {
 
         public int ID_Entrada { get; set; }
+        public int Estado { get; set; }
         public int ID_Proveedor { get; set; }
         public int ID_Producto { get; set; }
         public DateTime Fecha_Compra { get; set; }
