@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,11 @@ namespace Variedades_Man_s_Style
             InitializeComponent();
         }
 
+        ProductoMCN MetodosProducto = new ProductoMCN();
+
         private void btn_WF_CerrarProveedor_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
 
         }
 

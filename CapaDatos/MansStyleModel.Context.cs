@@ -13,10 +13,10 @@ namespace CapaDatos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BDD_VariedadesMansStyleEntities : DbContext
+    public partial class MansStyleBDDEntities : DbContext
     {
-        public BDD_VariedadesMansStyleEntities()
-            : base("name=BDD_VariedadesMansStyleEntities")
+        public MansStyleBDDEntities()
+            : base("name=MansStyleBDDEntities")
         {
         }
     
@@ -29,7 +29,6 @@ namespace CapaDatos
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Compra_Entrada> Compra_Entrada { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
-        public virtual DbSet<Proveedor> Proveedor { get; set; }
         public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<Sucursal> Sucursal { get; set; }
         public virtual DbSet<Vendedor> Vendedor { get; set; }

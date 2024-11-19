@@ -16,11 +16,9 @@ namespace CapaDatos
     {
         public int ID_Entrada { get; set; }
         public Nullable<int> Estado { get; set; }
-        public Nullable<int> ID_Proveedor { get; set; }
         public Nullable<int> ID_Producto { get; set; }
         public Nullable<System.DateTime> Fecha_Compra { get; set; }
     
-        public virtual Proveedor Proveedor { get; set; }
         public virtual Producto Producto { get; set; }
     }
 }

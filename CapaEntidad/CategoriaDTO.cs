@@ -8,8 +8,8 @@ namespace CapaEntidad
 {
     public class CategoriaDTO
     {
-        public int ID_Categoria { get; set; }
+        public int? ID_Categoria { get; set; }
         public string Nombre { get; set; }
-        public int Estado { get; set; }
+        public int? Estado { get; set; }
     }
 }

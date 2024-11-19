@@ -18,7 +18,7 @@ namespace Variedades_Man_s_Style
         public WF_CompraEntrada()
         {
             InitializeComponent();
-            ConfigureDataGridView();
+            /*this.Load += new EventHandler(WF_CompraEntrada_Load);*/
         }
 
         Compra_EntradaMCN MetodosCompraEntrada = new Compra_EntradaMCN();
@@ -58,6 +58,7 @@ namespace Variedades_Man_s_Style
             DGV_WF_Proveedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selecciona toda la fila al hacer clic
             DGV_WF_Proveedor.AutoGenerateColumns = false;
 
+            // Configuración de columnas
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "ID Entrada",
@@ -66,8 +67,14 @@ namespace Variedades_Man_s_Style
 
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
             {
-                HeaderText = "Proveedor",
-                DataPropertyName = "Nombre_Proveedor"
+                HeaderText = "Categoría",
+                DataPropertyName = "Nombre_Categoria"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "ID Producto",
+                DataPropertyName = "ID_Producto"
             });
 
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
@@ -78,27 +85,71 @@ namespace Variedades_Man_s_Style
 
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
             {
+                HeaderText = "Marca",
+                DataPropertyName = "Marca"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Cantidad",
+                DataPropertyName = "Cantidad"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Precio de Compra",
+                DataPropertyName = "Precio_Compra"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Precio de Producto",
+                DataPropertyName = "Precio_Producto"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Detalles",
+                DataPropertyName = "Detalles"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Detalle Sucursal",
+                DataPropertyName = "Descripcion_Sucursal"
+            });
+
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Sucursal",
+                DataPropertyName = "Nombre_Sucursal"
+            });
+
+            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            {
                 HeaderText = "Fecha de Compra",
                 DataPropertyName = "Fecha_Compra"
             });
 
-            // Configura otras columnas según sea necesario
         }
 
 
         private void imprimirRegistroCompraEntrada()
         {
 
-            DGV_WF_Proveedor.DataSource = null;
-            DGV_WF_Proveedor.DataSource = MetodosCompraEntrada.VerRegistroCompraEntrada();
+            var compras = MetodosCompraEntrada.VerRegistroCompraEntrada();
+            DGV_WF_Proveedor.DataSource = compras;
             DGV_WF_Proveedor.Refresh(); // Fuerza el refresco del control
 
         }
 
         private void WF_CompraEntrada_Load(object sender, EventArgs e)
         {
-            imprimirRegistroCompraEntrada();
 
+            ConfigureDataGridView();
+
+            imprimirRegistroCompraEntrada();
 
         }
 

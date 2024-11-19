@@ -10,11 +10,11 @@ namespace CapaNegocios
 {
     public class Compra_EntradaMCN
     {
-        private readonly BDD_VariedadesMansStyleEntities db;
+        private readonly MansStyleBDDEntities db;
 
         public Compra_EntradaMCN()
         {
-            db = new BDD_VariedadesMansStyleEntities();
+            db = new MansStyleBDDEntities();
 
         }
 
@@ -26,18 +26,32 @@ namespace CapaNegocios
 
                 from ce in db.Compra_Entrada
                 join p in db.Producto on ce.ID_Producto equals p.ID_Producto
-                join pv in db.Proveedor on ce.ID_Proveedor equals pv.ID_Proveedor
+                join ct in db.Categoria on p.ID_Categoria equals ct.ID_Categoria
+                join su in db.Sucursal on p.ID_Sucursal equals su.ID_Sucursal
 
                 select new Compra_EntradaDTO
                 {
-                   
+
                     ID_Entrada = ce.ID_Entrada,
-                    Nombre_Proveedor = pv.Nombre,
+
+                    Nombre_Categoria = ct.Nombre,
+                    ID_Producto = p.ID_Producto,
                     Nombre_Producto = p.Nombre,
+                    Marca = p.Marca,
+                    Cantidad = p.Cantidad,
+                    Precio_Compra = p.Precio_Compra,
+                    Precio_Producto = p.Precio_Producto,
+                    Detalles = p.DetalleS,
+                    Descripcion_Sucursal = su.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria",
+                    Nombre_Sucursal = su.Nombre,
+                   
                     Fecha_Compra = ce.Fecha_Compra.HasValue ? ce.Fecha_Compra.Value : DateTime.MinValue
                 };
 
             return resultado.ToList();
+
+
+            /*   HAY OTRA MANERA MAS FACIL DE HACER ESTA WEA PERO ME COMPLIQUE LA VIDA */
 
 
         }

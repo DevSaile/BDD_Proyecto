@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BDD_VariedadesMansStyleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MansStyleBDDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="ID_Categoria" />
@@ -27,7 +27,6 @@
           </Key>
           <Property Name="ID_Entrada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Estado" Type="int" />
-          <Property Name="ID_Proveedor" Type="int" />
           <Property Name="ID_Producto" Type="int" />
           <Property Name="Fecha_Compra" Type="date" />
         </EntityType>
@@ -44,16 +43,6 @@
           <Property Name="Precio_Producto" Type="decimal" Precision="10" Scale="2" />
           <Property Name="ID_Sucursal" Type="int" />
           <Property Name="DetalleS" Type="varchar" MaxLength="150" />
-          <Property Name="Estado" Type="int" />
-        </EntityType>
-        <EntityType Name="Proveedor">
-          <Key>
-            <PropertyRef Name="ID_Proveedor" />
-          </Key>
-          <Property Name="ID_Proveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Numero" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Direccion" Type="nvarchar" MaxLength="150" />
           <Property Name="Estado" Type="int" />
         </EntityType>
         <EntityType Name="Rol">
@@ -100,19 +89,7 @@
           <Property Name="Subtotal" Type="decimal" Precision="10" Scale="2" />
           <Property Name="Total" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
-        <Association Name="FK__Compra_En__ID_Pr__48CFD27E">
-          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
-          <End Role="Compra_Entrada" Type="Self.Compra_Entrada" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedor">
-              <PropertyRef Name="ID_Proveedor" />
-            </Principal>
-            <Dependent Role="Compra_Entrada">
-              <PropertyRef Name="ID_Proveedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Compra_En__ID_Pr__49C3F6B7">
+        <Association Name="FK__Compra_En__ID_Pr__46E78A0C">
           <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
           <End Role="Compra_Entrada" Type="Self.Compra_Entrada" Multiplicity="*" />
           <ReferentialConstraint>
@@ -124,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__ID_Cat__44FF419A">
+        <Association Name="FK__Producto__ID_Cat__4316F928">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -136,7 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__ID_Suc__45F365D3">
+        <Association Name="FK__Producto__ID_Suc__440B1D61">
           <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="0..1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -148,7 +125,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vendedor__ID_Rol__3D5E1FD2">
+        <Association Name="FK__Vendedor__ID_Rol__3B75D760">
           <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -160,7 +137,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vendedor__ID_Suc__3E52440B">
+        <Association Name="FK__Vendedor__ID_Suc__3C69FB99">
           <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="0..1" />
           <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,7 +149,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta_Fac__ID_Cl__4CA06362">
+        <Association Name="FK__Venta_Fac__ID_Cl__49C3F6B7">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
           <End Role="Venta_Factura" Type="Self.Venta_Factura" Multiplicity="*" />
           <ReferentialConstraint>
@@ -184,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta_Fac__ID_Pr__4D94879B">
+        <Association Name="FK__Venta_Fac__ID_Pr__4AB81AF0">
           <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
           <End Role="Venta_Factura" Type="Self.Venta_Factura" Multiplicity="*" />
           <ReferentialConstraint>
@@ -196,7 +173,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta_Fac__ID_Ve__4E88ABD4">
+        <Association Name="FK__Venta_Fac__ID_Ve__4BAC3F29">
           <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="0..1" />
           <End Role="Venta_Factura" Type="Self.Venta_Factura" Multiplicity="*" />
           <ReferentialConstraint>
@@ -208,49 +185,44 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDD_VariedadesMansStyleModelStoreContainer">
+        <EntityContainer Name="MansStyleBDDModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Compra_Entrada" EntityType="Self.Compra_Entrada" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sucursal" EntityType="Self.Sucursal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta_Factura" EntityType="Self.Venta_Factura" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Compra_En__ID_Pr__48CFD27E" Association="Self.FK__Compra_En__ID_Pr__48CFD27E">
-            <End Role="Proveedor" EntitySet="Proveedor" />
-            <End Role="Compra_Entrada" EntitySet="Compra_Entrada" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Compra_En__ID_Pr__49C3F6B7" Association="Self.FK__Compra_En__ID_Pr__49C3F6B7">
+          <AssociationSet Name="FK__Compra_En__ID_Pr__46E78A0C" Association="Self.FK__Compra_En__ID_Pr__46E78A0C">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Compra_Entrada" EntitySet="Compra_Entrada" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__ID_Cat__44FF419A" Association="Self.FK__Producto__ID_Cat__44FF419A">
+          <AssociationSet Name="FK__Producto__ID_Cat__4316F928" Association="Self.FK__Producto__ID_Cat__4316F928">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__ID_Suc__45F365D3" Association="Self.FK__Producto__ID_Suc__45F365D3">
+          <AssociationSet Name="FK__Producto__ID_Suc__440B1D61" Association="Self.FK__Producto__ID_Suc__440B1D61">
             <End Role="Sucursal" EntitySet="Sucursal" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vendedor__ID_Rol__3D5E1FD2" Association="Self.FK__Vendedor__ID_Rol__3D5E1FD2">
+          <AssociationSet Name="FK__Vendedor__ID_Rol__3B75D760" Association="Self.FK__Vendedor__ID_Rol__3B75D760">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Vendedor" EntitySet="Vendedor" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vendedor__ID_Suc__3E52440B" Association="Self.FK__Vendedor__ID_Suc__3E52440B">
+          <AssociationSet Name="FK__Vendedor__ID_Suc__3C69FB99" Association="Self.FK__Vendedor__ID_Suc__3C69FB99">
             <End Role="Sucursal" EntitySet="Sucursal" />
             <End Role="Vendedor" EntitySet="Vendedor" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta_Fac__ID_Cl__4CA06362" Association="Self.FK__Venta_Fac__ID_Cl__4CA06362">
+          <AssociationSet Name="FK__Venta_Fac__ID_Cl__49C3F6B7" Association="Self.FK__Venta_Fac__ID_Cl__49C3F6B7">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta_Factura" EntitySet="Venta_Factura" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta_Fac__ID_Pr__4D94879B" Association="Self.FK__Venta_Fac__ID_Pr__4D94879B">
+          <AssociationSet Name="FK__Venta_Fac__ID_Pr__4AB81AF0" Association="Self.FK__Venta_Fac__ID_Pr__4AB81AF0">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Venta_Factura" EntitySet="Venta_Factura" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta_Fac__ID_Ve__4E88ABD4" Association="Self.FK__Venta_Fac__ID_Ve__4E88ABD4">
+          <AssociationSet Name="FK__Venta_Fac__ID_Ve__4BAC3F29" Association="Self.FK__Venta_Fac__ID_Ve__4BAC3F29">
             <End Role="Vendedor" EntitySet="Vendedor" />
             <End Role="Venta_Factura" EntitySet="Venta_Factura" />
           </AssociationSet>
@@ -259,7 +231,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BDD_VariedadesMansStyleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MansStyleBDDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="ID_Categoria" />
@@ -267,7 +239,7 @@
           <Property Name="ID_Categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Int32" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__ID_Cat__44FF419A" FromRole="Categoria" ToRole="Producto" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__ID_Cat__4316F928" FromRole="Categoria" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -276,7 +248,7 @@
           <Property Name="ID_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Estado" Type="Int32" />
-          <NavigationProperty Name="Venta_Factura" Relationship="Self.FK__Venta_Fac__ID_Cl__4CA06362" FromRole="Cliente" ToRole="Venta_Factura" />
+          <NavigationProperty Name="Venta_Factura" Relationship="Self.FK__Venta_Fac__ID_Cl__49C3F6B7" FromRole="Cliente" ToRole="Venta_Factura" />
         </EntityType>
         <EntityType Name="Compra_Entrada">
           <Key>
@@ -284,11 +256,9 @@
           </Key>
           <Property Name="ID_Entrada" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Estado" Type="Int32" />
-          <Property Name="ID_Proveedor" Type="Int32" />
           <Property Name="ID_Producto" Type="Int32" />
           <Property Name="Fecha_Compra" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Proveedor" Relationship="Self.FK__Compra_En__ID_Pr__48CFD27E" FromRole="Compra_Entrada" ToRole="Proveedor" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Compra_En__ID_Pr__49C3F6B7" FromRole="Compra_Entrada" ToRole="Producto" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Compra_En__ID_Pr__46E78A0C" FromRole="Compra_Entrada" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -304,21 +274,10 @@
           <Property Name="ID_Sucursal" Type="Int32" />
           <Property Name="DetalleS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="Int32" />
-          <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__ID_Cat__44FF419A" FromRole="Producto" ToRole="Categoria" />
-          <NavigationProperty Name="Compra_Entrada" Relationship="Self.FK__Compra_En__ID_Pr__49C3F6B7" FromRole="Producto" ToRole="Compra_Entrada" />
-          <NavigationProperty Name="Sucursal" Relationship="Self.FK__Producto__ID_Suc__45F365D3" FromRole="Producto" ToRole="Sucursal" />
-          <NavigationProperty Name="Venta_Factura" Relationship="Self.FK__Venta_Fac__ID_Pr__4D94879B" FromRole="Producto" ToRole="Venta_Factura" />
-        </EntityType>
-        <EntityType Name="Proveedor">
-          <Key>
-            <PropertyRef Name="ID_Proveedor" />
-          </Key>
-          <Property Name="ID_Proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Estado" Type="Int32" />
-          <NavigationProperty Name="Compra_Entrada" Relationship="Self.FK__Compra_En__ID_Pr__48CFD27E" FromRole="Proveedor" ToRole="Compra_Entrada" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK__Producto__ID_Cat__4316F928" FromRole="Producto" ToRole="Categoria" />
+          <NavigationProperty Name="Compra_Entrada" Relationship="Self.FK__Compra_En__ID_Pr__46E78A0C" FromRole="Producto" ToRole="Compra_Entrada" />
+          <NavigationProperty Name="Sucursal" Relationship="Self.FK__Producto__ID_Suc__440B1D61" FromRole="Producto" ToRole="Sucursal" />
+          <NavigationProperty Name="Venta_Factura" Relationship="Self.FK__Venta_Fac__ID_Pr__4AB81AF0" FromRole="Producto" ToRole="Venta_Factura" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -326,7 +285,7 @@
           </Key>
           <Property Name="ID_Rol" Type="Int32" Nullable="false" />
           <Property Name="Puesto" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Vendedor" Relationship="Self.FK__Vendedor__ID_Rol__3D5E1FD2" FromRole="Rol" ToRole="Vendedor" />
+          <NavigationProperty Name="Vendedor" Relationship="Self.FK__Vendedor__ID_Rol__3B75D760" FromRole="Rol" ToRole="Vendedor" />
         </EntityType>
         <EntityType Name="Sucursal">
           <Key>
@@ -336,8 +295,8 @@
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Estado" Type="Int32" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__ID_Suc__45F365D3" FromRole="Sucursal" ToRole="Producto" />
-          <NavigationProperty Name="Vendedor" Relationship="Self.FK__Vendedor__ID_Suc__3E52440B" FromRole="Sucursal" ToRole="Vendedor" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Producto__ID_Suc__440B1D61" FromRole="Sucursal" ToRole="Producto" />
+          <NavigationProperty Name="Vendedor" Relationship="Self.FK__Vendedor__ID_Suc__3C69FB99" FromRole="Sucursal" ToRole="Vendedor" />
         </EntityType>
         <EntityType Name="Vendedor">
           <Key>
@@ -352,9 +311,9 @@
           <Property Name="contra" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ID_Sucursal" Type="Int32" />
           <Property Name="Estado" Type="Int32" />
-          <NavigationProperty Name="Rol" Relationship="Self.FK__Vendedor__ID_Rol__3D5E1FD2" FromRole="Vendedor" ToRole="Rol" />
-          <NavigationProperty Name="Sucursal" Relationship="Self.FK__Vendedor__ID_Suc__3E52440B" FromRole="Vendedor" ToRole="Sucursal" />
-          <NavigationProperty Name="Venta_Factura" Relationship="Self.FK__Venta_Fac__ID_Ve__4E88ABD4" FromRole="Vendedor" ToRole="Venta_Factura" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Vendedor__ID_Rol__3B75D760" FromRole="Vendedor" ToRole="Rol" />
+          <NavigationProperty Name="Sucursal" Relationship="Self.FK__Vendedor__ID_Suc__3C69FB99" FromRole="Vendedor" ToRole="Sucursal" />
+          <NavigationProperty Name="Venta_Factura" Relationship="Self.FK__Venta_Fac__ID_Ve__4BAC3F29" FromRole="Vendedor" ToRole="Venta_Factura" />
         </EntityType>
         <EntityType Name="Venta_Factura">
           <Key>
@@ -369,11 +328,11 @@
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="Subtotal" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="Total" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta_Fac__ID_Cl__4CA06362" FromRole="Venta_Factura" ToRole="Cliente" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK__Venta_Fac__ID_Pr__4D94879B" FromRole="Venta_Factura" ToRole="Producto" />
-          <NavigationProperty Name="Vendedor" Relationship="Self.FK__Venta_Fac__ID_Ve__4E88ABD4" FromRole="Venta_Factura" ToRole="Vendedor" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Venta_Fac__ID_Cl__49C3F6B7" FromRole="Venta_Factura" ToRole="Cliente" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK__Venta_Fac__ID_Pr__4AB81AF0" FromRole="Venta_Factura" ToRole="Producto" />
+          <NavigationProperty Name="Vendedor" Relationship="Self.FK__Venta_Fac__ID_Ve__4BAC3F29" FromRole="Venta_Factura" ToRole="Vendedor" />
         </EntityType>
-        <Association Name="FK__Producto__ID_Cat__44FF419A">
+        <Association Name="FK__Producto__ID_Cat__4316F928">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -385,7 +344,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta_Fac__ID_Cl__4CA06362">
+        <Association Name="FK__Venta_Fac__ID_Cl__49C3F6B7">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
           <End Role="Venta_Factura" Type="Self.Venta_Factura" Multiplicity="*" />
           <ReferentialConstraint>
@@ -397,19 +356,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Compra_En__ID_Pr__48CFD27E">
-          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
-          <End Role="Compra_Entrada" Type="Self.Compra_Entrada" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedor">
-              <PropertyRef Name="ID_Proveedor" />
-            </Principal>
-            <Dependent Role="Compra_Entrada">
-              <PropertyRef Name="ID_Proveedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Compra_En__ID_Pr__49C3F6B7">
+        <Association Name="FK__Compra_En__ID_Pr__46E78A0C">
           <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
           <End Role="Compra_Entrada" Type="Self.Compra_Entrada" Multiplicity="*" />
           <ReferentialConstraint>
@@ -421,7 +368,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producto__ID_Suc__45F365D3">
+        <Association Name="FK__Producto__ID_Suc__440B1D61">
           <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="0..1" />
           <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -433,7 +380,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta_Fac__ID_Pr__4D94879B">
+        <Association Name="FK__Venta_Fac__ID_Pr__4AB81AF0">
           <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
           <End Role="Venta_Factura" Type="Self.Venta_Factura" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,7 +392,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vendedor__ID_Rol__3D5E1FD2">
+        <Association Name="FK__Vendedor__ID_Rol__3B75D760">
           <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -457,7 +404,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Vendedor__ID_Suc__3E52440B">
+        <Association Name="FK__Vendedor__ID_Suc__3C69FB99">
           <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="0..1" />
           <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="*" />
           <ReferentialConstraint>
@@ -469,7 +416,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Venta_Fac__ID_Ve__4E88ABD4">
+        <Association Name="FK__Venta_Fac__ID_Ve__4BAC3F29">
           <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="0..1" />
           <End Role="Venta_Factura" Type="Self.Venta_Factura" Multiplicity="*" />
           <ReferentialConstraint>
@@ -481,49 +428,44 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDD_VariedadesMansStyleEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MansStyleBDDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
           <EntitySet Name="Compra_Entrada" EntityType="Self.Compra_Entrada" />
           <EntitySet Name="Producto" EntityType="Self.Producto" />
-          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
           <EntitySet Name="Rol" EntityType="Self.Rol" />
           <EntitySet Name="Sucursal" EntityType="Self.Sucursal" />
           <EntitySet Name="Vendedor" EntityType="Self.Vendedor" />
           <EntitySet Name="Venta_Factura" EntityType="Self.Venta_Factura" />
-          <AssociationSet Name="FK__Producto__ID_Cat__44FF419A" Association="Self.FK__Producto__ID_Cat__44FF419A">
+          <AssociationSet Name="FK__Producto__ID_Cat__4316F928" Association="Self.FK__Producto__ID_Cat__4316F928">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta_Fac__ID_Cl__4CA06362" Association="Self.FK__Venta_Fac__ID_Cl__4CA06362">
+          <AssociationSet Name="FK__Venta_Fac__ID_Cl__49C3F6B7" Association="Self.FK__Venta_Fac__ID_Cl__49C3F6B7">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta_Factura" EntitySet="Venta_Factura" />
           </AssociationSet>
-          <AssociationSet Name="FK__Compra_En__ID_Pr__48CFD27E" Association="Self.FK__Compra_En__ID_Pr__48CFD27E">
-            <End Role="Proveedor" EntitySet="Proveedor" />
-            <End Role="Compra_Entrada" EntitySet="Compra_Entrada" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Compra_En__ID_Pr__49C3F6B7" Association="Self.FK__Compra_En__ID_Pr__49C3F6B7">
+          <AssociationSet Name="FK__Compra_En__ID_Pr__46E78A0C" Association="Self.FK__Compra_En__ID_Pr__46E78A0C">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Compra_Entrada" EntitySet="Compra_Entrada" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producto__ID_Suc__45F365D3" Association="Self.FK__Producto__ID_Suc__45F365D3">
+          <AssociationSet Name="FK__Producto__ID_Suc__440B1D61" Association="Self.FK__Producto__ID_Suc__440B1D61">
             <End Role="Sucursal" EntitySet="Sucursal" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta_Fac__ID_Pr__4D94879B" Association="Self.FK__Venta_Fac__ID_Pr__4D94879B">
+          <AssociationSet Name="FK__Venta_Fac__ID_Pr__4AB81AF0" Association="Self.FK__Venta_Fac__ID_Pr__4AB81AF0">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Venta_Factura" EntitySet="Venta_Factura" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vendedor__ID_Rol__3D5E1FD2" Association="Self.FK__Vendedor__ID_Rol__3D5E1FD2">
+          <AssociationSet Name="FK__Vendedor__ID_Rol__3B75D760" Association="Self.FK__Vendedor__ID_Rol__3B75D760">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Vendedor" EntitySet="Vendedor" />
           </AssociationSet>
-          <AssociationSet Name="FK__Vendedor__ID_Suc__3E52440B" Association="Self.FK__Vendedor__ID_Suc__3E52440B">
+          <AssociationSet Name="FK__Vendedor__ID_Suc__3C69FB99" Association="Self.FK__Vendedor__ID_Suc__3C69FB99">
             <End Role="Sucursal" EntitySet="Sucursal" />
             <End Role="Vendedor" EntitySet="Vendedor" />
           </AssociationSet>
-          <AssociationSet Name="FK__Venta_Fac__ID_Ve__4E88ABD4" Association="Self.FK__Venta_Fac__ID_Ve__4E88ABD4">
+          <AssociationSet Name="FK__Venta_Fac__ID_Ve__4BAC3F29" Association="Self.FK__Venta_Fac__ID_Ve__4BAC3F29">
             <End Role="Vendedor" EntitySet="Vendedor" />
             <End Role="Venta_Factura" EntitySet="Venta_Factura" />
           </AssociationSet>
@@ -533,9 +475,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BDD_VariedadesMansStyleModelStoreContainer" CdmEntityContainer="BDD_VariedadesMansStyleEntities">
+        <EntityContainerMapping StorageEntityContainer="MansStyleBDDModelStoreContainer" CdmEntityContainer="MansStyleBDDEntities">
           <EntitySetMapping Name="Categoria">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Categoria">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -544,7 +486,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Cliente">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
                 <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -553,18 +495,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Compra_Entrada">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Compra_Entrada">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Compra_Entrada">
               <MappingFragment StoreEntitySet="Compra_Entrada">
                 <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="ID_Proveedor" ColumnName="ID_Proveedor" />
                 <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
                 <ScalarProperty Name="Fecha_Compra" ColumnName="Fecha_Compra" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Producto">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Producto">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
                 <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
                 <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
@@ -579,19 +520,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Proveedor">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Proveedor">
-              <MappingFragment StoreEntitySet="Proveedor">
-                <ScalarProperty Name="ID_Proveedor" ColumnName="ID_Proveedor" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Rol">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Rol">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Rol">
               <MappingFragment StoreEntitySet="Rol">
                 <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
                 <ScalarProperty Name="Puesto" ColumnName="Puesto" />
@@ -599,7 +529,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sucursal">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Sucursal">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Sucursal">
               <MappingFragment StoreEntitySet="Sucursal">
                 <ScalarProperty Name="ID_Sucursal" ColumnName="ID_Sucursal" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -609,7 +539,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vendedor">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Vendedor">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Vendedor">
               <MappingFragment StoreEntitySet="Vendedor">
                 <ScalarProperty Name="ID_Vendedor" ColumnName="ID_Vendedor" />
                 <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
@@ -624,7 +554,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Venta_Factura">
-            <EntityTypeMapping TypeName="BDD_VariedadesMansStyleModel.Venta_Factura">
+            <EntityTypeMapping TypeName="MansStyleBDDModel.Venta_Factura">
               <MappingFragment StoreEntitySet="Venta_Factura">
                 <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />

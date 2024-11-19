@@ -81,9 +81,6 @@
       <DependentUpon>MansStyleModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedor.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Rol.cs">
       <DependentUpon>MansStyleModel.tt</DependentUpon>
     </Compile>
