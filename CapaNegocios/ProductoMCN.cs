@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace CapaNegocios
 {
@@ -22,7 +23,27 @@ namespace CapaNegocios
         public List<ProductoDTO> verproductos()
         {
 
-            return db.Producto
+            var resultado = db.Producto
+                .Include(p => p.Categoria) // Incluye la relación con Categoria
+                .Include(p => p.Sucursal)  // Incluye la relación con Sucursal
+                .Where(p => p.Estado == 1) // Filtra productos activos
+                .Select(p => new ProductoDTO // Cambia a ProductoDTO
+                {
+                    ID_Producto = p.ID_Producto,
+                    Nombre = p.Nombre,
+                    Marca = p.Marca,
+                    Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
+                    vercate = p.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria",
+                    Descripcion_Sucursal = p.Sucursal.Nombre,   // Accede al nombre de la sucursal
+                    Cantidad = p.Cantidad,
+                    //Precio_Compra = p.Precio_Compra,
+                    Precio_Producto = p.Precio_Producto,
+                    Detalles = p.DetalleS // Asegúrate de incluir la propiedad si es relevante
+                }).ToList();
+
+            return resultado; // Esto ahora devuelve List<ProductoDTO>
+
+            /*return db.Producto
                 .Select(x => new ProductoDTO
                 {
 
@@ -37,7 +58,7 @@ namespace CapaNegocios
                     Estado = x.Estado
 
 
-                }).ToList();
+                }).ToList();*/
         }
 
         public bool AgregarProducto(ProductoDTO produ)

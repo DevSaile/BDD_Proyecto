@@ -22,7 +22,8 @@ namespace CapaEntidad
 
         /* VARIBALES PARA SUCURSAL*/
 
-        string Descripcion_Sucursal { get; set; }
+        public string Descripcion_Sucursal { get; set; }
+        public string vercate { get; set; }
 
         /*FIN VARIBALES SUCURSAL*/
 
@@ -30,7 +31,7 @@ namespace CapaEntidad
 
         /* VARIABLES CATEGORIA */
 
-        string Descripcion { get; set; }
+         public string Descripcion_Categoria { get; set; }
 
 
         /* FIN VARIABLES CATEGORIA*/

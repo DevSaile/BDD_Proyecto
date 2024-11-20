@@ -33,31 +33,31 @@
             this.btn_WF_CerrarProductos = new System.Windows.Forms.Button();
             this.panel_InfoProductos = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txt_Detalles = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_Marca = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_PrecioCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_DireccionProveedor = new System.Windows.Forms.TextBox();
+            this.txt_PrecioVenta = new System.Windows.Forms.TextBox();
             this.txt_CandtidadProducto = new System.Windows.Forms.TextBox();
             this.txt_NombreProducto = new System.Windows.Forms.TextBox();
             this.label_Direccion = new System.Windows.Forms.Label();
             this.label_Numero = new System.Windows.Forms.Label();
             this.label_Nombre = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbox_Sucursal = new System.Windows.Forms.ComboBox();
             this.panel_InfoProveedor = new System.Windows.Forms.Panel();
+            this.cbox_Categoria = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbox_Categoria = new System.Windows.Forms.ComboBox();
             this.Panel_txtProductos.SuspendLayout();
             this.panel_InfoProductos.SuspendLayout();
             this.panel_InfoProveedor.SuspendLayout();
@@ -115,12 +115,12 @@
             this.panel_InfoProductos.Controls.Add(this.txt_Marca);
             this.panel_InfoProductos.Controls.Add(this.label11);
             this.panel_InfoProductos.Controls.Add(this.label4);
-            this.panel_InfoProductos.Controls.Add(this.textBox1);
+            this.panel_InfoProductos.Controls.Add(this.txt_PrecioCompra);
             this.panel_InfoProductos.Controls.Add(this.label5);
             this.panel_InfoProductos.Controls.Add(this.label3);
             this.panel_InfoProductos.Controls.Add(this.label2);
             this.panel_InfoProductos.Controls.Add(this.label1);
-            this.panel_InfoProductos.Controls.Add(this.txt_DireccionProveedor);
+            this.panel_InfoProductos.Controls.Add(this.txt_PrecioVenta);
             this.panel_InfoProductos.Controls.Add(this.txt_CandtidadProducto);
             this.panel_InfoProductos.Controls.Add(this.txt_NombreProducto);
             this.panel_InfoProductos.Controls.Add(this.label_Direccion);
@@ -140,14 +140,6 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(475, 5);
             this.label12.TabIndex = 30;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(-3, -3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(10, 573);
-            this.label9.TabIndex = 21;
             // 
             // txt_Detalles
             // 
@@ -178,7 +170,7 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.SystemColors.InfoText;
-            this.label10.Location = new System.Drawing.Point(263, 319);
+            this.label10.Location = new System.Drawing.Point(263, 323);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(233, 5);
             this.label10.TabIndex = 27;
@@ -189,7 +181,7 @@
             this.txt_Marca.BackColor = System.Drawing.Color.White;
             this.txt_Marca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Marca.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Marca.Location = new System.Drawing.Point(263, 287);
+            this.txt_Marca.Location = new System.Drawing.Point(263, 291);
             this.txt_Marca.Multiline = true;
             this.txt_Marca.Name = "txt_Marca";
             this.txt_Marca.Size = new System.Drawing.Size(233, 34);
@@ -204,7 +196,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(21, 287);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(209, 34);
+            this.label11.Size = new System.Drawing.Size(209, 41);
             this.label11.TabIndex = 25;
             this.label11.Text = "Marca";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,16 +209,16 @@
             this.label4.Size = new System.Drawing.Size(233, 5);
             this.label4.TabIndex = 22;
             // 
-            // textBox1
+            // txt_PrecioCompra
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(263, 225);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 34);
-            this.textBox1.TabIndex = 21;
+            this.txt_PrecioCompra.BackColor = System.Drawing.Color.White;
+            this.txt_PrecioCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_PrecioCompra.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PrecioCompra.Location = new System.Drawing.Point(263, 225);
+            this.txt_PrecioCompra.Multiline = true;
+            this.txt_PrecioCompra.Name = "txt_PrecioCompra";
+            this.txt_PrecioCompra.Size = new System.Drawing.Size(233, 34);
+            this.txt_PrecioCompra.TabIndex = 21;
             // 
             // label5
             // 
@@ -267,18 +259,18 @@
             this.label1.Size = new System.Drawing.Size(233, 5);
             this.label1.TabIndex = 17;
             // 
-            // txt_DireccionProveedor
+            // txt_PrecioVenta
             // 
-            this.txt_DireccionProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_PrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_DireccionProveedor.BackColor = System.Drawing.Color.White;
-            this.txt_DireccionProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_DireccionProveedor.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DireccionProveedor.Location = new System.Drawing.Point(263, 154);
-            this.txt_DireccionProveedor.Multiline = true;
-            this.txt_DireccionProveedor.Name = "txt_DireccionProveedor";
-            this.txt_DireccionProveedor.Size = new System.Drawing.Size(233, 34);
-            this.txt_DireccionProveedor.TabIndex = 16;
+            this.txt_PrecioVenta.BackColor = System.Drawing.Color.White;
+            this.txt_PrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_PrecioVenta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PrecioVenta.Location = new System.Drawing.Point(263, 154);
+            this.txt_PrecioVenta.Multiline = true;
+            this.txt_PrecioVenta.Name = "txt_PrecioVenta";
+            this.txt_PrecioVenta.Size = new System.Drawing.Size(233, 34);
+            this.txt_PrecioVenta.TabIndex = 16;
             // 
             // txt_CandtidadProducto
             // 
@@ -349,6 +341,14 @@
             this.label_Nombre.Text = "Nombre";
             this.label_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(-3, -3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(10, 573);
+            this.label9.TabIndex = 21;
+            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -369,11 +369,13 @@
             // 
             this.cbox_Sucursal.BackColor = System.Drawing.Color.LightBlue;
             this.cbox_Sucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbox_Sucursal.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbox_Sucursal.FormattingEnabled = true;
-            this.cbox_Sucursal.Location = new System.Drawing.Point(365, 54);
+            this.cbox_Sucursal.Location = new System.Drawing.Point(309, 47);
             this.cbox_Sucursal.Name = "cbox_Sucursal";
-            this.cbox_Sucursal.Size = new System.Drawing.Size(172, 24);
+            this.cbox_Sucursal.Size = new System.Drawing.Size(319, 32);
             this.cbox_Sucursal.TabIndex = 24;
+            this.cbox_Sucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbox_Sucursal_KeyPress);
             // 
             // panel_InfoProveedor
             // 
@@ -391,6 +393,33 @@
             this.panel_InfoProveedor.Size = new System.Drawing.Size(696, 572);
             this.panel_InfoProveedor.TabIndex = 8;
             this.panel_InfoProveedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cbox_Categoria
+            // 
+            this.cbox_Categoria.BackColor = System.Drawing.Color.LightBlue;
+            this.cbox_Categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbox_Categoria.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbox_Categoria.FormattingEnabled = true;
+            this.cbox_Categoria.Location = new System.Drawing.Point(309, 161);
+            this.cbox_Categoria.Name = "cbox_Categoria";
+            this.cbox_Categoria.Size = new System.Drawing.Size(319, 32);
+            this.cbox_Categoria.TabIndex = 28;
+            this.cbox_Categoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbox_Categoria_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.BackColor = System.Drawing.SystemColors.WindowText;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(71, 154);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(209, 43);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Categoria";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancelar
             // 
@@ -426,31 +455,6 @@
             this.btn_AgregarProducto.Text = "Agregar";
             this.btn_AgregarProducto.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.BackColor = System.Drawing.SystemColors.WindowText;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(71, 154);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(209, 43);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Categoria";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbox_Categoria
-            // 
-            this.cbox_Categoria.BackColor = System.Drawing.Color.LightBlue;
-            this.cbox_Categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbox_Categoria.FormattingEnabled = true;
-            this.cbox_Categoria.Location = new System.Drawing.Point(365, 164);
-            this.cbox_Categoria.Name = "cbox_Categoria";
-            this.cbox_Categoria.Size = new System.Drawing.Size(172, 24);
-            this.cbox_Categoria.TabIndex = 28;
-            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -479,14 +483,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_DireccionProveedor;
+        private System.Windows.Forms.TextBox txt_PrecioVenta;
         private System.Windows.Forms.TextBox txt_CandtidadProducto;
         private System.Windows.Forms.TextBox txt_NombreProducto;
         private System.Windows.Forms.Label label_Direccion;
         private System.Windows.Forms.Label label_Numero;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_PrecioCompra;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbox_Sucursal;

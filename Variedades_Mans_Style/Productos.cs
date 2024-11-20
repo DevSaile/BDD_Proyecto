@@ -16,9 +16,13 @@ namespace Variedades_Man_s_Style
         public Productos()
         {
             InitializeComponent();
+
+            llenarCOMBOBOX();
         }
 
         ProductoMCN MetodosProducto = new ProductoMCN();
+        CategoriaMCN MetodosCategoria = new CategoriaMCN();
+        SucursalMCN MetodosSucursal = new SucursalMCN();
 
         private void btn_WF_CerrarProveedor_Click(object sender, EventArgs e)
         {
@@ -50,5 +54,44 @@ namespace Variedades_Man_s_Style
         {
             //txt_BuscarProveedor.Enabled = false;
         }
+
+        private void llenarCOMBOBOX()
+        {
+            var sucursales = MetodosSucursal.ObtenerSucursales();
+            cbox_Sucursal.DataSource = sucursales;
+            cbox_Sucursal.DisplayMember = "Nombre";
+            cbox_Sucursal.ValueMember = "ID_Sucursal";
+
+            var categorias = MetodosCategoria.ObtenerCategorias();
+            cbox_Categoria.DataSource = categorias;
+            cbox_Categoria.DisplayMember = "Nombre";
+            cbox_Categoria.ValueMember = "ID_Categoria";
+
+        }
+
+        private void cbox_Sucursal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // DESACTIVMOS LA ENTRADA POR EL TECLADO PARA LA COMBOBOX
+        }
+
+        private void cbox_Categoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // DESACTIVMOS LA ENTRADA POR EL TECLADO PARA LA COMBOBOX
+
+        }
+
+        /*private void cbox_Sucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void cbox_Categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+        }*/
     }
 }
