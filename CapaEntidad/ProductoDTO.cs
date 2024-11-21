@@ -20,10 +20,13 @@ namespace CapaEntidad
         public string Detalles { get; set; }
         public int? Estado { get; set; }
 
+        public string EstadoProducto { get; set; }
+
+
         /* VARIBALES PARA SUCURSAL*/
 
         public string Descripcion_Sucursal { get; set; }
-        public string vercate { get; set; }
+        public string versucu { get; set; }
 
         /*FIN VARIBALES SUCURSAL*/
 

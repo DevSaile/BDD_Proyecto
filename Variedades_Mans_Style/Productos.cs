@@ -57,6 +57,20 @@ namespace Variedades_Man_s_Style
             //txt_BuscarProveedor.Enabled = false;
         }
 
+        private bool ValidarTextBoxesEnGrupo(Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    MessageBox.Show($"Hay campos vacios, verifica por favor", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    textBox.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void llenarCOMBOBOX()
         {
             var sucursales = MetodosSucursal.ObtenerSucursales();
@@ -74,8 +88,33 @@ namespace Variedades_Man_s_Style
         private void GuardarProducto()
         {
 
-            try
+
+
+            if (ValidarTextBoxesEnGrupo(panel_InfoProductos))
             {
+                // ... (resto de tu código)
+
+                // Validación adicional para cantidades y precios negativos
+                if (int.TryParse(txt_CandtidadProducto.Text, out int cantidad) && cantidad < 0)
+                {
+                    MessageBox.Show("La cantidad no puede ser negativa.");
+                    return;
+                }
+
+                if (decimal.TryParse(txt_PrecioCompra.Text, out decimal precioCompra) && precioCompra < 0)
+                {
+                    MessageBox.Show("El precio de compra no puede ser negativo.");
+                    return;
+                }
+
+                if (decimal.TryParse(txt_PrecioProducto.Text, out decimal precioProducto) && precioProducto < 0)
+                {
+                    MessageBox.Show("El precio del producto no puede ser negativo.");
+                    return;
+                }
+
+                // Lógica para guardar datos.
+                MessageBox.Show("Todos los campos están llenos. Procediendo con la operación.");
 
                 ProductoDTO produ = new ProductoDTO();
 
@@ -135,11 +174,6 @@ namespace Variedades_Man_s_Style
                     MessageBox.Show("valio queso");
                 }
 
-
-            }
-            catch
-            {
-                MessageBox.Show("No se ha podido agregar el producto, verifica los campos");
             }
 
         }

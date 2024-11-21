@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Net.Sockets;
 
 namespace CapaNegocios
 {
@@ -18,6 +19,104 @@ namespace CapaNegocios
         {
 
             db = new bddVariedadesMansStyleEntities();
+        }
+
+        public List<ProductoDTO> BuscarPorSucursal(int sucursalprodu)
+        {
+
+            return (from p in db.Producto
+                    where p.ID_Sucursal == sucursalprodu
+                    select new ProductoDTO
+                    {
+
+                        ID_Producto = p.ID_Producto,
+                        EstadoProducto = p.Estado == 1 ? "Activo" : "Inactivo",
+                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal " /*+ p.Sucursal.Nombre*/ : "Tienda Primaria" /*+ p.Sucursal.Nombre*/,
+                        Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
+
+                        Nombre = p.Nombre,
+                        Marca = p.Marca,
+                        Cantidad = p.Cantidad,
+                        //Precio_Compra = p.Precio_Compra,
+                        Precio_Producto = p.Precio_Producto,
+                        Detalles = p.DetalleS // Asegúrate de incluir la propiedad si es relevante
+
+
+                    }).ToList();
+
+        }
+
+        public List<ProductoDTO> BuscarPorCategoria(int categoriaprodu)
+        {
+
+            return (from p in db.Producto
+                    where p.ID_Categoria == categoriaprodu
+                    select new ProductoDTO
+                    {
+
+                        ID_Producto = p.ID_Producto,
+                        EstadoProducto = p.Estado == 1 ? "Activo" : "Inactivo",
+                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal " : "Tienda Primaria" + p.Sucursal.Nombre,
+                        Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
+
+                        Nombre = p.Nombre,
+                        Marca = p.Marca,
+                        Cantidad = p.Cantidad,
+                        //Precio_Compra = p.Precio_Compra,
+                        Precio_Producto = p.Precio_Producto,
+                        Detalles = p.DetalleS // Asegúrate de incluir la propiedad si es relevante
+
+
+                    }).ToList();
+
+        }
+
+        public List<ProductoDTO> BuscarPorID(int nombreprodu)
+        {
+
+            return (from p in db.Producto
+                    where p.ID_Producto == nombreprodu
+                    select new ProductoDTO
+                    {
+
+                        ID_Producto = p.ID_Producto,
+                        EstadoProducto = p.Estado == 1 ? "Activo" : "Inactivo",
+                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal " : "Tienda Primaria",
+                        Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
+
+                        Nombre = p.Nombre,
+                        Marca = p.Marca,
+                        Cantidad = p.Cantidad,
+                        //Precio_Compra = p.Precio_Compra,
+                        Precio_Producto = p.Precio_Producto,
+                        Detalles = p.DetalleS // Asegúrate de incluir la propiedad si es relevante
+
+
+                    }).ToList();
+
+        }
+
+        public List<ProductoDTO> BuscarPorNombre(string nombreprodu)
+        {
+
+            return (from p in db.Producto where p.Nombre == nombreprodu
+                    select new ProductoDTO{
+
+                        ID_Producto = p.ID_Producto,
+                        EstadoProducto = p.Estado == 1 ? "Activo"  : "Inactivo" ,
+                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal"  : "Tienda Primaria" ,
+                        Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
+
+                        Nombre = p.Nombre,
+                        Marca = p.Marca,
+                        Cantidad = p.Cantidad,
+                        //Precio_Compra = p.Precio_Compra,
+                        Precio_Producto = p.Precio_Producto,
+                        Detalles = p.DetalleS // Asegúrate de incluir la propiedad si es relevante
+
+
+                    }).ToList();
+
         }
 
         public List<ProductoDTO> verproductos()
@@ -33,7 +132,7 @@ namespace CapaNegocios
                     Nombre = p.Nombre,
                     Marca = p.Marca,
                     Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
-                    vercate = p.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria",
+                    versucu = p.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria",
                     Descripcion_Sucursal = p.Sucursal.Nombre,   // Accede al nombre de la sucursal
                     Cantidad = p.Cantidad,
                     //Precio_Compra = p.Precio_Compra,

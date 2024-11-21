@@ -157,5 +157,10 @@ namespace Variedades_Man_s_Style
         {
             this.Close();
         }
+
+        private void DGV_WF_Proveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

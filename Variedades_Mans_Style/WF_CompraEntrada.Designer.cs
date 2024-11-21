@@ -116,6 +116,7 @@
             this.DGV_WF_Proveedor.RowTemplate.Height = 24;
             this.DGV_WF_Proveedor.Size = new System.Drawing.Size(912, 408);
             this.DGV_WF_Proveedor.TabIndex = 0;
+            this.DGV_WF_Proveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_WF_Proveedor_CellContentClick);
             // 
             // but
             // 
