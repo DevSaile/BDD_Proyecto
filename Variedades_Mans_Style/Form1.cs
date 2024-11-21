@@ -124,18 +124,18 @@ namespace Variedades_Man_s_Style
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         //METODO PARA ABRIR FORMULARIOS DENTRO DEL PANEL
-        private void AbrirFormEnPanel(object FormHijo)
-        {
-            if (this.panelContenedor.Controls.Count > 0)
-                this.panelContenedor.Controls.RemoveAt(0);
-            Form fh = FormHijo as Form;
-            fh.TopLevel = false;
-            fh.FormBorderStyle = FormBorderStyle.None;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
-            fh.Show();
-        }
+        //private void AbrirFormEnPanel(object FormHijo)
+        //{
+        //    if (this.panelContenedor.Controls.Count > 0)
+        //        this.panelContenedor.Controls.RemoveAt(0);
+        //    Form fh = FormHijo as Form;
+        //    fh.TopLevel = false;
+        //    fh.FormBorderStyle = FormBorderStyle.None;
+        //    fh.Dock = DockStyle.Fill;
+        //    this.panelContenedor.Controls.Add(fh);
+        //    this.panelContenedor.Tag = fh;
+        //    fh.Show();
+        //}
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -162,25 +162,22 @@ namespace Variedades_Man_s_Style
 
         private void btnlogoInicio_Click(object sender, EventArgs e)
         {
-            //AbrirFormEnPanel(new InicioResumen());
+            AbrirFormulario<frmDash>();
         }
         
         private void btnprod_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmProductos>();
-            //frmProductos fm = new frmProductos();
-            ////fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
-            //AbrirFormEnPanel(fm);
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-
+            //AbrirFormulario<FrmVentas>();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario<frmCliente>();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
@@ -198,9 +195,33 @@ namespace Variedades_Man_s_Style
 
         }
 
-        private void btnEtc_Click(object sender, EventArgs e)
+        private void tmFechaHora_Tick(object sender, EventArgs e)
+        {
+            lbFecha.Text = DateTime.Now.ToLongDateString();
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
+        }
+
+        private void tmContraerMenu_Tick(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width <= 55)
+                this.tmContraerMenu.Stop();
+            else
+                MenuVertical.Width = MenuVertical.Width - 10;
+        }
+
+        private void MenuVertical_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario <Categoria>();
+        }
+
+        private void btnEtc_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Empleados>();
         }
 
         private void Form1_Load(object sender, EventArgs e)

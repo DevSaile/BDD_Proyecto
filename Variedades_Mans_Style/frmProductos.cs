@@ -51,5 +51,21 @@ namespace Variedades_Man_s_Style
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void Label_Productos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_CancelarProveedor_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

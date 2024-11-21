@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categoria));
             this.Panel_txtProveedor = new System.Windows.Forms.Panel();
             this.Label_Proveedores = new System.Windows.Forms.Label();
             this.btn_WF_CerrarCategoria = new System.Windows.Forms.Button();
@@ -37,21 +36,21 @@
             this.btn_WF_Agregar = new System.Windows.Forms.Button();
             this.btn_WF_Desactivar = new System.Windows.Forms.Button();
             this.panel_dgvCategoria = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DGV_Categorias = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCategorias = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NombreCategoria = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DGV_Categorias = new System.Windows.Forms.DataGridView();
             this.Panel_txtProveedor.SuspendLayout();
             this.Panel_WF_Controles_Proveedor.SuspendLayout();
             this.panel_dgvCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Categorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_txtProveedor
             // 
-            this.Panel_txtProveedor.BackColor = System.Drawing.Color.Navy;
+            this.Panel_txtProveedor.BackColor = System.Drawing.Color.Black;
             this.Panel_txtProveedor.Controls.Add(this.Label_Proveedores);
             this.Panel_txtProveedor.Controls.Add(this.btn_WF_CerrarCategoria);
             this.Panel_txtProveedor.Dock = System.Windows.Forms.DockStyle.Top;
@@ -77,18 +76,19 @@
             // 
             this.btn_WF_CerrarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_WF_CerrarCategoria.BackColor = System.Drawing.Color.Navy;
+            this.btn_WF_CerrarCategoria.BackColor = System.Drawing.Color.Black;
             this.btn_WF_CerrarCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_WF_CerrarCategoria.FlatAppearance.BorderSize = 0;
             this.btn_WF_CerrarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WF_CerrarCategoria.Font = new System.Drawing.Font("Lucida Console", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_WF_CerrarCategoria.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btn_WF_CerrarCategoria.ForeColor = System.Drawing.Color.White;
             this.btn_WF_CerrarCategoria.Location = new System.Drawing.Point(1, 0);
             this.btn_WF_CerrarCategoria.Name = "btn_WF_CerrarCategoria";
             this.btn_WF_CerrarCategoria.Size = new System.Drawing.Size(51, 44);
             this.btn_WF_CerrarCategoria.TabIndex = 1;
             this.btn_WF_CerrarCategoria.Text = "X";
             this.btn_WF_CerrarCategoria.UseVisualStyleBackColor = false;
+            this.btn_WF_CerrarCategoria.Click += new System.EventHandler(this.btn_WF_CerrarCategoria_Click);
             // 
             // Panel_WF_Controles_Proveedor
             // 
@@ -159,7 +159,8 @@
             // 
             // panel_dgvCategoria
             // 
-            this.panel_dgvCategoria.Controls.Add(this.pictureBox1);
+            this.panel_dgvCategoria.Controls.Add(this.label3);
+            this.panel_dgvCategoria.Controls.Add(this.btnCategorias);
             this.panel_dgvCategoria.Controls.Add(this.label2);
             this.panel_dgvCategoria.Controls.Add(this.txt_NombreCategoria);
             this.panel_dgvCategoria.Controls.Add(this.label1);
@@ -171,38 +172,35 @@
             this.panel_dgvCategoria.TabIndex = 11;
             this.panel_dgvCategoria.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_dgvCategoria_Paint);
             // 
-            // label1
+            // label3
             // 
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(650, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(10, 474);
-            this.label1.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(47, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 29);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Buscar:";
             // 
-            // DGV_Categorias
+            // btnCategorias
             // 
-            this.DGV_Categorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Categorias.Location = new System.Drawing.Point(80, 119);
-            this.DGV_Categorias.Name = "DGV_Categorias";
-            this.DGV_Categorias.RowHeadersWidth = 51;
-            this.DGV_Categorias.RowTemplate.Height = 24;
-            this.DGV_Categorias.Size = new System.Drawing.Size(477, 319);
-            this.DGV_Categorias.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(81, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.btnCategorias.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.White;
+            this.btnCategorias.Image = global::Variedades_Man_s_Style.Properties.Resources.search__1_;
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Location = new System.Drawing.Point(514, 45);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(59, 49);
+            this.btnCategorias.TabIndex = 8;
+            this.btnCategorias.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.SystemColors.InfoText;
             this.label2.Location = new System.Drawing.Point(146, 89);
             this.label2.Name = "label2";
@@ -211,8 +209,6 @@
             // 
             // txt_NombreCategoria
             // 
-            this.txt_NombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_NombreCategoria.BackColor = System.Drawing.SystemColors.Control;
             this.txt_NombreCategoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_NombreCategoria.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,6 +217,28 @@
             this.txt_NombreCategoria.Name = "txt_NombreCategoria";
             this.txt_NombreCategoria.Size = new System.Drawing.Size(361, 34);
             this.txt_NombreCategoria.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(650, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 474);
+            this.label1.TabIndex = 1;
+            // 
+            // DGV_Categorias
+            // 
+            this.DGV_Categorias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.DGV_Categorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Categorias.Location = new System.Drawing.Point(80, 119);
+            this.DGV_Categorias.Name = "DGV_Categorias";
+            this.DGV_Categorias.RowHeadersWidth = 51;
+            this.DGV_Categorias.RowTemplate.Height = 24;
+            this.DGV_Categorias.Size = new System.Drawing.Size(477, 319);
+            this.DGV_Categorias.TabIndex = 0;
             // 
             // Categoria
             // 
@@ -238,7 +256,6 @@
             this.panel_dgvCategoria.ResumeLayout(false);
             this.panel_dgvCategoria.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Categorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,8 +272,9 @@
         private System.Windows.Forms.Panel panel_dgvCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGV_Categorias;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_NombreCategoria;
+        private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Label label3;
     }
 }
