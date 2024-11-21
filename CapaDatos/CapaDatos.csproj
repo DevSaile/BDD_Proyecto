@@ -54,69 +54,69 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Compra_Entrada.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MansStyleModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MansStyleModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MansStyleModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MansStyleModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MansStyleModel.edmx</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Producto.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StyleMansModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StyleMansModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StyleMansModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StyleMansModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StyleMansModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Sucursal.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Vendedor.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Venta_Factura.cs">
-      <DependentUpon>MansStyleModel.tt</DependentUpon>
+      <DependentUpon>StyleMansModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="InfoDatos.txt" />
-    <Content Include="MansStyleModel.Context.tt">
+    <Content Include="StyleMansModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MansStyleModel.edmx</DependentUpon>
-      <LastGenOutput>MansStyleModel.Context.cs</LastGenOutput>
+      <DependentUpon>StyleMansModel.edmx</DependentUpon>
+      <LastGenOutput>StyleMansModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="MansStyleModel.tt">
+    <Content Include="StyleMansModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MansStyleModel.edmx</DependentUpon>
-      <LastGenOutput>MansStyleModel.cs</LastGenOutput>
+      <DependentUpon>StyleMansModel.edmx</DependentUpon>
+      <LastGenOutput>StyleMansModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="MansStyleModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MansStyleModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="MansStyleModel.edmx.diagram">
-      <DependentUpon>MansStyleModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <EntityDeploy Include="StyleMansModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StyleMansModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="StyleMansModel.edmx.diagram">
+      <DependentUpon>StyleMansModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

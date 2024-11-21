@@ -18,6 +18,8 @@ namespace CapaDatos
         public Nullable<int> Estado { get; set; }
         public Nullable<int> ID_Producto { get; set; }
         public Nullable<System.DateTime> Fecha_Compra { get; set; }
+        public Nullable<decimal> Precio_Compra { get; set; }
+        public Nullable<int> CantidadCompra { get; set; }
     
         public virtual Producto Producto { get; set; }
     }

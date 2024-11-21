@@ -10,13 +10,47 @@ namespace CapaNegocios
 {
     public class Compra_EntradaMCN
     {
-        private readonly MansStyleBDDEntities db;
+        private readonly bddVariedadesMansStyleEntities db;
 
         public Compra_EntradaMCN()
         {
-            db = new MansStyleBDDEntities();
+            db = new bddVariedadesMansStyleEntities();
 
         }
+
+        public bool AgregarProducto(Compra_EntradaDTO compraentra)
+        {
+
+            try
+            {
+
+                Compra_Entrada nuevaentrada = new Compra_Entrada()
+                {
+
+                    Estado = compraentra.Estado,
+                    ID_Producto = compraentra.ID_Producto,
+                    Precio_Compra = compraentra.Precio_Compra,
+                    CantidadCompra = compraentra.CantidadCompra,
+                    Fecha_Compra = compraentra.Fecha_Compra
+
+                };
+
+                db.Compra_Entrada.Add(nuevaentrada);
+                db.SaveChanges();
+
+                return true;
+
+            }
+            catch
+            {
+
+                return false;
+
+            }
+
+        }
+
+
 
         public List<Compra_EntradaDTO> VerRegistroCompraEntrada()
         {
@@ -38,9 +72,9 @@ namespace CapaNegocios
                     ID_Producto = p.ID_Producto,
                     Nombre_Producto = p.Nombre,
                     Marca = p.Marca,
-                    Cantidad = p.Cantidad,
-                    Precio_Compra = p.Precio_Compra,
-                    Precio_Producto = p.Precio_Producto,
+                    CantidadCompra = ce.CantidadCompra,
+                    Precio_Compra = ce.Precio_Compra, // aqui modifique esto
+                    /*Precio_Producto = p.Precio_Producto,*/  //segun mi logica no hay que usar info del producto en la compra entrada
                     Detalles = p.DetalleS,
                     Descripcion_Sucursal = su.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria",
                     Nombre_Sucursal = su.Nombre,

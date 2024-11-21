@@ -92,7 +92,7 @@ namespace Variedades_Man_s_Style
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Cantidad",
-                DataPropertyName = "Cantidad"
+                DataPropertyName = "CantidadCompra"
             });
 
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
@@ -101,11 +101,11 @@ namespace Variedades_Man_s_Style
                 DataPropertyName = "Precio_Compra"
             });
 
-            DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
+            /*DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Precio de Producto",
                 DataPropertyName = "Precio_Producto"
-            });
+            });*/
 
             DGV_WF_Proveedor.Columns.Add(new DataGridViewTextBoxColumn
             {

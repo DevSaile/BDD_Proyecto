@@ -36,5 +36,20 @@ namespace Variedades_Man_s_Style
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Direccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

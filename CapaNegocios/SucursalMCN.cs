@@ -11,12 +11,12 @@ namespace CapaNegocios
     public class SucursalMCN
     {
 
-        private readonly MansStyleBDDEntities db;
+        private readonly bddVariedadesMansStyleEntities db;
 
         public SucursalMCN()
         {
 
-            db = new MansStyleBDDEntities();
+            db = new bddVariedadesMansStyleEntities();
         }
 
         public List<SucursalDTO> ObtenerSucursales()

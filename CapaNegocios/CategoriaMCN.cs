@@ -12,12 +12,12 @@ namespace CapaNegocios
     {
 
 
-        private readonly MansStyleBDDEntities db;
+        private readonly bddVariedadesMansStyleEntities db;
 
         public CategoriaMCN()
         {
 
-            db = new MansStyleBDDEntities();
+            db = new bddVariedadesMansStyleEntities();
 
         }
 

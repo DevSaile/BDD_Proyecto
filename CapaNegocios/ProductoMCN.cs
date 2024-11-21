@@ -12,12 +12,12 @@ namespace CapaNegocios
     public class ProductoMCN
     {
 
-        private readonly MansStyleBDDEntities db;
+        private readonly bddVariedadesMansStyleEntities db;
 
         public ProductoMCN()
         {
 
-            db = new MansStyleBDDEntities();
+            db = new bddVariedadesMansStyleEntities();
         }
 
         public List<ProductoDTO> verproductos()
@@ -61,7 +61,7 @@ namespace CapaNegocios
                 }).ToList();*/
         }
 
-        public bool AgregarProducto(ProductoDTO produ)
+        public int AgregarProducto(ProductoDTO produ)
         {
 
             try
@@ -87,14 +87,16 @@ namespace CapaNegocios
                 db.Producto.Add(nuevoprodu);
                 db.SaveChanges();
 
-                return true;
+
+                return nuevoprodu.ID_Producto;
 
             }
             catch
             {
 
-                return false;
-            
+                return -1;
+
+
             }
 
         }

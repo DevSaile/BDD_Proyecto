@@ -13,10 +13,10 @@ namespace CapaDatos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MansStyleBDDEntities : DbContext
+    public partial class bddVariedadesMansStyleEntities : DbContext
     {
-        public MansStyleBDDEntities()
-            : base("name=MansStyleBDDEntities")
+        public bddVariedadesMansStyleEntities()
+            : base("name=bddVariedadesMansStyleEntities")
         {
         }
     

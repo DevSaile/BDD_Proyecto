@@ -44,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_PrecioVenta = new System.Windows.Forms.TextBox();
+            this.txt_PrecioProducto = new System.Windows.Forms.TextBox();
             this.txt_CandtidadProducto = new System.Windows.Forms.TextBox();
             this.txt_NombreProducto = new System.Windows.Forms.TextBox();
             this.label_Direccion = new System.Windows.Forms.Label();
@@ -120,7 +120,7 @@
             this.panel_InfoProductos.Controls.Add(this.label3);
             this.panel_InfoProductos.Controls.Add(this.label2);
             this.panel_InfoProductos.Controls.Add(this.label1);
-            this.panel_InfoProductos.Controls.Add(this.txt_PrecioVenta);
+            this.panel_InfoProductos.Controls.Add(this.txt_PrecioProducto);
             this.panel_InfoProductos.Controls.Add(this.txt_CandtidadProducto);
             this.panel_InfoProductos.Controls.Add(this.txt_NombreProducto);
             this.panel_InfoProductos.Controls.Add(this.label_Direccion);
@@ -259,18 +259,18 @@
             this.label1.Size = new System.Drawing.Size(233, 5);
             this.label1.TabIndex = 17;
             // 
-            // txt_PrecioVenta
+            // txt_PrecioProducto
             // 
-            this.txt_PrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_PrecioProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_PrecioVenta.BackColor = System.Drawing.Color.White;
-            this.txt_PrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_PrecioVenta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PrecioVenta.Location = new System.Drawing.Point(263, 154);
-            this.txt_PrecioVenta.Multiline = true;
-            this.txt_PrecioVenta.Name = "txt_PrecioVenta";
-            this.txt_PrecioVenta.Size = new System.Drawing.Size(233, 34);
-            this.txt_PrecioVenta.TabIndex = 16;
+            this.txt_PrecioProducto.BackColor = System.Drawing.Color.White;
+            this.txt_PrecioProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_PrecioProducto.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PrecioProducto.Location = new System.Drawing.Point(263, 154);
+            this.txt_PrecioProducto.Multiline = true;
+            this.txt_PrecioProducto.Name = "txt_PrecioProducto";
+            this.txt_PrecioProducto.Size = new System.Drawing.Size(233, 34);
+            this.txt_PrecioProducto.TabIndex = 16;
             // 
             // txt_CandtidadProducto
             // 
@@ -454,6 +454,7 @@
             this.btn_AgregarProducto.TabIndex = 25;
             this.btn_AgregarProducto.Text = "Agregar";
             this.btn_AgregarProducto.UseVisualStyleBackColor = false;
+            this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
             // 
             // Productos
             // 
@@ -483,7 +484,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_PrecioVenta;
+        private System.Windows.Forms.TextBox txt_PrecioProducto;
         private System.Windows.Forms.TextBox txt_CandtidadProducto;
         private System.Windows.Forms.TextBox txt_NombreProducto;
         private System.Windows.Forms.Label label_Direccion;
