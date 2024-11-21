@@ -143,7 +143,6 @@
             // 
             // txt_Detalles
             // 
-            this.txt_Detalles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_Detalles.BackColor = System.Drawing.Color.White;
             this.txt_Detalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Detalles.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,7 +154,6 @@
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.BackColor = System.Drawing.Color.Black;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label13.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -177,7 +175,6 @@
             // 
             // txt_Marca
             // 
-            this.txt_Marca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_Marca.BackColor = System.Drawing.Color.White;
             this.txt_Marca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Marca.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,7 +186,6 @@
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.BackColor = System.Drawing.Color.Black;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -222,8 +218,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.BackColor = System.Drawing.Color.Black;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -261,8 +255,6 @@
             // 
             // txt_PrecioProducto
             // 
-            this.txt_PrecioProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_PrecioProducto.BackColor = System.Drawing.Color.White;
             this.txt_PrecioProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_PrecioProducto.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -274,8 +266,6 @@
             // 
             // txt_CandtidadProducto
             // 
-            this.txt_CandtidadProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_CandtidadProducto.BackColor = System.Drawing.Color.White;
             this.txt_CandtidadProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_CandtidadProducto.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -287,7 +277,6 @@
             // 
             // txt_NombreProducto
             // 
-            this.txt_NombreProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_NombreProducto.BackColor = System.Drawing.Color.White;
             this.txt_NombreProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_NombreProducto.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,8 +288,6 @@
             // 
             // label_Direccion
             // 
-            this.label_Direccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label_Direccion.BackColor = System.Drawing.Color.Black;
             this.label_Direccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Direccion.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -314,8 +301,6 @@
             // 
             // label_Numero
             // 
-            this.label_Numero.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label_Numero.BackColor = System.Drawing.Color.Black;
             this.label_Numero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Numero.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -329,7 +314,6 @@
             // 
             // label_Nombre
             // 
-            this.label_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_Nombre.BackColor = System.Drawing.Color.Black;
             this.label_Nombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Nombre.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -343,6 +327,8 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.BackColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(-3, -3);
             this.label9.Name = "label9";
@@ -351,8 +337,6 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.BackColor = System.Drawing.SystemColors.WindowText;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -408,8 +392,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.BackColor = System.Drawing.SystemColors.WindowText;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
@@ -431,12 +413,13 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancelar.Location = new System.Drawing.Point(375, 412);
+            this.btnCancelar.Location = new System.Drawing.Point(421, 342);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(149, 46);
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btn_AgregarProducto
             // 
@@ -448,7 +431,7 @@
             this.btn_AgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AgregarProducto.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarProducto.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_AgregarProducto.Location = new System.Drawing.Point(173, 412);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(145, 342);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
             this.btn_AgregarProducto.Size = new System.Drawing.Size(149, 46);
             this.btn_AgregarProducto.TabIndex = 25;

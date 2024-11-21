@@ -160,6 +160,11 @@ namespace Variedades_Man_s_Style
             GuardarProducto();
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         /*private void cbox_Sucursal_SelectedIndexChanged(object sender, EventArgs e)
         {
 

@@ -47,5 +47,15 @@ namespace Variedades_Man_s_Style
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_WF_CerrarCategoria_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

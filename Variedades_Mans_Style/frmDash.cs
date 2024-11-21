@@ -10,23 +10,21 @@ using System.Windows.Forms;
 
 namespace Variedades_Man_s_Style
 {
-    public partial class frmCliente : Form
+    public partial class frmDash : Form
     {
-        public frmCliente()
+        public frmDash()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            this.Close();
+
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void chart1_Click(object sender, EventArgs e)
         {
-            frmMantCliente fm = new frmMantCliente();
-            fm.Show();
-            
+
         }
     }
 }

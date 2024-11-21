@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados));
             this.Panel_txtProveedor = new System.Windows.Forms.Panel();
             this.Label_Proveedores = new System.Windows.Forms.Label();
             this.btn_WF_CerrarEmpleado = new System.Windows.Forms.Button();
-            this.Panel_WF_Controles_Proveedor = new System.Windows.Forms.Panel();
             this.btn_WF_Actualizar = new System.Windows.Forms.Button();
             this.btn_WF_Agregar = new System.Windows.Forms.Button();
             this.btn_WF_Desactivar = new System.Windows.Forms.Button();
             this.panel_dgvCategoria = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NombreEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Categorias = new System.Windows.Forms.DataGridView();
+            this.btnCategorias = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.Panel_txtProveedor.SuspendLayout();
-            this.Panel_WF_Controles_Proveedor.SuspendLayout();
             this.panel_dgvCategoria.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Categorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,19 +88,6 @@
             this.btn_WF_CerrarEmpleado.UseVisualStyleBackColor = false;
             this.btn_WF_CerrarEmpleado.Click += new System.EventHandler(this.btn_WF_CerrarEmpleado_Click);
             // 
-            // Panel_WF_Controles_Proveedor
-            // 
-            this.Panel_WF_Controles_Proveedor.BackColor = System.Drawing.SystemColors.Control;
-            this.Panel_WF_Controles_Proveedor.Controls.Add(this.btn_WF_Actualizar);
-            this.Panel_WF_Controles_Proveedor.Controls.Add(this.btn_WF_Agregar);
-            this.Panel_WF_Controles_Proveedor.Controls.Add(this.btn_WF_Desactivar);
-            this.Panel_WF_Controles_Proveedor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Panel_WF_Controles_Proveedor.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Panel_WF_Controles_Proveedor.Location = new System.Drawing.Point(697, 44);
-            this.Panel_WF_Controles_Proveedor.Name = "Panel_WF_Controles_Proveedor";
-            this.Panel_WF_Controles_Proveedor.Size = new System.Drawing.Size(233, 461);
-            this.Panel_WF_Controles_Proveedor.TabIndex = 11;
-            // 
             // btn_WF_Actualizar
             // 
             this.btn_WF_Actualizar.BackColor = System.Drawing.Color.LawnGreen;
@@ -114,7 +98,7 @@
             this.btn_WF_Actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WF_Actualizar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_WF_Actualizar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_WF_Actualizar.Location = new System.Drawing.Point(39, 230);
+            this.btn_WF_Actualizar.Location = new System.Drawing.Point(736, 201);
             this.btn_WF_Actualizar.Name = "btn_WF_Actualizar";
             this.btn_WF_Actualizar.Size = new System.Drawing.Size(154, 46);
             this.btn_WF_Actualizar.TabIndex = 6;
@@ -132,7 +116,7 @@
             this.btn_WF_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WF_Agregar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_WF_Agregar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_WF_Agregar.Location = new System.Drawing.Point(39, 312);
+            this.btn_WF_Agregar.Location = new System.Drawing.Point(736, 283);
             this.btn_WF_Agregar.Name = "btn_WF_Agregar";
             this.btn_WF_Agregar.Size = new System.Drawing.Size(154, 46);
             this.btn_WF_Agregar.TabIndex = 7;
@@ -150,7 +134,7 @@
             this.btn_WF_Desactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WF_Desactivar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_WF_Desactivar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_WF_Desactivar.Location = new System.Drawing.Point(39, 147);
+            this.btn_WF_Desactivar.Location = new System.Drawing.Point(736, 135);
             this.btn_WF_Desactivar.Name = "btn_WF_Desactivar";
             this.btn_WF_Desactivar.Size = new System.Drawing.Size(154, 46);
             this.btn_WF_Desactivar.TabIndex = 5;
@@ -161,60 +145,54 @@
             // 
             // panel_dgvCategoria
             // 
-            this.panel_dgvCategoria.Controls.Add(this.pictureBox1);
+            this.panel_dgvCategoria.Controls.Add(this.label3);
+            this.panel_dgvCategoria.Controls.Add(this.btnCategorias);
+            this.panel_dgvCategoria.Controls.Add(this.btn_WF_Actualizar);
+            this.panel_dgvCategoria.Controls.Add(this.btn_WF_Agregar);
             this.panel_dgvCategoria.Controls.Add(this.label2);
+            this.panel_dgvCategoria.Controls.Add(this.btn_WF_Desactivar);
             this.panel_dgvCategoria.Controls.Add(this.txt_NombreEmpleado);
             this.panel_dgvCategoria.Controls.Add(this.label1);
             this.panel_dgvCategoria.Controls.Add(this.DGV_Categorias);
             this.panel_dgvCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_dgvCategoria.Location = new System.Drawing.Point(0, 44);
             this.panel_dgvCategoria.Name = "panel_dgvCategoria";
-            this.panel_dgvCategoria.Size = new System.Drawing.Size(697, 461);
+            this.panel_dgvCategoria.Size = new System.Drawing.Size(930, 461);
             this.panel_dgvCategoria.TabIndex = 12;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(100, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.SystemColors.InfoText;
             this.label2.Location = new System.Drawing.Point(165, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(412, 5);
+            this.label2.Size = new System.Drawing.Size(323, 5);
             this.label2.TabIndex = 21;
             // 
             // txt_NombreEmpleado
             // 
-            this.txt_NombreEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_NombreEmpleado.BackColor = System.Drawing.SystemColors.Control;
             this.txt_NombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_NombreEmpleado.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NombreEmpleado.Location = new System.Drawing.Point(165, 47);
             this.txt_NombreEmpleado.Multiline = true;
             this.txt_NombreEmpleado.Name = "txt_NombreEmpleado";
-            this.txt_NombreEmpleado.Size = new System.Drawing.Size(412, 34);
+            this.txt_NombreEmpleado.Size = new System.Drawing.Size(323, 34);
             this.txt_NombreEmpleado.TabIndex = 20;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(687, 0);
+            this.label1.Location = new System.Drawing.Point(676, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(10, 461);
             this.label1.TabIndex = 1;
             // 
             // DGV_Categorias
             // 
+            this.DGV_Categorias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DGV_Categorias.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGV_Categorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Categorias.Location = new System.Drawing.Point(100, 102);
@@ -224,23 +202,47 @@
             this.DGV_Categorias.Size = new System.Drawing.Size(477, 319);
             this.DGV_Categorias.TabIndex = 0;
             // 
+            // btnCategorias
+            // 
+            this.btnCategorias.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.White;
+            this.btnCategorias.Image = global::Variedades_Man_s_Style.Properties.Resources.search__1_;
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Location = new System.Drawing.Point(518, 35);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(59, 49);
+            this.btnCategorias.TabIndex = 22;
+            this.btnCategorias.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(60, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 29);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Buscar:";
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 505);
             this.Controls.Add(this.panel_dgvCategoria);
-            this.Controls.Add(this.Panel_WF_Controles_Proveedor);
             this.Controls.Add(this.Panel_txtProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Empleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleados";
             this.Panel_txtProveedor.ResumeLayout(false);
-            this.Panel_WF_Controles_Proveedor.ResumeLayout(false);
             this.panel_dgvCategoria.ResumeLayout(false);
             this.panel_dgvCategoria.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Categorias)).EndInit();
             this.ResumeLayout(false);
 
@@ -251,15 +253,15 @@
         private System.Windows.Forms.Panel Panel_txtProveedor;
         private System.Windows.Forms.Label Label_Proveedores;
         private System.Windows.Forms.Button btn_WF_CerrarEmpleado;
-        private System.Windows.Forms.Panel Panel_WF_Controles_Proveedor;
         private System.Windows.Forms.Button btn_WF_Actualizar;
         private System.Windows.Forms.Button btn_WF_Agregar;
         private System.Windows.Forms.Button btn_WF_Desactivar;
         private System.Windows.Forms.Panel panel_dgvCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGV_Categorias;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_NombreEmpleado;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCategorias;
     }
 }
