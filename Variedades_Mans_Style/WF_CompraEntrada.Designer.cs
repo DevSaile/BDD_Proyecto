@@ -106,6 +106,8 @@
             // 
             // DGV_WF_Proveedor
             // 
+            this.DGV_WF_Proveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DGV_WF_Proveedor.BackgroundColor = System.Drawing.Color.Snow;
             this.DGV_WF_Proveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_WF_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;

@@ -17,7 +17,7 @@ namespace Variedades_Man_s_Style
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProductos());
+            Application.Run(new Form1());
         }
     }
 }
