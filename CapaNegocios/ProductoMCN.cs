@@ -56,7 +56,7 @@ namespace CapaNegocios
 
                         ID_Producto = p.ID_Producto,
                         EstadoProducto = p.Estado == 1 ? "Activo" : "Inactivo",
-                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal " : "Tienda Primaria" + p.Sucursal.Nombre,
+                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal " : "Tienda Primaria" /*+ p.Sucursal.Nombre*/,
                         Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
 
                         Nombre = p.Nombre,

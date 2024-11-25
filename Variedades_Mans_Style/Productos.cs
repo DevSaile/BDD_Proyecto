@@ -14,6 +14,9 @@ namespace Variedades_Man_s_Style
 {
     public partial class Productos : Form
     {
+
+
+
         public Productos()
         {
             InitializeComponent();

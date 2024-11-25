@@ -25,7 +25,7 @@ namespace CapaNegocios
             return db.Sucursal.Select(s => new SucursalDTO { 
                 
                 ID_Sucursal = s.ID_Sucursal,
-                Nombre = (s.ID_Sucursal == 1 ? "Tienda Principal " : s.ID_Sucursal == 2 ? "Tienda Primaria " : " ") + s.Nombre,
+                Nombre = (s.ID_Sucursal == 1 ? "Tienda Principal" : s.ID_Sucursal == 2 ? "Tienda Primaria" : " ") /*+ s.Nombre*/,
 
             }).ToList();
 

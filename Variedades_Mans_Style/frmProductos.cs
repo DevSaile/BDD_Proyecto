@@ -17,9 +17,11 @@ namespace Variedades_Man_s_Style
 {
     public partial class frmProductos : Form
     {
+
         public frmProductos()
         {
             InitializeComponent();
+
             llenarCOMBOBOX();
         }
 
@@ -38,6 +40,7 @@ namespace Variedades_Man_s_Style
             cbBuscarCategoria.DataSource = categorias;
             cbBuscarCategoria.DisplayMember = "Nombre";
             cbBuscarCategoria.ValueMember = "ID_Categoria";
+
 
         }
 
@@ -159,94 +162,8 @@ namespace Variedades_Man_s_Style
             return true;
         }
 
-        private void btnBuscarProduNombre_Click(object sender, EventArgs e)
-        {
- 
-
-            if (ValidarTextBoxIndividuales(txt_NombreProducto, "Nombre de Producto"))
-            {
-                // Lógica para guardar datos.
-                //MessageBox.Show("Todos los campos están llenos. Procediendo con la operación.");
-
-                List<ProductoDTO> verprodunomnbre = MetodosProducto.BuscarPorNombre(txt_NombreProducto.Text);
-
-                if (verprodunomnbre == null || verprodunomnbre.Count == 0)
-                {
-                    MessageBox.Show($"No se ha encontrado ningun producto con nombre {txt_NombreProducto.Text}");
-                    return;
-                }
 
 
-                dgvVerProductos.DataSource = verprodunomnbre;
-                dgvVerProductos.Refresh();
-            }
-
-
-
-
-        }
-
-        private void btnBucarProduID_Click(object sender, EventArgs e)
-        {
-            if (ValidarTextBoxIndividuales(txt_IdProducto, "ID de Producto"))
-            {
-
-                List<ProductoDTO> verproduid = MetodosProducto.BuscarPorID(int.Parse(txt_IdProducto.Text));
-
-
-                if (verproduid == null || verproduid.Count == 0)
-                {
-                    MessageBox.Show($"No se ha encontrado ningun producto con id {txt_IdProducto.Text}");
-                    return;
-                }
-
-
-                dgvVerProductos.DataSource = verproduid;
-                dgvVerProductos.Refresh();
-
-            }
-
-
-
-        }
-
-        private void BuscarPorCategoria_Click(object sender, EventArgs e)
-        {
-            List<ProductoDTO> verproducategoria = MetodosProducto.BuscarPorCategoria((int)cbBuscarCategoria.SelectedValue);
-
-
-            if (verproducategoria == null || verproducategoria.Count == 0)
-            {
-                MessageBox.Show($"No se ha encontrado ningun producto en la categoria {cbBuscarCategoria.SelectedText}");
-                return;
-            }
-
-
-            dgvVerProductos.DataSource = verproducategoria;
-            dgvVerProductos.Refresh();
-        }
-
-        private void cbBuscarCategoria_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true; // DESACTIVMOS LA ENTRADA POR EL TECLADO PARA LA COMBOBOX
-
-        }
-
-        private void btnBuscarSucursal_Click(object sender, EventArgs e)
-        {
-            List<ProductoDTO> verproduSucursal = MetodosProducto.BuscarPorSucursal((int)cbBuscarPorSucursal.SelectedValue);
-
-
-            if (verproduSucursal == null || verproduSucursal.Count == 0)
-            {
-                MessageBox.Show($"No se ha encontrado ningun producto en la Sucursal {cbBuscarPorSucursal.SelectedText}");
-                return;
-            }
-
-
-            dgvVerProductos.DataSource = verproduSucursal;
-            dgvVerProductos.Refresh();
-        }
 
         private void cbBuscarPorSucursal_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -274,6 +191,107 @@ namespace Variedades_Man_s_Style
         private void btn_WF_CerraProductos_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarProduNombre_Click(object sender, EventArgs e)
+        {
+            if (ValidarTextBoxIndividuales(txt_NombreProducto, "Nombre de Producto"))
+            {
+                // Lógica para guardar datos.
+                //MessageBox.Show("Todos los campos están llenos. Procediendo con la operación.");
+
+                List<ProductoDTO> verprodunomnbre = MetodosProducto.BuscarPorNombre(txt_NombreProducto.Text);
+
+                if (verprodunomnbre == null || verprodunomnbre.Count == 0)
+                {
+                    MessageBox.Show($"No se ha encontrado ningun producto con nombre {txt_NombreProducto.Text}");
+                    return;
+                }
+
+
+                dgvVerProductos.DataSource = verprodunomnbre;
+                dgvVerProductos.Refresh();
+            }
+        }
+
+        private void btnBucarProduID_Click(object sender, EventArgs e)
+        {
+            if (ValidarTextBoxIndividuales(txt_IdProducto, "ID de Producto"))
+            {
+
+                List<ProductoDTO> verproduid = MetodosProducto.BuscarPorID(int.Parse(txt_IdProducto.Text));
+
+
+                if (verproduid == null || verproduid.Count == 0)
+                {
+                    MessageBox.Show($"No se ha encontrado ningun producto con id {txt_IdProducto.Text}");
+                    return;
+                }
+
+
+                dgvVerProductos.DataSource = verproduid;
+                dgvVerProductos.Refresh();
+
+            }
+        }
+
+        private void BuscarPorCategoria_Click(object sender, EventArgs e)
+        {
+            List<ProductoDTO> verproducategoria = MetodosProducto.BuscarPorCategoria((int)cbBuscarCategoria.SelectedValue);
+
+
+            if (verproducategoria == null || verproducategoria.Count == 0)
+            {
+                MessageBox.Show($"No se ha encontrado ningun producto en la categoria {cbBuscarCategoria.SelectedText}");
+                return;
+            }
+
+
+            dgvVerProductos.DataSource = verproducategoria;
+            dgvVerProductos.Refresh();
+        }
+
+        private void btnBuscarSucursal_Click(object sender, EventArgs e)
+        {
+            List<ProductoDTO> verproduSucursal = MetodosProducto.BuscarPorSucursal((int)cbBuscarPorSucursal.SelectedValue);
+
+
+            if (verproduSucursal == null || verproduSucursal.Count == 0)
+            {
+                MessageBox.Show($"No se ha encontrado ningun producto en la Sucursal {cbBuscarPorSucursal.SelectedText}");
+                return;
+            }
+
+
+            dgvVerProductos.DataSource = verproduSucursal;
+            dgvVerProductos.Refresh();
+        }
+
+        private void dgvVerProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnBuscarProduNombre_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            // Cambiar la imagen al pasar el ratón
+            //btnBuscarProduNombre.Image = ImagenReemplazo;
+        }
+
+        private void btnBuscarProduNombre_MouseLeave(object sender, EventArgs e)
+        {
+            //btnBuscarProduNombre.Image = ImagenOriginal;
+        }
+
+        private void cbBuscarCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
