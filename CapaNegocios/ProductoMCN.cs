@@ -192,7 +192,7 @@ namespace CapaNegocios
             }
             catch
             {
-
+                
                 return -1;
 
 

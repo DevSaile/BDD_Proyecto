@@ -112,6 +112,7 @@
             this.btn_Agregar_Actualizar_Categoria.TabIndex = 12;
             this.btn_Agregar_Actualizar_Categoria.Text = "TextoDinamico";
             this.btn_Agregar_Actualizar_Categoria.UseVisualStyleBackColor = false;
+            this.btn_Agregar_Actualizar_Categoria.Click += new System.EventHandler(this.btn_Agregar_Actualizar_Categoria_Click);
             // 
             // btn_Cancelar
             // 

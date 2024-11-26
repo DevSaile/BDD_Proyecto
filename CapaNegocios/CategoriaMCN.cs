@@ -29,10 +29,44 @@ namespace CapaNegocios
 
                 ID_Categoria = c.ID_Categoria,
                 Nombre = c.Nombre,
-
+                Estado = c.Estado,
 
             }).ToList();
 
         }
+
+        public bool AgregarCategoria(CategoriaDTO namecategoria)
+        {
+
+            try
+            {
+
+                Categoria nuevacate = new Categoria()
+                {
+
+                    Nombre = namecategoria.Nombre,
+                    Estado = namecategoria.Estado
+
+
+                };
+
+                db.Categoria.Add(nuevacate);
+                db.SaveChanges();
+
+
+                return true;
+
+            }
+            catch
+            {
+
+                return false;
+
+
+            }
+
+        }
+
+
     }
 }

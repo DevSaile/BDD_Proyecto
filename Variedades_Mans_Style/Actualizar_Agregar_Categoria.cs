@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,72 @@ namespace Variedades_Man_s_Style
 {
     public partial class Actualizar_Agregar_Categoria : Form
     {
+
+        // Define un delegado y un evento
+
+        public delegate void CategoriaAgregadaHandler(object sender, EventArgs e);
+        public event CategoriaAgregadaHandler CategoriaAgregada;
+
         public Actualizar_Agregar_Categoria()
         {
             InitializeComponent();
+        }
+
+        //public Actualizar_Agregar_Categoria(int ID_Categoria)
+        //{
+        //    InitializeComponent();
+
+        //}
+
+        CategoriaMCN MetodosCategoria = new CategoriaMCN();
+        
+
+        public void AgregarCategoria()
+        {
+            CategoriaDTO namecate = new CategoriaDTO();
+
+            namecate = new CategoriaDTO()
+            {
+
+                Nombre = txt_NombreCategoria.Text,
+                Estado = 1
+
+
+            };
+
+            bool resultado = MetodosCategoria.AgregarCategoria(namecate);
+
+            if (resultado)
+            {
+
+                MessageBox.Show($"Se agrego la categoria {namecate.Nombre}");
+
+                CategoriaAgregada?.Invoke(this, EventArgs.Empty);
+
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show($"No Se agrego la categoria {namecate.Nombre}");
+            }
+
+        }
+        private void btn_Agregar_Actualizar_Categoria_Click(object sender, EventArgs e)
+        {
+
+            if (txt_NombreCategoria.Text == string.Empty)
+            {
+
+                MessageBox.Show("Nombre ivalido");
+                return;
+            }
+
+            if (label_Actualizar_Agregar_Categoria.Text == "Agregar Categoria")
+            {
+                AgregarCategoria();
+
+            }
         }
 
         public Label cambiarlabel {  // Aqui basicamente vamos a cambiar lo que dice el label
@@ -63,5 +128,7 @@ namespace Variedades_Man_s_Style
         {
 
         }
+
+
     }
 }
