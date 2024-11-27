@@ -44,11 +44,11 @@
     <Compile Include="CategoriaDTO.cs" />
     <Compile Include="ClienteDTO.cs" />
     <Compile Include="Compra_EntradaDTO.cs" />
+    <Compile Include="EmpleadoDTO.cs" />
     <Compile Include="ProductoDTO.cs" />
     <Compile Include="ProveedorDTO.cs" />
     <Compile Include="RolDTO.cs" />
     <Compile Include="SucursalDTO.cs" />
-    <Compile Include="VendedorDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venta_FacturaDTO.cs" />
   </ItemGroup>

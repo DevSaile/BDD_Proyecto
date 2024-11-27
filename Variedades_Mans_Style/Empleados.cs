@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,7 @@ namespace Variedades_Man_s_Style
             InitializeComponent();
         }
 
-        private Color originalColor;
-
+        EmpleadoMCN MetodosEmpleado = new EmpleadoMCN();
 
         private void btn_WF_Actualizar_Click(object sender, EventArgs e)
         {
@@ -39,21 +39,90 @@ namespace Variedades_Man_s_Style
 
         }
 
-        private void btn_WF_Desactivar_MouseHover(object sender, EventArgs e)
+        private void imprimirRegistroEmpleados()
         {
-            originalColor = btn_WF_Desactivar.BackColor;
-            btn_WF_Desactivar.BackColor = Color.Black;
-        }
-
-        private void btn_WF_Desactivar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_WF_Desactivar.BackColor = originalColor;
+            var compras = MetodosEmpleado.ObtenerVendedorActivos();
+            DGV_Empleados.DataSource = compras;
+            DGV_Empleados.Refresh(); // Fuerza el refresco del control
 
         }
+
+
+        private void ConfigureDataGridView()
+        {
+            this.DGV_Empleados.DefaultCellStyle.ForeColor = Color.Black;
+
+            DGV_Empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DGV_Empleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGV_Empleados.ReadOnly = true; // Evita que el usuario edite las celdas
+            DGV_Empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selecciona toda la fila al hacer clic
+            DGV_Empleados.AutoGenerateColumns = false;
+
+            // Configuración de columnas
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "ID Empleado",
+                DataPropertyName = "ID_Empleado"
+            });
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Estado",
+                DataPropertyName = "NombreEstado"
+            });
+
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Nombre",
+                DataPropertyName = "Nombre"
+            });
+
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Cedula",
+                DataPropertyName = "Cedula"
+            });
+
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Edad",
+                DataPropertyName = "Edad"
+            });
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Rol",
+                DataPropertyName = "NombreRol"
+            });
+
+
+            DGV_Empleados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Sucursal",
+                DataPropertyName = "NombreSucursal"
+            });
+
+
+           
+
+        }
+
 
         private void btn_WF_CerrarEmpleado_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void Empleados_Load(object sender, EventArgs e)
+        {
+            ConfigureDataGridView();
+            imprimirRegistroEmpleados();
         }
     }
 }

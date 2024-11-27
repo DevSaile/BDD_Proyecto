@@ -123,6 +123,7 @@
             this.btn_Agregar_Actualizar_Empleado.TabIndex = 12;
             this.btn_Agregar_Actualizar_Empleado.Text = "TextoDinamico";
             this.btn_Agregar_Actualizar_Empleado.UseVisualStyleBackColor = false;
+            this.btn_Agregar_Actualizar_Empleado.Click += new System.EventHandler(this.btn_Agregar_Actualizar_Empleado_Click);
             // 
             // btn_CancelarProveedor
             // 

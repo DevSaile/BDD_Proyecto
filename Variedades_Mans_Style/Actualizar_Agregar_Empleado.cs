@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,19 @@ namespace Variedades_Man_s_Style
 {
     public partial class Actualizar_Agregar_Empleado : Form
     {
+        // Define un delegado y un evento
+
+        public delegate void EmpleadoAgregadoActualizadoHandler(object sender, EventArgs e);
+
+        public event EmpleadoAgregadoActualizadoHandler CategoriaAgregada;
+
         public Actualizar_Agregar_Empleado()
         {
             InitializeComponent();
         }
+
+        CategoriaMCN MetodosEmpleado = new CategoriaMCN();
+        public int? CategoriaID { get; set; }
 
         public Label cambiarlabel {  // Aqui basicamente vamos a cambiar lo que dice el label
 
@@ -28,6 +38,25 @@ namespace Variedades_Man_s_Style
             get { return btn_Agregar_Actualizar_Empleado; }
 
         }
+
+        /*public TextBox cambiartxtnombreEmpleado
+        {
+
+            get { return txt_NombreEmpleado;  }
+        }
+        public TextBox cambiartxtCedulaEmpleado
+        {
+
+            get { return txt_CedulaEmpleado;  }
+        }
+        public TextBox cambiartxtEdadEmpleado
+        {
+
+            get { return txt_EdadEmpleado; }
+        }*/
+
+
+
 
         private void label_Agregar_Click(object sender, EventArgs e)
         {
@@ -60,6 +89,11 @@ namespace Variedades_Man_s_Style
         }
 
         private void panel_DatosProveedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_Agregar_Actualizar_Empleado_Click(object sender, EventArgs e)
         {
 
         }
