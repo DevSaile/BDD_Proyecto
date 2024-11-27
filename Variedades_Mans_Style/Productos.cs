@@ -81,7 +81,7 @@ namespace Variedades_Man_s_Style
             cbox_Sucursal.DisplayMember = "Nombre";
             cbox_Sucursal.ValueMember = "ID_Sucursal";
 
-            var categorias = MetodosCategoria.ObtenerCategorias();
+            var categorias = MetodosCategoria.ObtenerCategoriasActivas();
             cbox_Categoria.DataSource = categorias;
             cbox_Categoria.DisplayMember = "Nombre";
             cbox_Categoria.ValueMember = "ID_Categoria";

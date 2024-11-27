@@ -25,6 +25,7 @@ namespace Variedades_Man_s_Style
             InitializeComponent();
         }
 
+
         //public Actualizar_Agregar_Categoria(int ID_Categoria)
         //{
         //    InitializeComponent();
@@ -32,7 +33,7 @@ namespace Variedades_Man_s_Style
         //}
 
         CategoriaMCN MetodosCategoria = new CategoriaMCN();
-        
+        public int? CategoriaID { get; set; }
 
         public void AgregarCategoria()
         {
@@ -65,21 +66,62 @@ namespace Variedades_Man_s_Style
             }
 
         }
-        private void btn_Agregar_Actualizar_Categoria_Click(object sender, EventArgs e)
-        {
 
-            if (txt_NombreCategoria.Text == string.Empty)
+        public void ActualizarCategoria()
+        {
+            CategoriaDTO namecate = new CategoriaDTO();
+
+            namecate = new CategoriaDTO()
+            {
+                ID_Categoria = CategoriaID,
+                Nombre = txt_NombreCategoria.Text,
+
+            };
+
+            bool resultado = MetodosCategoria.ActualizarCategoria(namecate);
+
+            if (resultado)
             {
 
-                MessageBox.Show("Nombre ivalido");
-                return;
+                MessageBox.Show("Se actualizo la categoria");
+
+                CategoriaAgregada?.Invoke(this, EventArgs.Empty);
+
+                this.Close();
+
             }
+            else
+            {
+                MessageBox.Show("No se actualizo la categoria");
+            }
+
+        }
+        private void btn_Agregar_Actualizar_Categoria_Click(object sender, EventArgs e)
+        {
+            //  ESTO DE AQUI ES PARA CUANDO AGREGUE LA CATEGORIA
+
+            if (txt_NombreCategoria.Text == string.Empty || MetodosCategoria.ObtenerNombreCategoria(txt_NombreCategoria.Text) != null)
+            {
+
+                MessageBox.Show("Nombre ivalido o ya existe una categoria con ese nombre");
+                return;
+            }   
 
             if (label_Actualizar_Agregar_Categoria.Text == "Agregar Categoria")
             {
                 AgregarCategoria();
 
             }
+            else
+            {
+                ActualizarCategoria();
+            }
+
+            // FIN DE AGREGAR NUEVA CATEGORIA
+
+            // ESTO DE AQUI ES CUANDO ACTUALIZA
+
+
         }
 
         public Label cambiarlabel {  // Aqui basicamente vamos a cambiar lo que dice el label
@@ -91,6 +133,13 @@ namespace Variedades_Man_s_Style
         public Button cambiarboton{  // Aqui basicamente vamos a cambiar lo que dice el boton
 
             get { return btn_Agregar_Actualizar_Categoria; }
+
+        }
+
+        public TextBox cambiartextbox
+        {  // Aqui basicamente vamos a cambiar lo que dice el boton
+
+            get { return txt_NombreCategoria; }
 
         }
 

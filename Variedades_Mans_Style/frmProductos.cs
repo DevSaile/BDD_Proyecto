@@ -36,7 +36,7 @@ namespace Variedades_Man_s_Style
             cbBuscarPorSucursal.DisplayMember = "Nombre";
             cbBuscarPorSucursal.ValueMember = "ID_Sucursal";
 
-            var categorias = MetodosCategoria.ObtenerCategorias();
+            var categorias = MetodosCategoria.ObtenerCategoriasActivas();
             cbBuscarCategoria.DataSource = categorias;
             cbBuscarCategoria.DisplayMember = "Nombre";
             cbBuscarCategoria.ValueMember = "ID_Categoria";

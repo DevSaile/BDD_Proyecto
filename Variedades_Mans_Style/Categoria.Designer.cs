@@ -38,12 +38,12 @@
             this.btn_WF_Agregar = new System.Windows.Forms.Button();
             this.btn_WF_Desactivar = new System.Windows.Forms.Button();
             this.panel_dgvCategoria = new System.Windows.Forms.Panel();
+            this.dgvVerCategorias = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NombreCategoria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvVerCategorias = new System.Windows.Forms.DataGridView();
             this.Panel_txtProveedor.SuspendLayout();
             this.Panel_WF_Controles_Proveedor.SuspendLayout();
             this.panel_dgvCategoria.SuspendLayout();
@@ -158,6 +158,7 @@
             this.btn_WF_Desactivar.TabIndex = 5;
             this.btn_WF_Desactivar.Text = "Eliminar";
             this.btn_WF_Desactivar.UseVisualStyleBackColor = false;
+            this.btn_WF_Desactivar.Click += new System.EventHandler(this.btn_WF_Desactivar_Click);
             // 
             // panel_dgvCategoria
             // 
@@ -173,6 +174,45 @@
             this.panel_dgvCategoria.Size = new System.Drawing.Size(657, 474);
             this.panel_dgvCategoria.TabIndex = 11;
             this.panel_dgvCategoria.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_dgvCategoria_Paint);
+            // 
+            // dgvVerCategorias
+            // 
+            this.dgvVerCategorias.AllowUserToAddRows = false;
+            this.dgvVerCategorias.AllowUserToDeleteRows = false;
+            this.dgvVerCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvVerCategorias.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvVerCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvVerCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVerCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVerCategorias.ColumnHeadersHeight = 30;
+            this.dgvVerCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVerCategorias.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVerCategorias.EnableHeadersVisualStyles = false;
+            this.dgvVerCategorias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvVerCategorias.Location = new System.Drawing.Point(52, 99);
+            this.dgvVerCategorias.MultiSelect = false;
+            this.dgvVerCategorias.Name = "dgvVerCategorias";
+            this.dgvVerCategorias.ReadOnly = true;
+            this.dgvVerCategorias.RowHeadersVisible = false;
+            this.dgvVerCategorias.RowHeadersWidth = 51;
+            this.dgvVerCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVerCategorias.Size = new System.Drawing.Size(521, 360);
+            this.dgvVerCategorias.TabIndex = 106;
             // 
             // label3
             // 
@@ -229,45 +269,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(10, 474);
             this.label1.TabIndex = 1;
-            // 
-            // dgvVerCategorias
-            // 
-            this.dgvVerCategorias.AllowUserToAddRows = false;
-            this.dgvVerCategorias.AllowUserToDeleteRows = false;
-            this.dgvVerCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvVerCategorias.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvVerCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvVerCategorias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVerCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVerCategorias.ColumnHeadersHeight = 30;
-            this.dgvVerCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVerCategorias.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvVerCategorias.EnableHeadersVisualStyles = false;
-            this.dgvVerCategorias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvVerCategorias.Location = new System.Drawing.Point(52, 99);
-            this.dgvVerCategorias.MultiSelect = false;
-            this.dgvVerCategorias.Name = "dgvVerCategorias";
-            this.dgvVerCategorias.ReadOnly = true;
-            this.dgvVerCategorias.RowHeadersVisible = false;
-            this.dgvVerCategorias.RowHeadersWidth = 51;
-            this.dgvVerCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVerCategorias.Size = new System.Drawing.Size(521, 360);
-            this.dgvVerCategorias.TabIndex = 106;
             // 
             // Categoria
             // 

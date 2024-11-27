@@ -1,4 +1,6 @@
-﻿using CapaNegocios;
+﻿using CapaDatos;
+using CapaEntidad;
+using CapaNegocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +23,15 @@ namespace Variedades_Man_s_Style
 
         CategoriaMCN MetodosCategoria = new CategoriaMCN();
 
+        private void imprimirRegistroCategorias()
+        {
+
+            var compras = MetodosCategoria.ObtenerCategoriasActivas();
+            dgvVerCategorias.DataSource = compras;
+            dgvVerCategorias.Refresh(); // Fuerza el refresco del control
+
+        }
+
         private void Categoria_Load(object sender, EventArgs e)
         {
 
@@ -36,23 +47,26 @@ namespace Variedades_Man_s_Style
         }
 
 
-        private void imprimirRegistroCategorias()
-        {
-
-            var compras = MetodosCategoria.ObtenerCategorias();
-            dgvVerCategorias.DataSource = compras;
-            dgvVerCategorias.Refresh(); // Fuerza el refresco del control
-
-        }
-
         private void btn_WF_Actualizar_Click(object sender, EventArgs e)
         {
+            // Verificar que haya una fila seleccionada
+            if (dgvVerCategorias.SelectedRows.Count == 0) { 
+
+                MessageBox.Show("Por favor, selecciona una categoría para actualizar."); 
+                return; 
+            }
 
             Actualizar_Agregar_Categoria FormularioActualizar = new Actualizar_Agregar_Categoria();
 
+            FormularioActualizar.CategoriaAgregada += FormularioActualizar_CategoriaActualizada;
+
+            var filaSeleccionada = dgvVerCategorias.SelectedRows[0];
+            var categoriaSeleccionada = (CategoriaDTO)filaSeleccionada.DataBoundItem;
+
             FormularioActualizar.cambiarlabel.Text = "Actualizar Categoria";
             FormularioActualizar.cambiarboton.Text = "Actualizar";
-
+            FormularioActualizar.cambiartextbox.Text = categoriaSeleccionada.Nombre;
+            FormularioActualizar.CategoriaID = categoriaSeleccionada.ID_Categoria;
 
             FormularioActualizar.Show();
 
@@ -68,8 +82,6 @@ namespace Variedades_Man_s_Style
             FormularioAgregar.cambiarlabel.Text = "Agregar Categoria";
             FormularioAgregar.cambiarboton.Text = "Agregar";
 
-            
-
             FormularioAgregar.Show();
 
 
@@ -80,6 +92,11 @@ namespace Variedades_Man_s_Style
             imprimirRegistroCategorias();
         }
 
+        private void FormularioActualizar_CategoriaActualizada(object sender, EventArgs e) { 
+
+            imprimirRegistroCategorias();
+
+        }
 
 
         private void panel_dgvCategoria_Paint(object sender, PaintEventArgs e)
@@ -113,7 +130,7 @@ namespace Variedades_Man_s_Style
             dgvVerCategorias.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Estado",
-                DataPropertyName = "Estado"
+                DataPropertyName = "NombreEstado"
             });
 
             dgvVerCategorias.Columns.Add(new DataGridViewTextBoxColumn
@@ -131,6 +148,50 @@ namespace Variedades_Man_s_Style
 
         }
 
+        private void btn_WF_Desactivar_Click(object sender, EventArgs e)
+        {
 
+            // Verificar que haya una fila seleccionada
+            if (dgvVerCategorias.SelectedRows.Count == 0)
+            {
+
+                MessageBox.Show("Por favor, selecciona una categoría para Remover.");
+                return;
+            }
+
+            var filaSeleccionada = dgvVerCategorias.SelectedRows[0];
+            var categoriaSeleccionada = (CategoriaDTO)filaSeleccionada.DataBoundItem;
+
+            CategoriaDTO namecate = new CategoriaDTO();
+
+            namecate = new CategoriaDTO()
+            {
+                ID_Categoria = categoriaSeleccionada.ID_Categoria,
+                Estado = 0,
+
+            };
+
+            bool resultado = MetodosCategoria.EliminarCategoria(namecate);
+
+            if (resultado)
+            {
+
+                MessageBox.Show("Se removio la categoria");
+                imprimirRegistroCategorias();
+
+            }
+            else
+            {
+                MessageBox.Show("No se removio la categoria");
+            }
+
+            /*FormularioActualizar.cambiarlabel.Text = "Actualizar Categoria";
+            FormularioActualizar.cambiarboton.Text = "Actualizar";
+            FormularioActualizar.cambiartextbox.Text = categoriaSeleccionada.Nombre;
+            FormularioActualizar.CategoriaID = categoriaSeleccionada.ID_Categoria;
+
+            FormularioActualizar.Show();*/
+
+        }
     }
 }
