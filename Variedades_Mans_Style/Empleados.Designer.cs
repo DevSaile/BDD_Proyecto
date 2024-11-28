@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Panel_txtProveedor = new System.Windows.Forms.Panel();
             this.Label_Proveedores = new System.Windows.Forms.Label();
             this.btn_WF_CerrarEmpleado = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.txt_NombreEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Empleados = new System.Windows.Forms.DataGridView();
+            this.SearchTimer_Tick = new System.Windows.Forms.Timer(this.components);
             this.Panel_txtProveedor.SuspendLayout();
             this.panel_dgvCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Empleados)).BeginInit();
@@ -203,6 +205,7 @@
             this.txt_NombreEmpleado.Name = "txt_NombreEmpleado";
             this.txt_NombreEmpleado.Size = new System.Drawing.Size(323, 34);
             this.txt_NombreEmpleado.TabIndex = 20;
+            this.txt_NombreEmpleado.TextChanged += new System.EventHandler(this.txt_NombreEmpleado_TextChanged);
             // 
             // label1
             // 
@@ -226,6 +229,10 @@
             this.DGV_Empleados.RowTemplate.Height = 24;
             this.DGV_Empleados.Size = new System.Drawing.Size(477, 319);
             this.DGV_Empleados.TabIndex = 0;
+            // 
+            // SearchTimer_Tick
+            // 
+            this.SearchTimer_Tick.Tick += new System.EventHandler(this.SearchTimer_Tick_Tick);
             // 
             // Empleados
             // 
@@ -262,5 +269,6 @@
         private System.Windows.Forms.TextBox txt_NombreEmpleado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Timer SearchTimer_Tick;
     }
 }

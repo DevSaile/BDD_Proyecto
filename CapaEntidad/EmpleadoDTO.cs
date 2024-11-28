@@ -21,6 +21,11 @@ namespace CapaEntidad
 
         public string NombreEstado { get; set; }
 
+        public string usuario { get; set; }
+
+        public string contrasena { get; set; }
+
+
         /* Varibales para el rol de usuario */
 
         public int? ID_Rol { get; set; }

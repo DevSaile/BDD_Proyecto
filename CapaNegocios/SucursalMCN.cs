@@ -31,6 +31,19 @@ namespace CapaNegocios
 
         }
 
+        public List<SucursalDTO> ObtenerSucursalesPorID(int ID_sucu)
+        {
+
+            return ( from s in db.Sucursal where s.ID_Sucursal == ID_sucu
+            select new SucursalDTO
+            { 
+                ID_Sucursal = s.ID_Sucursal,
+                Nombre = (s.ID_Sucursal == 1 ? "Tienda Principal" : s.ID_Sucursal == 2 ? "Tienda Primaria" : " ") /*+ s.Nombre*/,
+
+            }).ToList();
+
+        }
+
 
     }
 }

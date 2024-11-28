@@ -29,7 +29,7 @@ namespace CapaNegocios
                     ID_Empleado = v.ID_Vendedor,
                     NombreEstado = "Activo",
                     Nombre = v.Nombre,
-                    Cedula = v.Cedula,
+                    Cedula = v.Cedula,  
                     Edad = v.Edad,
                     NombreRol = v.ID_Rol == 1 ? "Administrador" : "Empleado",
                     NombreSucursal = v.ID_Sucursal == 1 ? "Tienda Principa" : "Tienda Primaria"
@@ -81,6 +81,44 @@ namespace CapaNegocios
 
                     }).ToList();
 
+
+        }
+
+        public bool AgregarEmpleado(EmpleadoDTO empleado)
+        {
+
+            try
+            {
+
+                Vendedor nuevoempleado = new Vendedor() { 
+
+                    Nombre = empleado.Nombre,
+                    Cedula= empleado.Cedula,
+                    Edad = empleado.Edad,
+                    Estado = empleado.Estado,
+                    Usuario = empleado.usuario,
+                    contra = empleado.contrasena,
+                    ID_Rol = empleado.ID_Rol,
+                    ID_Sucursal = empleado.ID_Sucursal  
+
+
+                };
+
+                db.Vendedor.Add(nuevoempleado);
+                db.SaveChanges();
+
+                return true;
+
+
+
+
+            }
+            catch 
+            { 
+
+                return false;
+            
+            }
 
         }
 

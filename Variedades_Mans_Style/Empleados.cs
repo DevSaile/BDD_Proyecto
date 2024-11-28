@@ -13,9 +13,14 @@ namespace Variedades_Man_s_Style
 {
     public partial class Empleados : Form
     {
+
+        private Timer searchTimer; // Timer para retrasar la búsqueda
+
         public Empleados()
         {
             InitializeComponent();
+            ConfigureSearchTimer(); // Asegúrate de inicializar el Timer aquí
+    
         }
 
         EmpleadoMCN MetodosEmpleado = new EmpleadoMCN();
@@ -32,10 +37,26 @@ namespace Variedades_Man_s_Style
         private void btn_WF_Agregar_Click(object sender, EventArgs e)
         {
             Actualizar_Agregar_Empleado FormularioAgregar = new Actualizar_Agregar_Empleado();
-            FormularioAgregar.Show();
+
+            FormularioAgregar.EmpleadoAgregadoActualizado += FormularioAgregar_EmpleadoAgregada;
 
             FormularioAgregar.cambiarlabel.Text = "Agregar Empleado";
             FormularioAgregar.cambiarboton.Text = "Agregar";
+
+            FormularioAgregar.Show();
+
+        }
+
+        private void FormularioAgregar_EmpleadoAgregada(object sender, EventArgs e)
+        {
+
+            imprimirRegistroEmpleados();
+        }
+
+        private void FormularioActualizar_EmpleadoActualizada(object sender, EventArgs e)
+        {
+
+            imprimirRegistroEmpleados();
 
         }
 
@@ -47,6 +68,21 @@ namespace Variedades_Man_s_Style
 
         }
 
+        private void imprimirBusquedaEmpleados(string nombre)
+        {
+            var empleados = MetodosEmpleado.BuscarEmpleadoNombre(nombre);
+
+            if (empleados.Any())
+            {
+                DGV_Empleados.DataSource = empleados;
+            }
+            else
+            {
+                DGV_Empleados.DataSource = null;
+                //MessageBox.Show("No se encontraron coincidencias.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            DGV_Empleados.Refresh(); // Fuerza el refresco del control
+        }
 
         private void ConfigureDataGridView()
         {
@@ -123,6 +159,36 @@ namespace Variedades_Man_s_Style
         {
             ConfigureDataGridView();
             imprimirRegistroEmpleados();
+        }
+
+        private void ConfigureSearchTimer()
+        {
+            searchTimer = new Timer();
+            searchTimer.Interval = 300; // Retraso de 300 ms
+            searchTimer.Tick += SearchTimer_Tick_Tick;
+        }
+
+
+        private void txt_NombreEmpleado_TextChanged(object sender, EventArgs e)
+        {
+            searchTimer.Stop(); // Detiene el timer en cada cambio de texto
+            searchTimer.Start(); // Reinicia el timer
+        }
+
+        private void SearchTimer_Tick_Tick(object sender, EventArgs e)
+        {
+            searchTimer.Stop(); // Detiene el timer para evitar múltiples ejecuciones
+            string textoBusqueda = txt_NombreEmpleado.Text.Trim();
+
+            if (string.IsNullOrEmpty(textoBusqueda))
+            {
+                imprimirRegistroEmpleados(); // Si está vacío, muestra todos los registros
+            }
+            else
+            {
+                imprimirBusquedaEmpleados(textoBusqueda); // Realiza la búsqueda
+            }
+
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Variedades_Man_s_Style
 
 
             };
-
+    
             bool resultado = MetodosCategoria.AgregarCategoria(namecate);
 
             if (resultado)
