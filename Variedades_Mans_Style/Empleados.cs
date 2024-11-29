@@ -1,4 +1,5 @@
-﻿using CapaNegocios;
+﻿using CapaEntidad;
+using CapaNegocios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,11 +28,28 @@ namespace Variedades_Man_s_Style
 
         private void btn_WF_Actualizar_Click(object sender, EventArgs e)
         {
+
+            // Verificar que haya una fila seleccionada
+            if (DGV_Empleados.SelectedRows.Count == 0)
+            {
+
+                MessageBox.Show("Por favor, selecciona una empleado para actualizar.");
+                return;
+            }
+
             Actualizar_Agregar_Empleado FormularioActualizar = new Actualizar_Agregar_Empleado();
-            FormularioActualizar.Show();
+
+            FormularioActualizar.EmpleadoAgregadoActualizado += FormularioActualizar_EmpleadoActualizada;
+
+            var filaSeleccionada = DGV_Empleados.SelectedRows[0];
+            var categoriaSeleccionada = (EmpleadoDTO)filaSeleccionada.DataBoundItem;
 
             FormularioActualizar.cambiarlabel.Text = "Actualizar Empleado";
             FormularioActualizar.cambiarboton.Text = "Actualizar";
+            FormularioActualizar.idEmpleado = categoriaSeleccionada.ID_Empleado;
+
+            FormularioActualizar.Show();
+
         }
 
         private void btn_WF_Agregar_Click(object sender, EventArgs e)

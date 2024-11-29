@@ -84,6 +84,32 @@ namespace CapaNegocios
 
         }
 
+        public EmpleadoDTO ObtenerEmpleadoPorId(int idEmpleado)
+
+        {
+
+            return (from e in db.Vendedor
+
+                    where e.ID_Vendedor == idEmpleado
+
+                    select new EmpleadoDTO
+
+                    {
+
+                        Nombre = e.Nombre,
+
+                        Cedula = e.Cedula,
+
+                        Edad = e.Edad,
+
+                        usuario = e.Usuario,
+
+                        contrasena = e.contra,
+
+                    }).FirstOrDefault();
+
+        }
+
         public bool AgregarEmpleado(EmpleadoDTO empleado)
         {
 
@@ -122,21 +148,29 @@ namespace CapaNegocios
 
         }
 
-        /*public bool ActualizarCategoria(CategoriaDTO actualcate)
+        public bool ActualizarEmpleado(EmpleadoDTO actualEmpleado)
         {
             try
             {
-                Categoria newcategoria = db.Categoria.Find(actualcate.ID_Categoria);
+                Vendedor actempleado = db.Vendedor.Find(actualEmpleado.ID_Empleado);
 
-                if (newcategoria is null)
+                if (actempleado is null)
                 {
-                    
+
                     return false;
                 }
 
-                newcategoria.Nombre = actualcate.Nombre;
 
-                db.Entry(newcategoria).State = System.Data.Entity.EntityState.Modified;
+                actempleado.ID_Vendedor = actualEmpleado.ID_Empleado;
+                actempleado.Nombre = actualEmpleado.Nombre;
+                actempleado.Cedula = actualEmpleado.Cedula;
+                actempleado.Edad = actualEmpleado.Edad;
+                actempleado.ID_Sucursal = actualEmpleado.ID_Sucursal;
+                actempleado.ID_Rol = actualEmpleado.ID_Rol;
+                actempleado.Usuario = actualEmpleado.usuario;
+                actempleado.contra = actualEmpleado.contrasena;
+
+                db.Entry(actempleado).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
                 return true;
@@ -146,65 +180,6 @@ namespace CapaNegocios
                 return false;
             }
         }
-
-        public bool EliminarCategoria(CategoriaDTO actualcate)
-        {
-            try
-            {
-                Categoria newcategoria = db.Categoria.Find(actualcate.ID_Categoria);
-
-                if (newcategoria is null)
-                {
-                    
-                    return false;
-                }
-
-                newcategoria.Estado = actualcate.Estado;
-
-                db.Entry(newcategoria).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-
-        public bool AgregarCategoria(CategoriaDTO namecategoria)
-        {
-
-            try
-            {
-
-                Categoria nuevacate = new Categoria()
-                {
-
-                    Nombre = namecategoria.Nombre,
-                    Estado = namecategoria.Estado
-
-
-                };
-
-                db.Categoria.Add(nuevacate);
-                db.SaveChanges();
-
-
-                return true;
-
-            }
-            catch
-            {
-
-                return false;
-
-
-            }
-
-        }*/
-
 
     }
 }

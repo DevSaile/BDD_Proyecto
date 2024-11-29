@@ -78,7 +78,7 @@
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(23, 138);
+            this.label10.Location = new System.Drawing.Point(103, 281);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(154, 34);
             this.label10.TabIndex = 21;
@@ -91,7 +91,7 @@
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(206, 142);
+            this.label9.Location = new System.Drawing.Point(104, 114);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 34);
             this.label9.TabIndex = 20;
@@ -100,12 +100,14 @@
             // 
             // cbRol
             // 
-            this.cbRol.BackColor = System.Drawing.Color.AliceBlue;
-            this.cbRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(214)))));
+            this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRol.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbRol.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRol.FormattingEnabled = true;
-            this.cbRol.Location = new System.Drawing.Point(23, 187);
+            this.cbRol.Location = new System.Drawing.Point(85, 319);
             this.cbRol.Name = "cbRol";
-            this.cbRol.Size = new System.Drawing.Size(154, 24);
+            this.cbRol.Size = new System.Drawing.Size(197, 36);
             this.cbRol.TabIndex = 19;
             // 
             // label_Actualizar_Agregar_Empleado
@@ -125,12 +127,14 @@
             // 
             // cbsucursal
             // 
-            this.cbsucursal.BackColor = System.Drawing.Color.AliceBlue;
-            this.cbsucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbsucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(214)))));
+            this.cbsucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbsucursal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbsucursal.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbsucursal.FormattingEnabled = true;
-            this.cbsucursal.Location = new System.Drawing.Point(206, 187);
+            this.cbsucursal.Location = new System.Drawing.Point(87, 151);
             this.cbsucursal.Name = "cbsucursal";
-            this.cbsucursal.Size = new System.Drawing.Size(154, 24);
+            this.cbsucursal.Size = new System.Drawing.Size(195, 36);
             this.cbsucursal.TabIndex = 18;
             // 
             // panel_DatosEmpleado
@@ -162,6 +166,7 @@
             this.panel_DatosEmpleado.Name = "panel_DatosEmpleado";
             this.panel_DatosEmpleado.Size = new System.Drawing.Size(624, 447);
             this.panel_DatosEmpleado.TabIndex = 1;
+            this.panel_DatosEmpleado.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DatosEmpleado_Paint);
             // 
             // txtContra
             // 
@@ -237,7 +242,7 @@
             // 
             // btn_CancelarEmpleado
             // 
-            this.btn_CancelarEmpleado.BackColor = System.Drawing.Color.Red;
+            this.btn_CancelarEmpleado.BackColor = System.Drawing.Color.OrangeRed;
             this.btn_CancelarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_CancelarEmpleado.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_CancelarEmpleado.FlatAppearance.BorderSize = 2;

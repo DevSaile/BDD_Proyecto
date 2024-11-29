@@ -32,22 +32,63 @@ namespace Variedades_Man_s_Style
 
         EmpleadoMCN MetodosEmpleados  = new EmpleadoMCN();
 
-        public int SucursalID { get; set; }
 
-        public int RolesID { get; set; }
+        public int idEmpleado { get; set; }
+
+        private void LlenarDatosEmpleado(int idEmpleado)
+
+        {
+
+            var empleado = MetodosEmpleados.ObtenerEmpleadoPorId(idEmpleado);
+
+            if (empleado != null)
+
+            {
+
+                txtNombreEmpleado.Text = empleado.Nombre;
+
+                txtCedulaEmpleado.Text = empleado.Cedula;
+
+                txtEdadEmpleado.Text = empleado.Edad.HasValue ? empleado.Edad.Value.ToString() : string.Empty;
+
+                txtUsuario.Text = empleado.usuario;
+
+                txtContra.Text = empleado.contrasena;
+
+
+            }
+
+        }
+
 
 
         private void llenarCOMBOBOX_Actualizar()
         {
-            var Roles = MetodosRol.ObtenerRolesPorID(RolesID);
+            // Cargar todos los roles
+
+            var Roles = MetodosRol.ObtenerRoles();
+
             cbRol.DataSource = Roles;
+
             cbRol.DisplayMember = "Puesto";
+
             cbRol.ValueMember = "ID_Rol";
 
-            var Sucursales = MetodosSucursal.ObtenerSucursalesPorID(SucursalID);
+
+            // Cargar todas las sucursales
+
+            var Sucursales = MetodosSucursal.ObtenerSucursales();
+
             cbsucursal.DataSource = Sucursales;
+
             cbsucursal.DisplayMember = "Nombre";
+
             cbsucursal.ValueMember = "ID_Sucursal";
+
+
+            cbRol.SelectedValue = MetodosRol.ObtenerRolID(idEmpleado);
+            cbsucursal.SelectedValue = MetodosSucursal.ObtenerSucursalID(idEmpleado);
+
 
         }
 
@@ -62,6 +103,46 @@ namespace Variedades_Man_s_Style
             cbsucursal.DataSource = Sucursales;
             cbsucursal.DisplayMember = "Nombre";
             cbsucursal.ValueMember = "ID_Sucursal";
+
+        }
+
+        private void actulizarEmpleado()
+        {
+
+            EmpleadoDTO nuevoempleado = new EmpleadoDTO();
+
+            nuevoempleado = new EmpleadoDTO()
+            {
+
+                ID_Empleado = idEmpleado,
+                Nombre = txtNombreEmpleado.Text,
+                Cedula = txtCedulaEmpleado.Text,
+                Edad = string.IsNullOrEmpty(txtEdadEmpleado.Text) ? (int?)null : int.Parse(txtEdadEmpleado.Text),
+                usuario = txtUsuario.Text,
+                contrasena = txtContra.Text,
+                ID_Rol = (int)cbRol.SelectedValue,
+                ID_Sucursal = (int)cbsucursal.SelectedValue,
+
+            };
+
+            bool resultado = MetodosEmpleados.ActualizarEmpleado(nuevoempleado);
+
+            if (resultado)
+            {
+
+                MessageBox.Show($"Se actualizo el empleado{nuevoempleado.Nombre}");
+
+                EmpleadoAgregadoActualizado?.Invoke(this, EventArgs.Empty);
+
+                this.Close();
+
+            }
+            else
+            {
+                MessageBox.Show($"No se actualizo el empleado{nuevoempleado.Nombre}");
+
+            }
+
 
         }
 
@@ -168,6 +249,10 @@ namespace Variedades_Man_s_Style
                 AgregarEmpleado();
 
             }
+            else
+            {
+                actulizarEmpleado();
+            }
 
         }
 
@@ -184,7 +269,10 @@ namespace Variedades_Man_s_Style
             }
             else
             {
-                return;
+
+                LlenarDatosEmpleado(idEmpleado);
+
+                llenarCOMBOBOX_Actualizar();
             }
 
         }
@@ -192,6 +280,11 @@ namespace Variedades_Man_s_Style
         private void btn_CancelarEmpleado_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel_DatosEmpleado_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

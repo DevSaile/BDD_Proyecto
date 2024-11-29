@@ -223,11 +223,11 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.DGV_Empleados.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGV_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Empleados.Location = new System.Drawing.Point(100, 102);
+            this.DGV_Empleados.Location = new System.Drawing.Point(65, 102);
             this.DGV_Empleados.Name = "DGV_Empleados";
             this.DGV_Empleados.RowHeadersWidth = 51;
             this.DGV_Empleados.RowTemplate.Height = 24;
-            this.DGV_Empleados.Size = new System.Drawing.Size(477, 319);
+            this.DGV_Empleados.Size = new System.Drawing.Size(512, 319);
             this.DGV_Empleados.TabIndex = 0;
             // 
             // SearchTimer_Tick

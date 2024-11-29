@@ -9,7 +9,7 @@ namespace CapaEntidad
     public class RolDTO
     {
 
-        public int ID_Rol { get; set; }
+        public int? ID_Rol { get; set; }
         public string Puesto { get; set; }
 
     }

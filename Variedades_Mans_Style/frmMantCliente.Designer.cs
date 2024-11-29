@@ -214,6 +214,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(734, 299);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
@@ -227,6 +229,7 @@
             this.Controls.Add(this.txtapellido);
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.BarraTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmMantCliente";
             this.Text = "frmMantCliente";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

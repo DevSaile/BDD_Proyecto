@@ -34,7 +34,19 @@ namespace CapaNegocios
 
         }
 
-        public List<RolDTO> ObtenerRolesPorID(int IDRolsito)
+        public int ObtenerRolID(int? idempleado)
+        {
+            var rol = (from r in db.Vendedor
+                       where r.ID_Vendedor == idempleado
+                       select r.ID_Rol).FirstOrDefault();
+
+            return rol ?? -1;
+
+
+        }
+
+
+        /*public List<RolDTO> ObtenerRolesPorID(int? IDRolsito)
         {
 
             return (from r in db.Rol
@@ -50,5 +62,21 @@ namespace CapaNegocios
                }).ToList();
 
         }
+
+        public List<RolDTO> DevolverIndiceRol(int? idEmpleado)
+        {
+
+            return (from v in db.Vendedor
+                    where v.ID_Vendedor == idEmpleado.Value // Coincidencia parcial, insensible a mayúsculas
+                    select new RolDTO
+                    {
+                        ID_Rol = v.ID_Rol,
+                        Puesto = v.ID_Rol == 1 ? "Administrador" : "Empleado",
+
+                    }).ToList();
+
+        }*/
+
+
     }
 }
