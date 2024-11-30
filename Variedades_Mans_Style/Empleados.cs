@@ -208,5 +208,44 @@ namespace Variedades_Man_s_Style
             }
 
         }
+
+        private void btn_WF_Desactivar_Click(object sender, EventArgs e)
+        {
+
+            // Verificar que haya una fila seleccionada
+            if (DGV_Empleados.SelectedRows.Count == 0)
+            {
+
+                MessageBox.Show("Por favor, selecciona un empleado para Remover.");
+                return;
+            }
+
+            var filaSeleccionada = DGV_Empleados.SelectedRows[0];
+            var empleadoSeleccionada = (EmpleadoDTO)filaSeleccionada.DataBoundItem;
+
+            EmpleadoDTO ripemple = new EmpleadoDTO();
+
+            ripemple = new EmpleadoDTO()
+            {
+                ID_Empleado = empleadoSeleccionada.ID_Empleado,
+                Estado = 0,
+
+            };
+
+            bool resultado = MetodosEmpleado.EliminarEmpleado(ripemple);
+
+            if (resultado)
+            {
+
+                MessageBox.Show("Se removio el empleado");
+                imprimirRegistroEmpleados();
+
+            }
+            else
+            {
+                MessageBox.Show("No se removio el empleado");
+            }
+
+        }
     }
 }

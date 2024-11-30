@@ -142,6 +142,7 @@
             this.btn_WF_Desactivar.TabIndex = 5;
             this.btn_WF_Desactivar.Text = "Eliminar";
             this.btn_WF_Desactivar.UseVisualStyleBackColor = false;
+            this.btn_WF_Desactivar.Click += new System.EventHandler(this.btn_WF_Desactivar_Click);
             // 
             // panel_dgvCategoria
             // 

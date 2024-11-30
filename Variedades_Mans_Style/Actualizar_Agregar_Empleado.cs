@@ -199,23 +199,6 @@ namespace Variedades_Man_s_Style
 
         }
 
-        /*public TextBox cambiartxtnombreEmpleado
-        {
-
-            get { return txt_NombreEmpleado;  }
-        }
-        public TextBox cambiartxtCedulaEmpleado
-        {
-
-            get { return txt_CedulaEmpleado;  }
-        }
-        public TextBox cambiartxtEdadEmpleado
-        {
-
-            get { return txt_EdadEmpleado; }
-        }*/
-
-
 
 
         private void label_Agregar_Click(object sender, EventArgs e)

@@ -119,7 +119,7 @@ namespace CapaNegocios
                 return false;
             }
         }
-
+ 
 
         public bool AgregarCategoria(CategoriaDTO namecategoria)
         {

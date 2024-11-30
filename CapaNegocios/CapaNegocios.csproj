@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaMCN.cs" />
+    <Compile Include="ClienteMCN.cs" />
     <Compile Include="Compra_EntradaMCN.cs" />
     <Compile Include="EmpleadoMCN.cs" />
     <Compile Include="ProductoMCN.cs" />

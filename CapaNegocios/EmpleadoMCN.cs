@@ -135,15 +135,39 @@ namespace CapaNegocios
 
                 return true;
 
-
-
-
             }
             catch 
             { 
 
                 return false;
             
+            }
+
+        }
+
+        public bool EliminarEmpleado(EmpleadoDTO ripempleado)
+        {
+
+            try
+            {
+                Vendedor ripvendedor= db.Vendedor.Find(ripempleado.ID_Empleado);
+
+                if (ripvendedor is null)
+                {
+
+                    return false;
+                }
+
+                ripvendedor.Estado = ripempleado.Estado;
+
+                db.Entry(ripvendedor).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
             }
 
         }
