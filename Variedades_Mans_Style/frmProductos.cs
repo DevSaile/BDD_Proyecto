@@ -79,6 +79,8 @@ namespace Variedades_Man_s_Style
         private void frmProductos_Load(object sender, EventArgs e)
         {
             ConfigureDataGridView();
+            ImprimirProductos();
+
         }
 
         private void ConfigureDataGridView()
@@ -98,11 +100,11 @@ namespace Variedades_Man_s_Style
                 DataPropertyName = "ID_Producto"
             });
 
-            dgvVerProductos.Columns.Add(new DataGridViewTextBoxColumn
+            /*dgvVerProductos.Columns.Add(new DataGridViewTextBoxColumn
             {
                 HeaderText = "Estado de venta",
                 DataPropertyName = "EstadoProducto"
-            });
+            });*/
 
 
             dgvVerProductos.Columns.Add(new DataGridViewTextBoxColumn
@@ -292,6 +294,75 @@ namespace Variedades_Man_s_Style
         private void cbBuscarCategoria_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void ImprimirProductos()
+        {
+            var verproductos = MetodosProducto.verproductos();
+            dgvVerProductos.DataSource = verproductos;
+            dgvVerProductos.Refresh();
+        }
+
+        private void FormularioActualizar_ProductoActualizada(object sender, EventArgs e)
+        {
+
+            ImprimirProductos();
+        }
+
+        private void btnActualizarProducto_Click(object sender, EventArgs e)
+        {
+
+            // Verificar que haya una fila seleccionada
+            if (dgvVerProductos.SelectedRows.Count == 0)
+            {
+
+                MessageBox.Show("Por favor, selecciona una empleado para actualizar.");
+                return;
+            }
+
+            ProductosActualizar FormularioActualizar = new ProductosActualizar();
+
+            FormularioActualizar.ProductoActualizado += FormularioActualizar_ProductoActualizada;
+
+            var filaSeleccionada = dgvVerProductos.SelectedRows[0];
+            var categoriaSeleccionada = (ProductoDTO)filaSeleccionada.DataBoundItem;
+
+            FormularioActualizar.idProducto = categoriaSeleccionada.ID_Producto;
+
+            FormularioActualizar.Show();
+        }
+
+        private void btnDesactivarProducto_Click(object sender, EventArgs e)
+        {
+            var filaSeleccionada = dgvVerProductos.SelectedRows[0];
+            var productoSeleccionado = (ProductoDTO)filaSeleccionada.DataBoundItem;
+
+            ProductoDTO actuProducto = new ProductoDTO();
+
+            actuProducto = new ProductoDTO()
+            {
+
+                ID_Producto = productoSeleccionado.ID_Producto,
+                Estado = 0
+
+            };
+
+            int resulPRO = MetodosProducto.KILLProductoExistente(actuProducto);
+
+            if (resulPRO != -1)
+            {
+
+                MessageBox.Show($" Removido hecho papa");
+                ImprimirProductos();
+
+            }
+            else
+            {
+                MessageBox.Show($" No Removido no hecho pipipi");
+
+            }
+
+
         }
     }
 }

@@ -315,7 +315,38 @@ namespace CapaNegocios
             }
 
         }
-        
+        public int KILLProductoExistente(ProductoDTO produ)
+        {
+
+            try
+            {
+
+                Producto newProdu = db.Producto.Find(produ.ID_Producto);
+
+                if (newProdu is null)
+                {
+
+                    return -1;
+
+                }
+                
+                newProdu.Estado = produ.Estado;
+
+                db.Entry(newProdu).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                return newProdu.ID_Producto;
+
+            }
+            catch
+            {
+                
+                return -1;
+
+
+            }
+
+        }
 
     }
 }
