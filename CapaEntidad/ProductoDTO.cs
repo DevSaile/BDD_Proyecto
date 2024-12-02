@@ -9,7 +9,7 @@ namespace CapaEntidad
     public class ProductoDTO
     {
 
-        public int? ID_Producto { get; set; }
+        public int ID_Producto { get; set; }
         public int? ID_Categoria { get; set; }
         public string Nombre { get; set; }
         public string Marca { get; set; }

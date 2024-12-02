@@ -101,7 +101,7 @@ namespace Variedades_Man_s_Style
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
 
-            if (txtNombreCliente.Text == string.Empty)
+            if (txtNombreCliente.Text == string.Empty || txtNombreCliente.Text == MetodosCliente.BuscarClienteNombreSolo(txtNombreCliente.Text))
             {
                 MessageBox.Show("Nombre invalido");
                 return;
@@ -145,6 +145,7 @@ namespace Variedades_Man_s_Style
             var filaSeleccionada = dgvVerClientes.SelectedRows[0];
             var categoriaSeleccionada = (ClienteDTO)filaSeleccionada.DataBoundItem;
 
+
             ClienteDTO namecliente = new ClienteDTO();
 
             namecliente = new ClienteDTO()
@@ -159,13 +160,13 @@ namespace Variedades_Man_s_Style
             if (resultado)
             {
 
-                MessageBox.Show("Se agrego el cliente");
+                MessageBox.Show("Se actualizo el cliente");
                 ImprimirClientes();
 
             }
             else
             {
-                MessageBox.Show("No se agrego el cliente");
+                MessageBox.Show("No se actualizo el cliente");
             }
         }
 
@@ -213,6 +214,45 @@ namespace Variedades_Man_s_Style
         {
             searchTimer.Stop(); // Detiene el timer en cada cambio de texto
             searchTimer.Start(); // Reinicia el timer
+        }
+
+        private void dgvVerClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var filaSeleccionada = dgvVerClientes.SelectedRows[0];
+            var categoriaSeleccionada = (ClienteDTO)filaSeleccionada.DataBoundItem;
+
+            txtNombreCliente.Text = categoriaSeleccionada.Nombre.ToString();
+        }
+
+        private void btnDesactivarEmpleado_Click(object sender, EventArgs e)
+        {
+
+            var filaSeleccionada = dgvVerClientes.SelectedRows[0];
+            var categoriaSeleccionada = (ClienteDTO)filaSeleccionada.DataBoundItem;
+
+            ClienteDTO namecliente = new ClienteDTO();
+
+            namecliente = new ClienteDTO()
+            {
+                ID_Cliente = categoriaSeleccionada.ID_Cliente,
+                Estado = 0,
+
+            };
+
+            bool resultado = MetodosCliente.EliminarCliente(namecliente);
+
+            if (resultado)
+            {
+
+                MessageBox.Show("Se removio el cliente");
+                ImprimirClientes();
+
+            }
+            else
+            {
+                MessageBox.Show("No se removio el cliente");
+            }
+
         }
     }
 }

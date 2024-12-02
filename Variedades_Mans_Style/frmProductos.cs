@@ -224,10 +224,10 @@ namespace Variedades_Man_s_Style
             if (ValidarTextBoxIndividuales(txt_IdProducto, "ID de Producto"))
             {
 
-                List<ProductoDTO> verproduid = MetodosProducto.BuscarPorID(int.Parse(txt_IdProducto.Text));
+                var verproduid = MetodosProducto.BuscarPorIDLista(int.Parse(txt_IdProducto.Text));
 
 
-                if (verproduid == null || verproduid.Count == 0)
+                if (verproduid == null)
                 {
                     MessageBox.Show($"No se ha encontrado ningun producto con id {txt_IdProducto.Text}");
                     return;

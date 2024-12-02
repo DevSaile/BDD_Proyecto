@@ -35,6 +35,7 @@
             this.label_Actualizar_Agregar_Empleado = new System.Windows.Forms.Label();
             this.cbsucursal = new System.Windows.Forms.ComboBox();
             this.panel_DatosEmpleado = new System.Windows.Forms.Panel();
+            this.dtpFechaEmple = new System.Windows.Forms.DateTimePicker();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,8 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btn_CancelarEmpleado = new System.Windows.Forms.Button();
             this.btn_Agregar_Actualizar_Empleado = new System.Windows.Forms.Button();
-            this.txtEdadEmpleado = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNombreEmpleado = new System.Windows.Forms.TextBox();
             this.txtCedulaEmpleado = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -143,6 +142,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_DatosEmpleado.BackColor = System.Drawing.Color.White;
+            this.panel_DatosEmpleado.Controls.Add(this.dtpFechaEmple);
             this.panel_DatosEmpleado.Controls.Add(this.txtContra);
             this.panel_DatosEmpleado.Controls.Add(this.label7);
             this.panel_DatosEmpleado.Controls.Add(this.label8);
@@ -151,8 +151,6 @@
             this.panel_DatosEmpleado.Controls.Add(this.label6);
             this.panel_DatosEmpleado.Controls.Add(this.btn_CancelarEmpleado);
             this.panel_DatosEmpleado.Controls.Add(this.btn_Agregar_Actualizar_Empleado);
-            this.panel_DatosEmpleado.Controls.Add(this.txtEdadEmpleado);
-            this.panel_DatosEmpleado.Controls.Add(this.label3);
             this.panel_DatosEmpleado.Controls.Add(this.txtNombreEmpleado);
             this.panel_DatosEmpleado.Controls.Add(this.txtCedulaEmpleado);
             this.panel_DatosEmpleado.Controls.Add(this.label4);
@@ -167,6 +165,14 @@
             this.panel_DatosEmpleado.Size = new System.Drawing.Size(624, 447);
             this.panel_DatosEmpleado.TabIndex = 1;
             this.panel_DatosEmpleado.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DatosEmpleado_Paint);
+            // 
+            // dtpFechaEmple
+            // 
+            this.dtpFechaEmple.Location = new System.Drawing.Point(230, 167);
+            this.dtpFechaEmple.Name = "dtpFechaEmple";
+            this.dtpFechaEmple.Size = new System.Drawing.Size(354, 40);
+            this.dtpFechaEmple.TabIndex = 24;
+            this.dtpFechaEmple.ValueChanged += new System.EventHandler(this.DPtFechaEmpleado_ValueChanged);
             // 
             // txtContra
             // 
@@ -276,29 +282,6 @@
             this.btn_Agregar_Actualizar_Empleado.UseVisualStyleBackColor = false;
             this.btn_Agregar_Actualizar_Empleado.Click += new System.EventHandler(this.btn_Agregar_Actualizar_Empleado_Click);
             // 
-            // txtEdadEmpleado
-            // 
-            this.txtEdadEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEdadEmpleado.BackColor = System.Drawing.Color.White;
-            this.txtEdadEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEdadEmpleado.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdadEmpleado.Location = new System.Drawing.Point(226, 165);
-            this.txtEdadEmpleado.Multiline = true;
-            this.txtEdadEmpleado.Name = "txtEdadEmpleado";
-            this.txtEdadEmpleado.Size = new System.Drawing.Size(360, 34);
-            this.txtEdadEmpleado.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.SystemColors.InfoText;
-            this.label3.Location = new System.Drawing.Point(226, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(360, 5);
-            this.label3.TabIndex = 16;
-            // 
             // txtNombreEmpleado
             // 
             this.txtNombreEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -366,7 +349,7 @@
             this.label_Direccion.Name = "label_Direccion";
             this.label_Direccion.Size = new System.Drawing.Size(157, 34);
             this.label_Direccion.TabIndex = 4;
-            this.label_Direccion.Text = "Edad:";
+            this.label_Direccion.Text = "Fecha NA:";
             this.label_Direccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_Numero
@@ -431,17 +414,16 @@
         private System.Windows.Forms.Button btn_CancelarEmpleado;
         private System.Windows.Forms.TextBox txtNombreEmpleado;
         private System.Windows.Forms.TextBox txtCedulaEmpleado;
-        private System.Windows.Forms.TextBox txtEdadEmpleado;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbsucursal;
         private System.Windows.Forms.ComboBox cbRol;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dtpFechaEmple;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label label5;
     }
 }

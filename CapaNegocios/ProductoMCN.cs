@@ -71,13 +71,46 @@ namespace CapaNegocios
 
         }
 
-        public List<ProductoDTO> BuscarPorID(int nombreprodu)
+        public ProductoDTO BuscarPorID(int nombreprodu)
         {
 
             return (from p in db.Producto
                     where p.ID_Producto == nombreprodu
                     select new ProductoDTO
                     {
+                        
+                        ID_Categoria = p.ID_Categoria,
+                        ID_Sucursal = p.ID_Sucursal,
+
+                        ID_Producto = p.ID_Producto,
+                        EstadoProducto = p.Estado == 1 ? "Activo" : "Inactivo",
+                        versucu = p.ID_Sucursal == 1 ? "Tienda Principal " : "Tienda Primaria",
+                        Descripcion_Categoria = p.Categoria.Nombre, // Accede al nombre de la categoría
+
+                        Nombre = p.Nombre,
+                        Marca = p.Marca,
+                        Cantidad = p.Cantidad,
+                        //Precio_Compra = p.Precio_Compra,
+                        Precio_Producto = p.Precio_Producto,
+                        Precio_Compra = p.Precio_Compra,
+
+                        Detalles = p.DetalleS // Asegúrate de incluir la propiedad si es relevante
+
+
+                    }).FirstOrDefault();
+
+        }
+
+        public List<ProductoDTO> BuscarPorIDLista(int nombreprodu)
+        {
+
+            return (from p in db.Producto
+                    where p.ID_Producto == nombreprodu
+                    select new ProductoDTO
+                    {
+                        
+                        ID_Categoria = p.ID_Categoria,
+                        ID_Sucursal = p.ID_Sucursal,
 
                         ID_Producto = p.ID_Producto,
                         EstadoProducto = p.Estado == 1 ? "Activo" : "Inactivo",
@@ -117,6 +150,50 @@ namespace CapaNegocios
 
                     }).ToList();
 
+        }
+
+        public List<ProductoDTO> BuscarProductosHEAVY(string nombre = null, string marca = null, int? categoriaId = null, int? sucursalId = null,  bool soloActivos = true)
+        {
+            var query = db.Producto.AsQueryable();
+
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                query = query.Where(p => p.Nombre.ToLower().Contains(nombre.ToLower()));
+            }
+
+            if (!string.IsNullOrEmpty(marca))
+            {
+                query = query.Where(p => p.Marca.ToLower().Contains(marca.ToLower()));
+            }
+
+            if (categoriaId.HasValue)
+            {
+                query = query.Where(p => p.ID_Categoria == categoriaId);
+            }
+
+            if (sucursalId.HasValue)
+            {
+                query = query.Where(p => p.ID_Sucursal == sucursalId);
+            }
+
+            if (soloActivos)
+            {
+                query = query.Where(p => p.Estado == 1);
+            }
+
+            return query.Select(p => new ProductoDTO
+            {
+                ID_Producto = p.ID_Producto,
+                EstadoProducto = "Activo",
+                versucu = p.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria",
+                Descripcion_Categoria = p.Categoria.Nombre,
+                Nombre = p.Nombre,
+                Marca = p.Marca,
+                Cantidad = p.Cantidad,
+                Precio_Producto = p.Precio_Producto,
+                Detalles = p.DetalleS
+                
+            }).ToList();
         }
 
         public List<ProductoDTO> verproductos()
@@ -199,6 +276,46 @@ namespace CapaNegocios
             }
 
         }
+
+        public int ActulizarProductoExistente(ProductoDTO produ)
+        {
+
+            try
+            {
+
+                Producto newProdu = db.Producto.Find(produ.ID_Producto);
+
+                if (newProdu is null)
+                {
+
+                    return -1;
+
+                }
+                
+
+                newProdu.Nombre = produ.Nombre;
+                newProdu.Marca = produ.Marca;
+                newProdu.DetalleS = produ.Detalles;
+                newProdu.Cantidad += produ.Cantidad;
+                newProdu.Precio_Compra = produ.Precio_Compra;
+                newProdu.Precio_Producto = produ.Precio_Producto;      
+
+                db.Entry(newProdu).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                return newProdu.ID_Producto;
+
+            }
+            catch
+            {
+                
+                return -1;
+
+
+            }
+
+        }
+        
 
     }
 }

@@ -15,7 +15,7 @@ namespace CapaEntidad
 
         public string Cedula { get; set; }
 
-        public int? Edad { get; set; }
+        public DateTime? Edad { get; set; }
 
         public int? Estado { get; set; }
 

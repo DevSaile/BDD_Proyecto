@@ -49,7 +49,7 @@ namespace Variedades_Man_s_Style
 
                 txtCedulaEmpleado.Text = empleado.Cedula;
 
-                txtEdadEmpleado.Text = empleado.Edad.HasValue ? empleado.Edad.Value.ToString() : string.Empty;
+                dtpFechaEmple.Value = empleado.Edad ?? DateTime.Now;
 
                 txtUsuario.Text = empleado.usuario;
 
@@ -117,7 +117,7 @@ namespace Variedades_Man_s_Style
                 ID_Empleado = idEmpleado,
                 Nombre = txtNombreEmpleado.Text,
                 Cedula = txtCedulaEmpleado.Text,
-                Edad = string.IsNullOrEmpty(txtEdadEmpleado.Text) ? (int?)null : int.Parse(txtEdadEmpleado.Text),
+                Edad = dtpFechaEmple.Value,
                 usuario = txtUsuario.Text,
                 contrasena = txtContra.Text,
                 ID_Rol = (int)cbRol.SelectedValue,
@@ -156,7 +156,7 @@ namespace Variedades_Man_s_Style
 
                 Nombre = txtNombreEmpleado.Text,
                 Cedula = txtCedulaEmpleado.Text,
-                Edad = string.IsNullOrEmpty(txtEdadEmpleado.Text) ? (int?)null : int.Parse(txtEdadEmpleado.Text),
+                Edad = dtpFechaEmple.Value,
                 Estado = 1,
                 usuario = txtUsuario.Text,
                 contrasena = txtContra.Text,
@@ -266,6 +266,11 @@ namespace Variedades_Man_s_Style
         }
 
         private void panel_DatosEmpleado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DPtFechaEmpleado_ValueChanged(object sender, EventArgs e)
         {
 
         }

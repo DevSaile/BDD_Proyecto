@@ -24,7 +24,7 @@ namespace CapaDatos
         public Nullable<int> ID_Rol { get; set; }
         public string Nombre { get; set; }
         public string Cedula { get; set; }
-        public Nullable<int> Edad { get; set; }
+        public Nullable<System.DateTime> Edad { get; set; }
         public string Usuario { get; set; }
         public string contra { get; set; }
         public Nullable<int> ID_Sucursal { get; set; }

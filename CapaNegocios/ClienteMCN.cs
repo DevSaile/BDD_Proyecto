@@ -52,6 +52,18 @@ namespace CapaNegocios
 
         }
 
+        public string BuscarClienteNombreSolo(string namecliente)
+        {
+            // Realiza una consulta LINQ para buscar por nombre de cliente
+            var cliente = (from c in db.Cliente
+                        where c.Nombre.ToLower().Contains(namecliente.ToLower()) // Coincidencia parcial, insensible a mayúsculas
+                        select c.Nombre).FirstOrDefault();
+
+            // Retorna el nombre del cliente encontrado o una cadena vacía si no se encuentra ningún cliente
+            return cliente ?? string.Empty;
+        }
+
+
 
 
 

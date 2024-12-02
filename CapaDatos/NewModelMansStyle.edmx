@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bddVariedadesMansStyleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BasedeDatosMansStyleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="ID_Categoria" />
@@ -71,7 +71,7 @@
           <Property Name="ID_Rol" Type="int" />
           <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Cedula" Type="nvarchar" MaxLength="20" />
-          <Property Name="Edad" Type="int" />
+          <Property Name="Edad" Type="date" />
           <Property Name="Usuario" Type="nvarchar" MaxLength="50" />
           <Property Name="contra" Type="nvarchar" MaxLength="20" />
           <Property Name="ID_Sucursal" Type="int" />
@@ -187,7 +187,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="bddVariedadesMansStyleModelStoreContainer">
+        <EntityContainer Name="BasedeDatosMansStyleModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Compra_Entrada" EntityType="Self.Compra_Entrada" Schema="dbo" store:Type="Tables" />
@@ -233,7 +233,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="bddVariedadesMansStyleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BasedeDatosMansStyleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="ID_Categoria" />
@@ -310,7 +310,7 @@
           <Property Name="ID_Rol" Type="Int32" />
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Edad" Type="Int32" />
+          <Property Name="Edad" Type="DateTime" Precision="0" />
           <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="contra" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ID_Sucursal" Type="Int32" />
@@ -479,9 +479,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bddVariedadesMansStyleModelStoreContainer" CdmEntityContainer="bddVariedadesMansStyleEntities">
+        <EntityContainerMapping StorageEntityContainer="BasedeDatosMansStyleModelStoreContainer" CdmEntityContainer="bddVariedadesMansStyleEntities">
           <EntitySetMapping Name="Categoria">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Categoria">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -490,7 +490,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Cliente">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
                 <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -499,7 +499,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Compra_Entrada">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Compra_Entrada">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Compra_Entrada">
               <MappingFragment StoreEntitySet="Compra_Entrada">
                 <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
@@ -511,7 +511,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Producto">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Producto">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
                 <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
                 <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
@@ -527,7 +527,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rol">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Rol">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Rol">
               <MappingFragment StoreEntitySet="Rol">
                 <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
                 <ScalarProperty Name="Puesto" ColumnName="Puesto" />
@@ -535,7 +535,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sucursal">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Sucursal">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Sucursal">
               <MappingFragment StoreEntitySet="Sucursal">
                 <ScalarProperty Name="ID_Sucursal" ColumnName="ID_Sucursal" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -545,7 +545,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vendedor">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Vendedor">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Vendedor">
               <MappingFragment StoreEntitySet="Vendedor">
                 <ScalarProperty Name="ID_Vendedor" ColumnName="ID_Vendedor" />
                 <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
@@ -560,7 +560,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Venta_Factura">
-            <EntityTypeMapping TypeName="bddVariedadesMansStyleModel.Venta_Factura">
+            <EntityTypeMapping TypeName="BasedeDatosMansStyleModel.Venta_Factura">
               <MappingFragment StoreEntitySet="Venta_Factura">
                 <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />

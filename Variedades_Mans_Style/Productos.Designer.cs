@@ -58,6 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
+            this.btnAgregarExistente = new System.Windows.Forms.Button();
             this.Panel_txtProductos.SuspendLayout();
             this.panel_InfoProductos.SuspendLayout();
             this.panel_InfoProveedor.SuspendLayout();
@@ -111,6 +112,7 @@
             this.panel_InfoProductos.Controls.Add(this.label12);
             this.panel_InfoProductos.Controls.Add(this.txt_Detalles);
             this.panel_InfoProductos.Controls.Add(this.label13);
+            this.panel_InfoProductos.Controls.Add(this.label9);
             this.panel_InfoProductos.Controls.Add(this.label10);
             this.panel_InfoProductos.Controls.Add(this.txt_Marca);
             this.panel_InfoProductos.Controls.Add(this.label11);
@@ -129,7 +131,7 @@
             this.panel_InfoProductos.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_InfoProductos.Location = new System.Drawing.Point(0, 44);
             this.panel_InfoProductos.Name = "panel_InfoProductos";
-            this.panel_InfoProductos.Size = new System.Drawing.Size(519, 572);
+            this.panel_InfoProductos.Size = new System.Drawing.Size(529, 572);
             this.panel_InfoProductos.TabIndex = 7;
             this.panel_InfoProductos.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_InfoProductos_Paint);
             // 
@@ -330,7 +332,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.BackColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(-3, -3);
+            this.label9.Location = new System.Drawing.Point(526, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(10, 573);
             this.label9.TabIndex = 21;
@@ -364,17 +366,17 @@
             // panel_InfoProveedor
             // 
             this.panel_InfoProveedor.BackColor = System.Drawing.Color.White;
+            this.panel_InfoProveedor.Controls.Add(this.btnAgregarExistente);
             this.panel_InfoProveedor.Controls.Add(this.cbox_Categoria);
             this.panel_InfoProveedor.Controls.Add(this.label6);
-            this.panel_InfoProveedor.Controls.Add(this.label9);
             this.panel_InfoProveedor.Controls.Add(this.btnCancelar);
             this.panel_InfoProveedor.Controls.Add(this.btn_AgregarProducto);
             this.panel_InfoProveedor.Controls.Add(this.label7);
             this.panel_InfoProveedor.Controls.Add(this.cbox_Sucursal);
             this.panel_InfoProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_InfoProveedor.Location = new System.Drawing.Point(519, 44);
+            this.panel_InfoProveedor.Location = new System.Drawing.Point(529, 44);
             this.panel_InfoProveedor.Name = "panel_InfoProveedor";
-            this.panel_InfoProveedor.Size = new System.Drawing.Size(696, 572);
+            this.panel_InfoProveedor.Size = new System.Drawing.Size(686, 572);
             this.panel_InfoProveedor.TabIndex = 8;
             this.panel_InfoProveedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -413,7 +415,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancelar.Location = new System.Drawing.Point(421, 342);
+            this.btnCancelar.Location = new System.Drawing.Point(431, 258);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(149, 46);
             this.btnCancelar.TabIndex = 26;
@@ -431,13 +433,31 @@
             this.btn_AgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AgregarProducto.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AgregarProducto.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_AgregarProducto.Location = new System.Drawing.Point(145, 342);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(155, 258);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
             this.btn_AgregarProducto.Size = new System.Drawing.Size(149, 46);
             this.btn_AgregarProducto.TabIndex = 25;
             this.btn_AgregarProducto.Text = "Agregar";
             this.btn_AgregarProducto.UseVisualStyleBackColor = false;
             this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
+            // 
+            // btnAgregarExistente
+            // 
+            this.btnAgregarExistente.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAgregarExistente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarExistente.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAgregarExistente.FlatAppearance.BorderSize = 2;
+            this.btnAgregarExistente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnAgregarExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarExistente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarExistente.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnAgregarExistente.Location = new System.Drawing.Point(219, 470);
+            this.btnAgregarExistente.Name = "btnAgregarExistente";
+            this.btnAgregarExistente.Size = new System.Drawing.Size(261, 46);
+            this.btnAgregarExistente.TabIndex = 29;
+            this.btnAgregarExistente.Text = "Agregar Existente";
+            this.btnAgregarExistente.UseVisualStyleBackColor = false;
+            this.btnAgregarExistente.Click += new System.EventHandler(this.btnAgregarExistente_Click);
             // 
             // Productos
             // 
@@ -490,5 +510,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbox_Categoria;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAgregarExistente;
     }
 }

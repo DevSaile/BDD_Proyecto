@@ -1,4 +1,5 @@
-﻿using CapaEntidad;
+﻿using CapaDatos;
+using CapaEntidad;
 using CapaNegocios;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,9 @@ namespace Variedades_Man_s_Style
 
             llenarCOMBOBOX();
         }
+
+        private bool esProductoExistente; // Variable para indicar si el producto es existente
+        private int idProductoSeleccionado; // Variable para almacenar el ID del producto seleccionado
 
         ProductoMCN MetodosProducto = new ProductoMCN();
         CategoriaMCN MetodosCategoria = new CategoriaMCN();
@@ -91,63 +95,37 @@ namespace Variedades_Man_s_Style
         private void GuardarProducto()
         {
 
-
-
-            if (ValidarTextBoxesEnGrupo(panel_InfoProductos))
+            if (esProductoExistente)
             {
-                // ... (resto de tu código)
 
-                // Validación adicional para cantidades y precios negativos
-                if (int.TryParse(txt_CandtidadProducto.Text, out int cantidad) && cantidad < 0)
-                {
-                    MessageBox.Show("La cantidad no puede ser negativa.");
-                    return;
-                }
+                ProductoDTO actuProducto = new ProductoDTO();
 
-                if (decimal.TryParse(txt_PrecioCompra.Text, out decimal precioCompra) && precioCompra < 0)
-                {
-                    MessageBox.Show("El precio de compra no puede ser negativo.");
-                    return;
-                }
-
-                if (decimal.TryParse(txt_PrecioProducto.Text, out decimal precioProducto) && precioProducto < 0)
-                {
-                    MessageBox.Show("El precio del producto no puede ser negativo.");
-                    return;
-                }
-
-                // Lógica para guardar datos.
-                MessageBox.Show("Todos los campos están llenos. Procediendo con la operación.");
-
-                ProductoDTO produ = new ProductoDTO();
-
-
-                produ = new ProductoDTO()
+                actuProducto = new ProductoDTO()
                 {
 
-                    ID_Categoria = (int)cbox_Categoria.SelectedValue,
-                    ID_Sucursal = (int)cbox_Sucursal.SelectedValue,
+                    ID_Producto = idProductoSeleccionado,
                     Nombre = txt_NombreProducto.Text,
                     Marca = txt_Marca.Text,
                     Cantidad = string.IsNullOrEmpty(txt_CandtidadProducto.Text) ? (int?)null : int.Parse(txt_CandtidadProducto.Text),
                     Precio_Compra = string.IsNullOrEmpty(txt_PrecioCompra.Text) ? (decimal?)null : decimal.Parse(txt_PrecioCompra.Text),
                     Precio_Producto = string.IsNullOrEmpty(txt_PrecioProducto.Text) ? (decimal?)null : decimal.Parse(txt_PrecioProducto.Text),
                     Detalles = txt_Detalles.Text,
-                    Estado = 1
-
 
                 };
 
-                int GuardarProdu_obtenerResultado = MetodosProducto.AgregarProducto(produ);
+                int resulPRO = MetodosProducto.ActulizarProductoExistente(actuProducto);
 
-                if (GuardarProdu_obtenerResultado != -1)
+                if (resulPRO != -1)
                 {
 
-                    MessageBox.Show("Se agrego el producto");
+                    MessageBox.Show($" Registro hecho papa");
+
+
                 }
                 else
                 {
-                    MessageBox.Show("valio queso");
+                    MessageBox.Show($" Registro no hecho pipipi");
+
                 }
 
                 Compra_EntradaDTO compraentra = new Compra_EntradaDTO();
@@ -157,7 +135,7 @@ namespace Variedades_Man_s_Style
                 {
 
                     Estado = 1,
-                    ID_Producto = GuardarProdu_obtenerResultado,
+                    ID_Producto = resulPRO,
                     Fecha_Compra = DateTime.Today,
                     Precio_Compra = string.IsNullOrEmpty(txt_PrecioCompra.Text) ? (decimal?)null : decimal.Parse(txt_PrecioCompra.Text),
                     CantidadCompra = string.IsNullOrEmpty(txt_CandtidadProducto.Text) ? (int?)null : int.Parse(txt_CandtidadProducto.Text)
@@ -177,7 +155,99 @@ namespace Variedades_Man_s_Style
                     MessageBox.Show("valio queso");
                 }
 
+
             }
+            else
+            {
+
+                if (ValidarTextBoxesEnGrupo(panel_InfoProductos))
+                {
+                    // ... (resto de tu código)
+
+                    // Validación adicional para cantidades y precios negativos
+                    if (int.TryParse(txt_CandtidadProducto.Text, out int cantidad) && cantidad < 0)
+                    {
+                        MessageBox.Show("La cantidad no puede ser negativa.");
+                        return;
+                    }
+
+                    if (decimal.TryParse(txt_PrecioCompra.Text, out decimal precioCompra) && precioCompra < 0)
+                    {
+                        MessageBox.Show("El precio de compra no puede ser negativo.");
+                        return;
+                    }
+
+                    if (decimal.TryParse(txt_PrecioProducto.Text, out decimal precioProducto) && precioProducto < 0)
+                    {
+                        MessageBox.Show("El precio del producto no puede ser negativo.");
+                        return;
+                    }
+
+                    // Lógica para guardar datos.
+                    MessageBox.Show("Todos los campos están llenos. Procediendo con la operación.");
+
+                    ProductoDTO produ = new ProductoDTO();
+
+
+                    produ = new ProductoDTO()
+                    {
+
+                        ID_Categoria = (int)cbox_Categoria.SelectedValue,
+                        ID_Sucursal = (int)cbox_Sucursal.SelectedValue,
+                        Nombre = txt_NombreProducto.Text,
+                        Marca = txt_Marca.Text,
+                        Cantidad = string.IsNullOrEmpty(txt_CandtidadProducto.Text) ? (int?)null : int.Parse(txt_CandtidadProducto.Text),
+                        Precio_Compra = string.IsNullOrEmpty(txt_PrecioCompra.Text) ? (decimal?)null : decimal.Parse(txt_PrecioCompra.Text),
+                        Precio_Producto = string.IsNullOrEmpty(txt_PrecioProducto.Text) ? (decimal?)null : decimal.Parse(txt_PrecioProducto.Text),
+                        Detalles = txt_Detalles.Text,
+                        Estado = 1
+
+
+                    };
+
+                    int GuardarProdu_obtenerResultado = MetodosProducto.AgregarProducto(produ);
+
+                    if (GuardarProdu_obtenerResultado != -1)
+                    {
+
+                        MessageBox.Show("Se agrego el producto");
+                    }
+                    else
+                    {
+                        MessageBox.Show("valio queso");
+                    }
+
+                    Compra_EntradaDTO compraentra = new Compra_EntradaDTO();
+
+
+                    compraentra = new Compra_EntradaDTO()
+                    {
+
+                        Estado = 1,
+                        ID_Producto = GuardarProdu_obtenerResultado,
+                        Fecha_Compra = DateTime.Today,
+                        Precio_Compra = string.IsNullOrEmpty(txt_PrecioCompra.Text) ? (decimal?)null : decimal.Parse(txt_PrecioCompra.Text),
+                        CantidadCompra = string.IsNullOrEmpty(txt_CandtidadProducto.Text) ? (int?)null : int.Parse(txt_CandtidadProducto.Text)
+
+                    };
+
+                    bool savecompraentra = MetodosCompraEntrada.AgregarProducto(compraentra);
+
+
+                    if (savecompraentra)
+                    {
+
+                        MessageBox.Show("Se agrego el registro");
+                    }
+                    else
+                    {
+                        MessageBox.Show("valio queso");
+                    }
+
+                }
+
+            }
+
 
         }
 
@@ -200,6 +270,60 @@ namespace Variedades_Man_s_Style
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregarExistente_Click(object sender, EventArgs e)
+        {
+
+
+
+           BuscarProductoExistente FormularioProduExistente = new BuscarProductoExistente();
+
+            FormularioProduExistente.ProductoSeleccionado += FormBuscarProducto_ProductoSeleccionado;
+            FormularioProduExistente.Show();
+
+        }
+
+        private void FormBuscarProducto_ProductoSeleccionado(int idProducto)
+        {
+
+            // Cargar los detalles del producto seleccionado y realizar el proceso de registro
+
+            var producto = MetodosProducto.BuscarPorID(idProducto);
+
+            if (producto != null)
+            {
+
+                idProductoSeleccionado = idProducto; // Almacenar el ID del producto seleccionado
+
+                esProductoExistente = true; // El producto es existente
+                // Llenar los TextBox con la información del producto seleccionado
+
+                txt_NombreProducto.Text = producto.Nombre;
+
+                txt_Marca.Text = producto.Marca;
+
+                txt_CandtidadProducto.Text = producto.Cantidad.ToString();
+
+                txt_PrecioCompra.Text = producto.Precio_Compra.HasValue ? producto.Precio_Compra.Value.ToString("F2") : string.Empty;
+
+                txt_PrecioProducto.Text = producto.Precio_Producto.HasValue ? producto.Precio_Producto.Value.ToString("F2") : string.Empty;
+
+                txt_Detalles.Text = producto.Detalles;
+
+                cbox_Categoria.SelectedValue = producto.ID_Categoria;
+                cbox_Sucursal.SelectedValue = producto.ID_Sucursal;
+
+            }
+
+            else
+
+            {
+
+                MessageBox.Show("No se encontró el producto seleccionado.");
+
+            }
+
         }
 
         /*private void cbox_Sucursal_SelectedIndexChanged(object sender, EventArgs e)
