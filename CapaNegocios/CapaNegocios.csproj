@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolMCN.cs" />
     <Compile Include="SucursalMCN.cs" />
+    <Compile Include="VentaFacturaMCN.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="InfoNegocios.txt" />

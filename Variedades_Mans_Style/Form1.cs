@@ -172,7 +172,7 @@ namespace Variedades_Man_s_Style
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            //AbrirFormulario<FrmVentas>();
+            AbrirFormulario<FrmVentas>();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

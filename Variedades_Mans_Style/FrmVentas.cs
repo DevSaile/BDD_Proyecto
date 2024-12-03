@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,18 @@ namespace Variedades_Man_s_Style
             InitializeComponent();
         }
 
+
+        ClienteMCN MetodosCliente = new ClienteMCN();
+        ProductoMCN MeotodosProducto = new ProductoMCN();
+
+
+
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmVentas_Load(object sender, EventArgs e)
         {
 
         }

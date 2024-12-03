@@ -23,6 +23,9 @@ namespace CapaDatos
         public Nullable<int> Cantidad { get; set; }
         public Nullable<decimal> Subtotal { get; set; }
         public Nullable<decimal> Total { get; set; }
+        public Nullable<decimal> PrecioProducto { get; set; }
+        public Nullable<decimal> Paga { get; set; }
+        public Nullable<decimal> Cambio { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         public virtual Producto Producto { get; set; }

@@ -34,6 +34,19 @@ namespace CapaNegocios
 
         }
 
+        public List<RolDTO> ObtenerRolesEmpleado()
+        {
+            return db.Rol
+                     .Where(r => r.ID_Rol == 0) // Filtra los roles donde ID_Rol sea igual a 0
+                     .Select(r => new RolDTO
+                     {
+                         ID_Rol = r.ID_Rol,
+                         Puesto = "Empleado" // Si `ID_Rol` es siempre 0 en este caso, no necesitas verificar
+                     }).ToList();
+        }
+
+
+
         public int ObtenerRolID(int? idempleado)
         {
             var rol = (from r in db.Vendedor
