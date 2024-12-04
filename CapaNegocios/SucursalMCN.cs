@@ -31,7 +31,7 @@ namespace CapaNegocios
 
         }
 
-        public int ObtenerSucursalID(int? idempleado)
+        public int ObtenerSucursalID(int? idempleado) // obtiene la sucursal que le pertence al empleado en ese momento
         {
             var sucu = (from v in db.Vendedor
                        where v.ID_Vendedor == idempleado
@@ -40,19 +40,26 @@ namespace CapaNegocios
             return sucu ?? -1;
         }
 
-        /*public List<SucursalDTO> ObtenerSucursalesPorID(int? ID_sucu)
+        public List<SucursalDTO> ObtenerSucursalesPorID(int? ID_cate) // obtner el id de la categiria que pertenece al producto
         {
+            // Verifica que ID_sucu no sea null antes de proceder
+            if (!ID_cate.HasValue)
+                return new List<SucursalDTO>();
 
-            return ( from s in db.Sucursal where s.ID_Sucursal == ID_sucu
-            select new SucursalDTO
-            { 
-                ID_Sucursal = s.ID_Sucursal,
-                Nombre = (s.ID_Sucursal == 1 ? "Tienda Principal" : s.ID_Sucursal == 2 ? "Tienda Primaria" : " "),
+            // Realiza la consulta
+            var resultado = db.Sucursal
+                .Where(c => c.Producto.Any(p => p.ID_Sucursal == ID_cate)) // Filtra categorías según los productos en la sucursal
+                .Select(c => new SucursalDTO
+                {
+                    ID_Sucursal = c.ID_Sucursal,
+                    Nombre = c.Nombre, // Mapear el nombre de la categoría
 
-            }).ToList();
+                }).ToList();
 
+            return resultado;
         }
-        public List<SucursalDTO> DevolverIndiceSucursal(int? idEmpleado)
+        
+        /*public List<SucursalDTO> DevolverIndiceSucursal(int? idEmpleado)
         {
 
             return (from v in db.Vendedor

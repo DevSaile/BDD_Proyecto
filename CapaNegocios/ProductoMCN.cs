@@ -25,7 +25,7 @@ namespace CapaNegocios
         {
 
             return (from p in db.Producto
-                    where p.ID_Sucursal == sucursalprodu
+                    where p.ID_Sucursal == sucursalprodu && p.Estado != 0
                     select new ProductoDTO
                     {
 
@@ -50,7 +50,7 @@ namespace CapaNegocios
         {
 
             return (from p in db.Producto
-                    where p.ID_Categoria == categoriaprodu
+                    where p.ID_Categoria == categoriaprodu && p.Estado != 0
                     select new ProductoDTO
                     {
 
@@ -75,7 +75,7 @@ namespace CapaNegocios
         {
 
             return (from p in db.Producto
-                    where p.ID_Producto == nombreprodu
+                    where p.ID_Producto == nombreprodu && p.Estado != 0
                     select new ProductoDTO
                     {
                         
@@ -101,11 +101,11 @@ namespace CapaNegocios
 
         }
 
-        public List<ProductoDTO> BuscarPorIDLista(int nombreprodu)
+        public List<ProductoDTO> BuscarPorIDLista(int nombreprodu) // NO SE EN ALGUN MOMENTO USE ESTO
         {
 
             return (from p in db.Producto
-                    where p.ID_Producto == nombreprodu
+                    where p.ID_Producto == nombreprodu && p.Estado != 0
                     select new ProductoDTO
                     {
                         
@@ -293,6 +293,46 @@ namespace CapaNegocios
                 }
                 
 
+                newProdu.Nombre = produ.Nombre;
+                newProdu.Marca = produ.Marca;
+                newProdu.DetalleS = produ.Detalles;
+                newProdu.Cantidad += produ.Cantidad;
+                newProdu.Precio_Compra = produ.Precio_Compra;
+                newProdu.Precio_Producto = produ.Precio_Producto;      
+
+                db.Entry(newProdu).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                return newProdu.ID_Producto;
+
+            }
+            catch
+            {
+                
+                return -1;
+
+
+            }
+
+        }
+
+         public int ActulizarProducto(ProductoDTO produ)
+        {
+
+            try
+            {
+
+                Producto newProdu = db.Producto.Find(produ.ID_Producto);
+
+                if (newProdu is null)
+                {
+
+                    return -1;  
+
+                }
+                
+                newProdu.ID_Sucursal = produ.ID_Sucursal;
+                newProdu.ID_Categoria = produ.ID_Categoria;
                 newProdu.Nombre = produ.Nombre;
                 newProdu.Marca = produ.Marca;
                 newProdu.DetalleS = produ.Detalles;

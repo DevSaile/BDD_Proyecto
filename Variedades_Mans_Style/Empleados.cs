@@ -108,6 +108,7 @@ namespace Variedades_Man_s_Style
 
             DGV_Empleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             DGV_Empleados.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             DGV_Empleados.ReadOnly = true; // Evita que el usuario edite las celdas
             DGV_Empleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selecciona toda la fila al hacer clic
             DGV_Empleados.AutoGenerateColumns = false;

@@ -101,6 +101,34 @@ namespace CapaNegocios
             }
         }
 
+        public List<Venta_FacturaDTO> ObtenerTodasLasVentas()
+        {
+            try
+            {
+                return db.Venta_Factura.Select(venta => new Venta_FacturaDTO
+                {
+                    ID_Venta = venta.ID_Venta,
+                    Estado = venta.Estado,
+                    ID_Cliente = venta.ID_Cliente,
+                    ID_Producto = venta.ID_Producto,
+                    ID_Vendedor = venta.ID_Vendedor,
+                    Fecha_Venta = venta.Fecha_Venta,
+                    Cantidad = venta.Cantidad,
+                    Subtotal = venta.Subtotal,
+                    Total = venta.Total,
+                    PrecioProducto = venta.PrecioProducto,
+                    pagacon = venta.Paga,
+                    cambio = venta.Cambio
+
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                return new List<Venta_FacturaDTO>();
+            }
+        }
+
         public Venta_FacturaDTO ObtenerVentaPorId(int idVenta)
         {
             try
@@ -131,34 +159,70 @@ namespace CapaNegocios
             }
         }
 
-        public List<Venta_FacturaDTO> ObtenerTodasLasVentas()
+        // En estos metodos de abajo basicamente realizamos las busquedas
+
+        public List<ClienteDTO> BuscarClientes(string valor)
         {
-            try
-            {
-                return db.Venta_Factura.Select(venta => new Venta_FacturaDTO
+            return db.Cliente
+                .Where(c => c.Estado == 1 && c.Nombre.ToLower().Contains(valor.ToLower()))
+                .Select(c => new ClienteDTO
                 {
-                    ID_Venta = venta.ID_Venta,
-                    Estado = venta.Estado,
-                    ID_Cliente = venta.ID_Cliente,
-                    ID_Producto = venta.ID_Producto,
-                    ID_Vendedor = venta.ID_Vendedor,
-                    Fecha_Venta = venta.Fecha_Venta,
-                    Cantidad = venta.Cantidad,
-                    Subtotal = venta.Subtotal,
-                    Total = venta.Total,
-                    PrecioProducto = venta.PrecioProducto,
-                    pagacon = venta.Paga,
-                    cambio = venta.Cambio
+                    ID_Cliente = c.ID_Cliente,
+                    Nombre = c.Nombre,
+                    //Estado = c.Estado,
+                    // Otros campos relevantes
+                }).ToList();
+        }
+
+        public List<ProductoDTO> BuscarProductos(string valor)
+        {
+            return db.Producto
+                .Where(p => p.Estado == 1 && p.Nombre.ToLower().Contains(valor.ToLower()))
+                .Select(p => new ProductoDTO
+                {
+                    ID_Producto = p.ID_Producto,
+                    Nombre = p.Nombre,
+                    Marca = p.Marca,
+                    Cantidad = p.Cantidad,
+                    Precio_Producto = p.Precio_Producto,
+                    Detalles = p.DetalleS,
+                    Descripcion_Categoria = p.ID_Categoria == 1 ? "Cosmeticos" : "Electronica",
+                    Descripcion_Sucursal = p.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria"
 
                 }).ToList();
-            }
-            catch (Exception ex)
+        }
+
+        public List<EmpleadoDTO> BuscarVendedores(string valor)
+        {
+            return db.Vendedor
+                .Where(v => v.Estado == 1 && v.Nombre.ToLower().Contains(valor.ToLower()))
+                .Select(v => new EmpleadoDTO
+                {
+                    ID_Empleado = v.ID_Vendedor,
+                    Nombre = v.Nombre,
+                    NombreRol = v.ID_Rol == 1 ? "Administrador" : "Empleado",
+                    NombreSucursal = v.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Primaria"
+                    // Otros campos relevantes
+                }).ToList();
+        }
+
+        public object BuscarRegistros(string criterio, string valor)
+        {
+            switch (criterio.ToLower())
             {
-                // Manejo de excepciones
-                return new List<Venta_FacturaDTO>();
+                case "cliente":
+                    return BuscarClientes(valor);
+                case "producto":
+                    return BuscarProductos(valor);
+                case "vendedor":
+                    return BuscarVendedores(valor);
+                default:
+                    return null; // Si el criterio no es válido, retorna null o lanza una excepción.
             }
         }
 
+
+        // Métodos específicos para cada tipo de búsqueda
 
     }
 }

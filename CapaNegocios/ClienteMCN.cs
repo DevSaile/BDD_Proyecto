@@ -52,6 +52,22 @@ namespace CapaNegocios
 
         }
 
+        public ClienteDTO BuscarClienteIDSolo(int idcliente)
+        {
+
+            // Realiza una consulta LINQ para buscar por nombre de cliente
+            return (from c in db.Cliente
+                        where c.ID_Cliente == idcliente && c.Estado != 0 // Coincidencia parcial, insensible a mayúsculas
+                        select new ClienteDTO{
+
+                            Nombre = c.Nombre,
+                            ID_Cliente = c.ID_Cliente
+
+                        }).FirstOrDefault();
+
+            // Retorna el nombre del cliente encontrado o una cadena vacía si no se encuentra ningún cliente
+        }
+
         public string BuscarClienteNombreSolo(string namecliente)
         {
             // Realiza una consulta LINQ para buscar por nombre de cliente
@@ -62,9 +78,6 @@ namespace CapaNegocios
             // Retorna el nombre del cliente encontrado o una cadena vacía si no se encuentra ningún cliente
             return cliente ?? string.Empty;
         }
-
-
-
 
 
         public bool ActualizarCliente(ClienteDTO actualCliente)
@@ -145,6 +158,38 @@ namespace CapaNegocios
             {
 
                 return false;
+
+
+            }
+
+        }
+
+        public int AgregarClienteParaVenta(ClienteDTO newCliente)
+        {
+
+            try
+            {
+
+                Cliente nuevocliente = new Cliente()
+                {
+
+                    Nombre = newCliente.Nombre,
+                    Estado = newCliente.Estado
+
+
+                };
+
+                db.Cliente.Add(nuevocliente);
+                db.SaveChanges();
+
+
+                return nuevocliente.ID_Cliente;
+
+            }
+            catch
+            {
+
+                return -1;
 
 
             }

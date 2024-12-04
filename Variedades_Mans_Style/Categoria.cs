@@ -121,6 +121,9 @@ namespace Variedades_Man_s_Style
 
             dgvVerCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvVerCategorias.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvVerCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
             dgvVerCategorias.ReadOnly = true; // Evita que el usuario edite las celdas
             dgvVerCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selecciona toda la fila al hacer clic
             dgvVerCategorias.AutoGenerateColumns = false;

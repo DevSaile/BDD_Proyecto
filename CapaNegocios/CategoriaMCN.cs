@@ -52,6 +52,24 @@ namespace CapaNegocios
                 .ToList();
 
         }
+        public List<CategoriaDTO> ObtenerCategoriasPorID(int? ID_cate) // obtner el id de la categiria que pertenece al producto
+        {
+            // Verifica que ID_sucu no sea null antes de proceder
+            if (!ID_cate.HasValue)
+                return new List<CategoriaDTO>();
+
+            // Realiza la consulta
+            var resultado = db.Categoria
+                .Where(c => c.Producto.Any(p => p.ID_Categoria == ID_cate)) // Filtra categorías según los productos en la sucursal
+                .Select(c => new CategoriaDTO
+                {
+                    ID_Categoria = c.ID_Categoria,
+                    Nombre = c.Nombre, // Mapear el nombre de la categoría
+
+                }).ToList();
+
+            return resultado;
+        }
 
         public CategoriaDTO ObtenerNombreCategoria(string namecate)
         {

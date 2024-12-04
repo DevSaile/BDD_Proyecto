@@ -90,7 +90,7 @@ namespace CapaNegocios
 
             return (from e in db.Vendedor
 
-                    where e.ID_Vendedor == idEmpleado
+                    where e.ID_Vendedor == idEmpleado && e.Estado != 0
 
                     select new EmpleadoDTO
 

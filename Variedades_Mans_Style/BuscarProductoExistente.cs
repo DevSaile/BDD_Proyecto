@@ -30,7 +30,7 @@ namespace Variedades_Man_s_Style
 
 
 
-        private void ConfigureDataGridView()
+        private void ConfigureDataGridViewProductos()
         {
             this.dgvVerProductosExis.DefaultCellStyle.ForeColor = Color.Black;
 
@@ -155,9 +155,9 @@ namespace Variedades_Man_s_Style
 
         private void BuscarProductoExistente_Load(object sender, EventArgs e)
         {
-            ConfigureDataGridView();
+            ConfigureDataGridViewProductos();
         }
-
+            
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
         {
 

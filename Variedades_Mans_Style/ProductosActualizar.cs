@@ -107,7 +107,8 @@ namespace Variedades_Man_s_Style
 
                 actuProducto = new ProductoDTO() 
                 {
-
+                    ID_Categoria = (int)cbox_Categoria.SelectedValue,
+                    ID_Sucursal = (int)cbox_Sucursal.SelectedValue,
                     ID_Producto = idProductoSeleccionado,
                     Nombre = txt_NombreProducto.Text,
                     Marca = txt_Marca.Text,
@@ -118,7 +119,7 @@ namespace Variedades_Man_s_Style
 
                 };
 
-                int resulPRO = MetodosProducto.ActulizarProductoExistente(actuProducto);
+                int resulPRO = MetodosProducto.ActulizarProducto(actuProducto);
 
                 if (resulPRO != -1)
                 {

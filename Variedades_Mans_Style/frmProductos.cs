@@ -226,7 +226,7 @@ namespace Variedades_Man_s_Style
             if (ValidarTextBoxIndividuales(txt_IdProducto, "ID de Producto"))
             {
 
-                var verproduid = MetodosProducto.BuscarPorIDLista(int.Parse(txt_IdProducto.Text));
+                var verproduid = MetodosProducto.BuscarPorID(int.Parse(txt_IdProducto.Text));
 
 
                 if (verproduid == null)
