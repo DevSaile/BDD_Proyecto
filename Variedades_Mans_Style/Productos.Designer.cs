@@ -54,12 +54,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbox_Sucursal = new System.Windows.Forms.ComboBox();
             this.panel_InfoProveedor = new System.Windows.Forms.Panel();
+            this.btnGuardarExistente = new System.Windows.Forms.Button();
+            this.btnCancelarExistente = new System.Windows.Forms.Button();
             this.btnAgregarExistente = new System.Windows.Forms.Button();
             this.cbox_Categoria = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
-            this.btnCancelarExistente = new System.Windows.Forms.Button();
-            this.btnGuardarExistente = new System.Windows.Forms.Button();
             this.Panel_txtProductos.SuspendLayout();
             this.panel_InfoProductos.SuspendLayout();
             this.panel_InfoProveedor.SuspendLayout();
@@ -181,7 +181,7 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.SystemColors.InfoText;
-            this.label10.Location = new System.Drawing.Point(263, 323);
+            this.label10.Location = new System.Drawing.Point(263, 334);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(233, 5);
             this.label10.TabIndex = 27;
@@ -191,7 +191,7 @@
             this.txt_Marca.BackColor = System.Drawing.Color.White;
             this.txt_Marca.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Marca.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Marca.Location = new System.Drawing.Point(263, 291);
+            this.txt_Marca.Location = new System.Drawing.Point(263, 302);
             this.txt_Marca.Multiline = true;
             this.txt_Marca.Name = "txt_Marca";
             this.txt_Marca.Size = new System.Drawing.Size(233, 34);
@@ -203,7 +203,7 @@
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(21, 287);
+            this.label11.Location = new System.Drawing.Point(21, 298);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(209, 41);
             this.label11.TabIndex = 25;
@@ -213,7 +213,7 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.InfoText;
-            this.label4.Location = new System.Drawing.Point(263, 258);
+            this.label4.Location = new System.Drawing.Point(260, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(233, 5);
             this.label4.TabIndex = 22;
@@ -223,7 +223,7 @@
             this.txt_PrecioCompra.BackColor = System.Drawing.Color.White;
             this.txt_PrecioCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_PrecioCompra.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PrecioCompra.Location = new System.Drawing.Point(263, 225);
+            this.txt_PrecioCompra.Location = new System.Drawing.Point(260, 163);
             this.txt_PrecioCompra.Multiline = true;
             this.txt_PrecioCompra.Name = "txt_PrecioCompra";
             this.txt_PrecioCompra.Size = new System.Drawing.Size(233, 34);
@@ -235,7 +235,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 154);
+            this.label5.Location = new System.Drawing.Point(21, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(209, 34);
             this.label5.TabIndex = 20;
@@ -245,7 +245,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.InfoText;
-            this.label3.Location = new System.Drawing.Point(263, 187);
+            this.label3.Location = new System.Drawing.Point(263, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 5);
             this.label3.TabIndex = 19;
@@ -271,7 +271,7 @@
             this.txt_PrecioProducto.BackColor = System.Drawing.Color.White;
             this.txt_PrecioProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_PrecioProducto.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PrecioProducto.Location = new System.Drawing.Point(263, 154);
+            this.txt_PrecioProducto.Location = new System.Drawing.Point(263, 231);
             this.txt_PrecioProducto.Multiline = true;
             this.txt_PrecioProducto.Name = "txt_PrecioProducto";
             this.txt_PrecioProducto.Size = new System.Drawing.Size(233, 34);
@@ -305,7 +305,7 @@
             this.label_Direccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Direccion.Font = new System.Drawing.Font("Yu Gothic", 14.2F);
             this.label_Direccion.ForeColor = System.Drawing.Color.White;
-            this.label_Direccion.Location = new System.Drawing.Point(21, 216);
+            this.label_Direccion.Location = new System.Drawing.Point(18, 154);
             this.label_Direccion.Name = "label_Direccion";
             this.label_Direccion.Size = new System.Drawing.Size(209, 43);
             this.label_Direccion.TabIndex = 13;
@@ -382,6 +382,42 @@
             this.panel_InfoProveedor.TabIndex = 8;
             this.panel_InfoProveedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnGuardarExistente
+            // 
+            this.btnGuardarExistente.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnGuardarExistente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarExistente.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGuardarExistente.FlatAppearance.BorderSize = 2;
+            this.btnGuardarExistente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnGuardarExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarExistente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarExistente.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnGuardarExistente.Location = new System.Drawing.Point(229, 457);
+            this.btnGuardarExistente.Name = "btnGuardarExistente";
+            this.btnGuardarExistente.Size = new System.Drawing.Size(261, 46);
+            this.btnGuardarExistente.TabIndex = 31;
+            this.btnGuardarExistente.Text = "Guardar";
+            this.btnGuardarExistente.UseVisualStyleBackColor = false;
+            this.btnGuardarExistente.Click += new System.EventHandler(this.btnGuardarExistente_Click);
+            // 
+            // btnCancelarExistente
+            // 
+            this.btnCancelarExistente.BackColor = System.Drawing.Color.Red;
+            this.btnCancelarExistente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarExistente.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelarExistente.FlatAppearance.BorderSize = 2;
+            this.btnCancelarExistente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnCancelarExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarExistente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarExistente.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCancelarExistente.Location = new System.Drawing.Point(229, 394);
+            this.btnCancelarExistente.Name = "btnCancelarExistente";
+            this.btnCancelarExistente.Size = new System.Drawing.Size(261, 46);
+            this.btnCancelarExistente.TabIndex = 30;
+            this.btnCancelarExistente.Text = "Cancelar Existente";
+            this.btnCancelarExistente.UseVisualStyleBackColor = false;
+            this.btnCancelarExistente.Click += new System.EventHandler(this.btnCancelarExistente_Click);
+            // 
             // btnAgregarExistente
             // 
             this.btnAgregarExistente.BackColor = System.Drawing.Color.RoyalBlue;
@@ -442,42 +478,6 @@
             this.btn_AgregarProducto.Text = "Agregar Nuevo";
             this.btn_AgregarProducto.UseVisualStyleBackColor = false;
             this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
-            // 
-            // btnCancelarExistente
-            // 
-            this.btnCancelarExistente.BackColor = System.Drawing.Color.Red;
-            this.btnCancelarExistente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarExistente.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarExistente.FlatAppearance.BorderSize = 2;
-            this.btnCancelarExistente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnCancelarExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarExistente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarExistente.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCancelarExistente.Location = new System.Drawing.Point(229, 394);
-            this.btnCancelarExistente.Name = "btnCancelarExistente";
-            this.btnCancelarExistente.Size = new System.Drawing.Size(261, 46);
-            this.btnCancelarExistente.TabIndex = 30;
-            this.btnCancelarExistente.Text = "Cancelar Existente";
-            this.btnCancelarExistente.UseVisualStyleBackColor = false;
-            this.btnCancelarExistente.Click += new System.EventHandler(this.btnCancelarExistente_Click);
-            // 
-            // btnGuardarExistente
-            // 
-            this.btnGuardarExistente.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnGuardarExistente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarExistente.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGuardarExistente.FlatAppearance.BorderSize = 2;
-            this.btnGuardarExistente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnGuardarExistente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarExistente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarExistente.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnGuardarExistente.Location = new System.Drawing.Point(229, 457);
-            this.btnGuardarExistente.Name = "btnGuardarExistente";
-            this.btnGuardarExistente.Size = new System.Drawing.Size(261, 46);
-            this.btnGuardarExistente.TabIndex = 31;
-            this.btnGuardarExistente.Text = "Guardar";
-            this.btnGuardarExistente.UseVisualStyleBackColor = false;
-            this.btnGuardarExistente.Click += new System.EventHandler(this.btnGuardarExistente_Click);
             // 
             // Productos
             // 
