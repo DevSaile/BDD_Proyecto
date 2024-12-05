@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_txtProveedor = new System.Windows.Forms.Panel();
             this.Label_CompraEntrada = new System.Windows.Forms.Label();
             this.btn_WF_CerrarProveedor = new System.Windows.Forms.Button();
             this.Panel_WF_Info_Proveedor = new System.Windows.Forms.Panel();
-            this.DGV_WF_Proveedor = new System.Windows.Forms.DataGridView();
-            this.but = new System.Windows.Forms.Button();
             this.label_Agregar = new System.Windows.Forms.Label();
             this.Fecha2_CompraEntrada = new System.Windows.Forms.DateTimePicker();
             this.Fecha1_CompraEntrada = new System.Windows.Forms.DateTimePicker();
             this.btn_BuscarCompraEntrada = new System.Windows.Forms.Button();
+            this.DGV_WF_Proveedor = new System.Windows.Forms.DataGridView();
             this.Panel_txtProveedor.SuspendLayout();
             this.Panel_WF_Info_Proveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_WF_Proveedor)).BeginInit();
@@ -90,7 +91,6 @@
             this.Panel_WF_Info_Proveedor.BackColor = System.Drawing.Color.Snow;
             this.Panel_WF_Info_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Panel_WF_Info_Proveedor.Controls.Add(this.DGV_WF_Proveedor);
-            this.Panel_WF_Info_Proveedor.Controls.Add(this.but);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.label_Agregar);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.Fecha2_CompraEntrada);
             this.Panel_WF_Info_Proveedor.Controls.Add(this.Fecha1_CompraEntrada);
@@ -104,40 +104,6 @@
             this.Panel_WF_Info_Proveedor.TabIndex = 11;
             this.Panel_WF_Info_Proveedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_WF_Info_Proveedor_Paint);
             // 
-            // DGV_WF_Proveedor
-            // 
-            this.DGV_WF_Proveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.DGV_WF_Proveedor.BackgroundColor = System.Drawing.Color.Snow;
-            this.DGV_WF_Proveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_WF_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGV_WF_Proveedor.GridColor = System.Drawing.SystemColors.ControlText;
-            this.DGV_WF_Proveedor.Location = new System.Drawing.Point(56, 95);
-            this.DGV_WF_Proveedor.Name = "DGV_WF_Proveedor";
-            this.DGV_WF_Proveedor.RowHeadersWidth = 51;
-            this.DGV_WF_Proveedor.RowTemplate.Height = 24;
-            this.DGV_WF_Proveedor.Size = new System.Drawing.Size(912, 408);
-            this.DGV_WF_Proveedor.TabIndex = 0;
-            this.DGV_WF_Proveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_WF_Proveedor_CellContentClick);
-            // 
-            // but
-            // 
-            this.but.BackColor = System.Drawing.Color.Black;
-            this.but.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.but.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.but.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.but.FlatAppearance.BorderSize = 2;
-            this.but.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.but.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.but.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.but.Location = new System.Drawing.Point(1001, 202);
-            this.but.Name = "but";
-            this.but.Size = new System.Drawing.Size(149, 48);
-            this.but.TabIndex = 13;
-            this.but.Text = "Modificar";
-            this.but.UseVisualStyleBackColor = false;
-            // 
             // label_Agregar
             // 
             this.label_Agregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -145,7 +111,7 @@
             this.label_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Agregar.Font = new System.Drawing.Font("Yu Gothic", 15.2F);
             this.label_Agregar.ForeColor = System.Drawing.Color.White;
-            this.label_Agregar.Location = new System.Drawing.Point(443, 28);
+            this.label_Agregar.Location = new System.Drawing.Point(441, 28);
             this.label_Agregar.Name = "label_Agregar";
             this.label_Agregar.Size = new System.Drawing.Size(142, 40);
             this.label_Agregar.TabIndex = 11;
@@ -157,9 +123,9 @@
             // 
             this.Fecha2_CompraEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Fecha2_CompraEntrada.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.Fecha2_CompraEntrada.Location = new System.Drawing.Point(623, 28);
+            this.Fecha2_CompraEntrada.Location = new System.Drawing.Point(610, 28);
             this.Fecha2_CompraEntrada.Name = "Fecha2_CompraEntrada";
-            this.Fecha2_CompraEntrada.Size = new System.Drawing.Size(384, 40);
+            this.Fecha2_CompraEntrada.Size = new System.Drawing.Size(391, 40);
             this.Fecha2_CompraEntrada.TabIndex = 10;
             this.Fecha2_CompraEntrada.ValueChanged += new System.EventHandler(this.Fecha2_CompraEntrada_ValueChanged);
             // 
@@ -168,9 +134,9 @@
             this.Fecha1_CompraEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Fecha1_CompraEntrada.CalendarFont = new System.Drawing.Font("Yu Gothic", 12F);
             this.Fecha1_CompraEntrada.Font = new System.Drawing.Font("Yu Gothic", 12F);
-            this.Fecha1_CompraEntrada.Location = new System.Drawing.Point(22, 28);
+            this.Fecha1_CompraEntrada.Location = new System.Drawing.Point(12, 28);
             this.Fecha1_CompraEntrada.Name = "Fecha1_CompraEntrada";
-            this.Fecha1_CompraEntrada.Size = new System.Drawing.Size(384, 40);
+            this.Fecha1_CompraEntrada.Size = new System.Drawing.Size(399, 40);
             this.Fecha1_CompraEntrada.TabIndex = 9;
             this.Fecha1_CompraEntrada.ValueChanged += new System.EventHandler(this.Fecha1_CompraEntrada_ValueChanged);
             // 
@@ -185,12 +151,53 @@
             this.btn_BuscarCompraEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BuscarCompraEntrada.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BuscarCompraEntrada.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_BuscarCompraEntrada.Location = new System.Drawing.Point(1001, 124);
+            this.btn_BuscarCompraEntrada.Location = new System.Drawing.Point(1022, 23);
             this.btn_BuscarCompraEntrada.Name = "btn_BuscarCompraEntrada";
             this.btn_BuscarCompraEntrada.Size = new System.Drawing.Size(149, 48);
             this.btn_BuscarCompraEntrada.TabIndex = 8;
             this.btn_BuscarCompraEntrada.Text = "Buscar";
             this.btn_BuscarCompraEntrada.UseVisualStyleBackColor = false;
+            this.btn_BuscarCompraEntrada.Click += new System.EventHandler(this.btn_BuscarCompraEntrada_Click);
+            // 
+            // DGV_WF_Proveedor
+            // 
+            this.DGV_WF_Proveedor.AllowUserToAddRows = false;
+            this.DGV_WF_Proveedor.AllowUserToDeleteRows = false;
+            this.DGV_WF_Proveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_WF_Proveedor.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.DGV_WF_Proveedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.DGV_WF_Proveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_WF_Proveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_WF_Proveedor.ColumnHeadersHeight = 30;
+            this.DGV_WF_Proveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_WF_Proveedor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV_WF_Proveedor.EnableHeadersVisualStyles = false;
+            this.DGV_WF_Proveedor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DGV_WF_Proveedor.Location = new System.Drawing.Point(12, 94);
+            this.DGV_WF_Proveedor.MultiSelect = false;
+            this.DGV_WF_Proveedor.Name = "DGV_WF_Proveedor";
+            this.DGV_WF_Proveedor.ReadOnly = true;
+            this.DGV_WF_Proveedor.RowHeadersVisible = false;
+            this.DGV_WF_Proveedor.RowHeadersWidth = 51;
+            this.DGV_WF_Proveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_WF_Proveedor.Size = new System.Drawing.Size(1159, 427);
+            this.DGV_WF_Proveedor.TabIndex = 106;
             // 
             // WF_CompraEntrada
             // 
@@ -218,10 +225,9 @@
         private System.Windows.Forms.Button btn_WF_CerrarProveedor;
         private System.Windows.Forms.Panel Panel_WF_Info_Proveedor;
         private System.Windows.Forms.Button btn_BuscarCompraEntrada;
-        private System.Windows.Forms.DataGridView DGV_WF_Proveedor;
         private System.Windows.Forms.DateTimePicker Fecha2_CompraEntrada;
         private System.Windows.Forms.DateTimePicker Fecha1_CompraEntrada;
         private System.Windows.Forms.Label label_Agregar;
-        private System.Windows.Forms.Button but;
+        private System.Windows.Forms.DataGridView DGV_WF_Proveedor;
     }
 }

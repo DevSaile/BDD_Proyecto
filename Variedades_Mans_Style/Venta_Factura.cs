@@ -28,7 +28,7 @@ namespace Variedades_Man_s_Style
             DGV_WF_VentaFactura.Refresh();
 
         }
-        
+
         private void ConfigurarDGVventa()
         {
             this.DGV_WF_VentaFactura.DefaultCellStyle.ForeColor = Color.Black;
@@ -47,6 +47,11 @@ namespace Variedades_Man_s_Style
                 DataPropertyName = "ID_Venta"
             });
 
+            DGV_WF_VentaFactura.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Fecha de Venta",
+                DataPropertyName = "Fecha_Venta"
+            });
 
             DGV_WF_VentaFactura.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -128,6 +133,39 @@ namespace Variedades_Man_s_Style
         {
             ImprimirVentas();
 
+        }
+
+        private void VerRegistroVentasPorFecha(){
+
+            try
+            {
+                // Capturamos las fechas de los DateTimePicker
+                DateTime fechaInicio = Fecha1_Venta_Factura.Value.Date;
+                DateTime fechaFin = Fecha2_Venta_Factura.Value.Date;
+
+                if (fechaInicio > fechaFin)
+                {
+                    MessageBox.Show("La fecha de inicio no puede ser mayor que la fecha de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Llamamos al método de la capa negocio
+                var negocio = new VentaFacturaMCN(); // Instancia de la clase de negocio
+                var ventas = negocio.ObtenerVentasPorFechas(fechaInicio, fechaFin);
+
+                // Mostramos los resultados en un DataGridView
+                DGV_WF_VentaFactura.DataSource = ventas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btn_BuscarVentaFactura_Click(object sender, EventArgs e)
+        {
+            VerRegistroVentasPorFecha();
         }
     }
 }

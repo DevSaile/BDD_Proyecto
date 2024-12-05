@@ -299,12 +299,44 @@ namespace CapaNegocios
                                 Total = venta.Total,
                                 pagacon = venta.Paga,
                                 cambio = venta.Cambio,
-                                NombreSucursal = sucursal.Nombre // Supone que `Sucursal` tiene un atributo `Nombre`
+                                NombreSucursal = sucursal.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Secundaria"
+                                //NombreSucursal = sucursal.Nombre // Supone que `Sucursal` tiene un atributo `Nombre`
 
                             }).ToList();
 
                 return ventas;
         }
+
+        public List<Venta_FacturaDTO> ObtenerVentasPorFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            using (var db = new bddVariedadesMansStyleEntities())
+            {
+                var ventas = (from venta in db.Venta_Factura
+                            join detalle in db.Venta_Detalles on venta.ID_Venta equals detalle.ID_Venta
+                            join producto in db.Producto on detalle.ID_Producto equals producto.ID_Producto
+                            join sucursal in db.Sucursal on producto.ID_Sucursal equals sucursal.ID_Sucursal
+                            where venta.Fecha_Venta >= fechaInicio && venta.Fecha_Venta <= fechaFin
+                            select new Venta_FacturaDTO
+                            {
+                                ID_Venta = venta.ID_Venta,
+                                Fecha_Venta = venta.Fecha_Venta,
+                                NombreCliente = venta.Cliente.Nombre, // Supone relación con Cliente
+                                NombreVendedor = venta.Vendedor.Nombre, // Supone relación con Empleado
+                                NombreProducto = producto.Nombre,
+                                Cantidad = detalle.Cantidad,
+                                PrecioProducto = detalle.PrecioProducto,
+                                Subtotal = detalle.Cantidad * detalle.PrecioProducto,
+                                Total = venta.Total,
+                                pagacon = venta.Paga,
+                                cambio = venta.Cambio,
+                                NombreSucursal = sucursal.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Secundaria"
+                            }).ToList();
+
+                return ventas;
+            }
+            
+        }
+
 
     }   
         // Otros métodos no mostrados para mantener el enfoque..

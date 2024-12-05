@@ -162,5 +162,38 @@ namespace Variedades_Man_s_Style
         {
 
         }
+
+        private void BuscarEntreFechasCompras()
+        {
+            try
+            {
+                // Capturamos las fechas de los DateTimePicker
+                DateTime fechaInicio = Fecha1_CompraEntrada.Value.Date;
+                DateTime fechaFin = Fecha2_CompraEntrada.Value.Date;
+
+                if (fechaInicio > fechaFin)
+                {
+                    MessageBox.Show("La fecha de inicio no puede ser mayor que la fecha de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Llamamos al método de la capa de negocio
+                var negocio = new Compra_EntradaMCN(); // Instancia de la clase de negocio
+                var registros = negocio.VerRegistroCompraEntradaFechas(fechaInicio, fechaFin);
+
+                // Mostramos los resultados en un DataGridView
+                DGV_WF_Proveedor.DataSource = registros;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btn_BuscarCompraEntrada_Click(object sender, EventArgs e)
+        {
+            BuscarEntreFechasCompras();
+        }
     }
 }

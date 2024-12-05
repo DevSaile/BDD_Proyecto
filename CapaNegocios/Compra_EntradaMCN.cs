@@ -50,6 +50,35 @@ namespace CapaNegocios
 
         }
 
+        public List<Compra_EntradaDTO> VerRegistroCompraEntradaFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+
+                var resultado =
+
+                    from ce in db.Compra_Entrada
+                    join p in db.Producto on ce.ID_Producto equals p.ID_Producto
+                    join ct in db.Categoria on p.ID_Categoria equals ct.ID_Categoria
+                    join su in db.Sucursal on p.ID_Sucursal equals su.ID_Sucursal
+                    where ce.Fecha_Compra >= fechaInicio && ce.Fecha_Compra <= fechaFin
+                    select new Compra_EntradaDTO
+                    {
+                        ID_Entrada = ce.ID_Entrada,
+                        Nombre_Categoria = ct.Nombre,
+                        ID_Producto = p.ID_Producto,
+                        Nombre_Producto = p.Nombre,
+                        Marca = p.Marca,
+                        CantidadCompra = ce.CantidadCompra,
+                        Precio_Compra = ce.Precio_Compra,
+                        Detalles = p.DetalleS,
+                        Descripcion_Sucursal = su.ID_Sucursal == 1 ? "Tienda Principal" : "Tienda Secundaria", // Ajuste en el texto
+                        Nombre_Sucursal = su.Nombre,
+                        Fecha_Compra = ce.Fecha_Compra ?? DateTime.MinValue // Manejo de nulos en Fecha_Compra
+                    };
+
+                return resultado.ToList();
+            
+        }
+
 
 
         public List<Compra_EntradaDTO> VerRegistroCompraEntrada()

@@ -48,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbempleadoventa = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtfecha = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnAgregarVentaProducto = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.btn_WF_CerrarEmpleado = new System.Windows.Forms.Button();
             this.btnLlenarCampos = new System.Windows.Forms.Button();
             this.dgvdataVenta = new System.Windows.Forms.DataGridView();
+            this.datetpFechaVenta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).BeginInit();
             this.Panel_txtProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdataVenta)).BeginInit();
@@ -66,7 +66,7 @@
             // 
             this.txtcambio.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtcambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcambio.Location = new System.Drawing.Point(720, 538);
+            this.txtcambio.Location = new System.Drawing.Point(944, 461);
             this.txtcambio.Margin = new System.Windows.Forms.Padding(4);
             this.txtcambio.Name = "txtcambio";
             this.txtcambio.ReadOnly = true;
@@ -79,7 +79,7 @@
             this.label16.BackColor = System.Drawing.Color.MintCream;
             this.label16.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F);
             this.label16.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label16.Location = new System.Drawing.Point(720, 500);
+            this.label16.Location = new System.Drawing.Point(944, 423);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 25);
@@ -92,7 +92,7 @@
             this.label13.BackColor = System.Drawing.Color.MintCream;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F);
             this.label13.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(720, 397);
+            this.label13.Location = new System.Drawing.Point(944, 320);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(104, 25);
@@ -102,7 +102,7 @@
             // txtpagocon
             // 
             this.txtpagocon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpagocon.Location = new System.Drawing.Point(719, 431);
+            this.txtpagocon.Location = new System.Drawing.Point(943, 354);
             this.txtpagocon.Margin = new System.Windows.Forms.Padding(4);
             this.txtpagocon.Name = "txtpagocon";
             this.txtpagocon.Size = new System.Drawing.Size(125, 24);
@@ -115,7 +115,7 @@
             this.label1.BackColor = System.Drawing.Color.MintCream;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(720, 286);
+            this.label1.Location = new System.Drawing.Point(944, 209);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 25);
@@ -126,7 +126,7 @@
             // 
             this.txttotalpagar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txttotalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalpagar.Location = new System.Drawing.Point(720, 326);
+            this.txttotalpagar.Location = new System.Drawing.Point(944, 249);
             this.txttotalpagar.Margin = new System.Windows.Forms.Padding(4);
             this.txttotalpagar.Name = "txttotalpagar";
             this.txttotalpagar.ReadOnly = true;
@@ -279,16 +279,6 @@
             this.label3.TabIndex = 89;
             this.label3.Text = "Fecha:";
             // 
-            // txtfecha
-            // 
-            this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfecha.Location = new System.Drawing.Point(33, 112);
-            this.txtfecha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfecha.Name = "txtfecha";
-            this.txtfecha.ReadOnly = true;
-            this.txtfecha.Size = new System.Drawing.Size(157, 24);
-            this.txtfecha.TabIndex = 90;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -312,7 +302,7 @@
             this.btnAgregarVentaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarVentaProducto.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarVentaProducto.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAgregarVentaProducto.Location = new System.Drawing.Point(893, 348);
+            this.btnAgregarVentaProducto.Location = new System.Drawing.Point(893, 516);
             this.btnAgregarVentaProducto.Name = "btnAgregarVentaProducto";
             this.btnAgregarVentaProducto.Size = new System.Drawing.Size(238, 46);
             this.btnAgregarVentaProducto.TabIndex = 225;
@@ -330,7 +320,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Location = new System.Drawing.Point(893, 427);
+            this.button1.Location = new System.Drawing.Point(893, 595);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(238, 46);
             this.button1.TabIndex = 226;
@@ -390,7 +380,7 @@
             this.btnLlenarCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLlenarCampos.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLlenarCampos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnLlenarCampos.Location = new System.Drawing.Point(893, 92);
+            this.btnLlenarCampos.Location = new System.Drawing.Point(893, 61);
             this.btnLlenarCampos.Name = "btnLlenarCampos";
             this.btnLlenarCampos.Size = new System.Drawing.Size(238, 46);
             this.btnLlenarCampos.TabIndex = 228;
@@ -427,15 +417,22 @@
             this.dgvdataVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdataVenta.EnableHeadersVisualStyles = false;
             this.dgvdataVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvdataVenta.Location = new System.Drawing.Point(33, 278);
+            this.dgvdataVenta.Location = new System.Drawing.Point(33, 291);
             this.dgvdataVenta.MultiSelect = false;
             this.dgvdataVenta.Name = "dgvdataVenta";
             this.dgvdataVenta.ReadOnly = true;
             this.dgvdataVenta.RowHeadersVisible = false;
             this.dgvdataVenta.RowHeadersWidth = 51;
             this.dgvdataVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdataVenta.Size = new System.Drawing.Size(662, 372);
+            this.dgvdataVenta.Size = new System.Drawing.Size(751, 372);
             this.dgvdataVenta.TabIndex = 229;
+            // 
+            // datetpFechaVenta
+            // 
+            this.datetpFechaVenta.Location = new System.Drawing.Point(12, 110);
+            this.datetpFechaVenta.Name = "datetpFechaVenta";
+            this.datetpFechaVenta.Size = new System.Drawing.Size(205, 22);
+            this.datetpFechaVenta.TabIndex = 230;
             // 
             // FrmVentas
             // 
@@ -443,6 +440,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1155, 675);
+            this.Controls.Add(this.datetpFechaVenta);
             this.Controls.Add(this.dgvdataVenta);
             this.Controls.Add(this.btnLlenarCampos);
             this.Controls.Add(this.Panel_txtProveedor);
@@ -457,7 +455,6 @@
             this.Controls.Add(this.txtprecio);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtfecha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtnombrecliente);
@@ -498,7 +495,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbempleadoventa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtfecha;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnAgregarVentaProducto;
         private System.Windows.Forms.Button button1;
@@ -507,5 +503,6 @@
         private System.Windows.Forms.Button btn_WF_CerrarEmpleado;
         private System.Windows.Forms.Button btnLlenarCampos;
         private System.Windows.Forms.DataGridView dgvdataVenta;
+        private System.Windows.Forms.DateTimePicker datetpFechaVenta;
     }
 }
