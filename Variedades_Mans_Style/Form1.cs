@@ -219,6 +219,11 @@ namespace Variedades_Man_s_Style
             AbrirFormulario <Categoria>();
         }
 
+        private void bntRegistrosVenta_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Venta_Factura>();
+        }
+
         private void btnEtc_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Empleados>();

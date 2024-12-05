@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_txtVentaFactura = new System.Windows.Forms.Panel();
             this.Label_CompraEntrada = new System.Windows.Forms.Label();
             this.btn_WF_CerrarCompraEntrada = new System.Windows.Forms.Button();
@@ -82,16 +84,17 @@
             this.btn_WF_CerrarCompraEntrada.TabIndex = 1;
             this.btn_WF_CerrarCompraEntrada.Text = "X";
             this.btn_WF_CerrarCompraEntrada.UseVisualStyleBackColor = false;
+            this.btn_WF_CerrarCompraEntrada.Click += new System.EventHandler(this.btn_WF_CerrarCompraEntrada_Click);
             // 
             // Panel_WF_Info_VentaFactura
             // 
             this.Panel_WF_Info_VentaFactura.BackColor = System.Drawing.Color.White;
             this.Panel_WF_Info_VentaFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Panel_WF_Info_VentaFactura.Controls.Add(this.DGV_WF_VentaFactura);
             this.Panel_WF_Info_VentaFactura.Controls.Add(this.label_Agregar);
             this.Panel_WF_Info_VentaFactura.Controls.Add(this.Fecha2_Venta_Factura);
             this.Panel_WF_Info_VentaFactura.Controls.Add(this.Fecha1_Venta_Factura);
             this.Panel_WF_Info_VentaFactura.Controls.Add(this.btn_BuscarVentaFactura);
-            this.Panel_WF_Info_VentaFactura.Controls.Add(this.DGV_WF_VentaFactura);
             this.Panel_WF_Info_VentaFactura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_WF_Info_VentaFactura.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Panel_WF_Info_VentaFactura.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -134,6 +137,7 @@
             // 
             // btn_BuscarVentaFactura
             // 
+            this.btn_BuscarVentaFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_BuscarVentaFactura.BackColor = System.Drawing.Color.Navy;
             this.btn_BuscarVentaFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_BuscarVentaFactura.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -143,7 +147,7 @@
             this.btn_BuscarVentaFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BuscarVentaFactura.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BuscarVentaFactura.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_BuscarVentaFactura.Location = new System.Drawing.Point(1010, 150);
+            this.btn_BuscarVentaFactura.Location = new System.Drawing.Point(1006, 138);
             this.btn_BuscarVentaFactura.Name = "btn_BuscarVentaFactura";
             this.btn_BuscarVentaFactura.Size = new System.Drawing.Size(149, 48);
             this.btn_BuscarVentaFactura.TabIndex = 8;
@@ -152,13 +156,43 @@
             // 
             // DGV_WF_VentaFactura
             // 
-            this.DGV_WF_VentaFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_WF_VentaFactura.Location = new System.Drawing.Point(21, 117);
+            this.DGV_WF_VentaFactura.AllowUserToAddRows = false;
+            this.DGV_WF_VentaFactura.AllowUserToDeleteRows = false;
+            this.DGV_WF_VentaFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_WF_VentaFactura.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.DGV_WF_VentaFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.DGV_WF_VentaFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_WF_VentaFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.DGV_WF_VentaFactura.ColumnHeadersHeight = 30;
+            this.DGV_WF_VentaFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV_WF_VentaFactura.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DGV_WF_VentaFactura.EnableHeadersVisualStyles = false;
+            this.DGV_WF_VentaFactura.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DGV_WF_VentaFactura.Location = new System.Drawing.Point(21, 99);
+            this.DGV_WF_VentaFactura.MultiSelect = false;
             this.DGV_WF_VentaFactura.Name = "DGV_WF_VentaFactura";
+            this.DGV_WF_VentaFactura.ReadOnly = true;
+            this.DGV_WF_VentaFactura.RowHeadersVisible = false;
             this.DGV_WF_VentaFactura.RowHeadersWidth = 51;
-            this.DGV_WF_VentaFactura.RowTemplate.Height = 24;
-            this.DGV_WF_VentaFactura.Size = new System.Drawing.Size(965, 394);
-            this.DGV_WF_VentaFactura.TabIndex = 0;
+            this.DGV_WF_VentaFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_WF_VentaFactura.Size = new System.Drawing.Size(962, 372);
+            this.DGV_WF_VentaFactura.TabIndex = 106;
             // 
             // Venta_Factura
             // 
@@ -170,6 +204,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Venta_Factura";
             this.Text = "Venta_Factura";
+            this.Load += new System.EventHandler(this.Venta_Factura_Load);
             this.Panel_txtVentaFactura.ResumeLayout(false);
             this.Panel_WF_Info_VentaFactura.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_WF_VentaFactura)).EndInit();

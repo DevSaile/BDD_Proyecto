@@ -32,6 +32,7 @@ namespace CapaDatos
         public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<Sucursal> Sucursal { get; set; }
         public virtual DbSet<Vendedor> Vendedor { get; set; }
+        public virtual DbSet<Venta_Detalles> Venta_Detalles { get; set; }
         public virtual DbSet<Venta_Factura> Venta_Factura { get; set; }
     }
 }

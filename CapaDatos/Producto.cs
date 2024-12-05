@@ -18,7 +18,7 @@ namespace CapaDatos
         public Producto()
         {
             this.Compra_Entrada = new HashSet<Compra_Entrada>();
-            this.Venta_Factura = new HashSet<Venta_Factura>();
+            this.Venta_Detalles = new HashSet<Venta_Detalles>();
         }
     
         public int ID_Producto { get; set; }
@@ -37,6 +37,6 @@ namespace CapaDatos
         public virtual ICollection<Compra_Entrada> Compra_Entrada { get; set; }
         public virtual Sucursal Sucursal { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Venta_Factura> Venta_Factura { get; set; }
+        public virtual ICollection<Venta_Detalles> Venta_Detalles { get; set; }
     }
 }

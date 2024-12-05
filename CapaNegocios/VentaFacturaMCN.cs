@@ -1,11 +1,14 @@
 ﻿using CapaDatos;
 using CapaEntidad;
+using CapaNegocios;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Infrastructure;
+
 
 namespace CapaNegocios
 {
@@ -27,7 +30,6 @@ namespace CapaNegocios
                 {
                     Estado = venta.Estado,
                     ID_Cliente = venta.ID_Cliente,
-                    ID_Producto = venta.ID_Producto,
                     ID_Vendedor = venta.ID_Vendedor,
                     Fecha_Venta = venta.Fecha_Venta,
                     Cantidad = venta.Cantidad,
@@ -58,7 +60,6 @@ namespace CapaNegocios
 
                 existingVenta.Estado = venta.Estado;
                 existingVenta.ID_Cliente = venta.ID_Cliente;
-                existingVenta.ID_Producto = venta.ID_Producto;
                 existingVenta.ID_Vendedor = venta.ID_Vendedor;
                 existingVenta.Fecha_Venta = venta.Fecha_Venta;
                 existingVenta.Cantidad = venta.Cantidad;
@@ -110,7 +111,6 @@ namespace CapaNegocios
                     ID_Venta = venta.ID_Venta,
                     Estado = venta.Estado,
                     ID_Cliente = venta.ID_Cliente,
-                    ID_Producto = venta.ID_Producto,
                     ID_Vendedor = venta.ID_Vendedor,
                     Fecha_Venta = venta.Fecha_Venta,
                     Cantidad = venta.Cantidad,
@@ -141,7 +141,6 @@ namespace CapaNegocios
                     ID_Venta = venta.ID_Venta,
                     Estado = venta.Estado,
                     ID_Cliente = venta.ID_Cliente,
-                    ID_Producto = venta.ID_Producto,
                     ID_Vendedor = venta.ID_Vendedor,
                     Fecha_Venta = venta.Fecha_Venta,
                     Cantidad = venta.Cantidad,
@@ -221,8 +220,92 @@ namespace CapaNegocios
             }
         }
 
+        public int AgregarVentaPRO(Venta_FacturaDTO venta)
+        {
+            using (var transaction = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    Venta_Factura newVenta = new Venta_Factura
+                    {
+                        Estado = venta.Estado ?? 1, 
+                        ID_Cliente = venta.ID_Cliente,
+                        ID_Vendedor = venta.ID_Vendedor,
+                        Fecha_Venta = venta.Fecha_Venta ?? DateTime.Now, 
+                        Subtotal = venta.Subtotal ?? 0m, 
+                        Total = venta.Total ?? 0m, 
+                        Paga = venta.pagacon ?? 0m, 
+                        Cambio = venta.cambio ?? 0m, 
+                        PrecioProducto = venta.PrecioProducto ?? 0m,
+                        Cantidad = venta.Cantidad
+                    };
 
-        // Métodos específicos para cada tipo de búsqueda
+                    db.Venta_Factura.Add(newVenta);
+                    db.SaveChanges();
 
-    }
+                    foreach (var detalle in venta.Detalles)
+                    {
+                        var producto = db.Producto.Find(detalle.ID_Producto);
+                        if (producto == null || producto.Cantidad < detalle.Cantidad)
+                        {
+                            transaction.Rollback();
+                            return -1;
+                        }
+
+                        producto.Cantidad -= detalle.Cantidad;
+                        db.Entry(producto).State = EntityState.Modified;
+
+                        Venta_Detalles newDetalle = new Venta_Detalles
+                        {
+                            ID_Venta = newVenta.ID_Venta,
+                            ID_Producto = detalle.ID_Producto,
+                            Cantidad = detalle.Cantidad,
+                            PrecioProducto = detalle.PrecioProducto ?? 0m 
+                        };
+
+                        db.Venta_Detalles.Add(newDetalle);
+                    }
+
+                    db.SaveChanges();
+                    transaction.Commit();
+                    return newVenta.ID_Venta;
+                }
+                catch (DbUpdateException ex)
+                {
+                    transaction.Rollback();
+                    // Registrar la excepción interna
+                    Console.WriteLine($"Error: {ex.InnerException.Message}");                    
+                    return -1;
+                }
+            }
+        }
+
+        public List<Venta_FacturaDTO> ObtenerVentasConSucursal() // Se supone que esto de aqui me devuelve la lista de todos los productos
+        {
+                var ventas = (from venta in db.Venta_Factura
+                            join detalle in db.Venta_Detalles on venta.ID_Venta equals detalle.ID_Venta
+                            join producto in db.Producto on detalle.ID_Producto equals producto.ID_Producto
+                            join sucursal in db.Sucursal on producto.ID_Sucursal equals sucursal.ID_Sucursal
+                            select new Venta_FacturaDTO
+                            {
+                                ID_Venta = venta.ID_Venta,
+                                Fecha_Venta = venta.Fecha_Venta,
+                                NombreCliente = venta.Cliente.Nombre, // Supone que hay una relación con Cliente
+                                NombreVendedor = venta.Vendedor.Nombre, // Supone que hay una relación con Empleado
+                                NombreProducto = producto.Nombre,
+                                Cantidad = detalle.Cantidad,
+                                PrecioProducto = detalle.PrecioProducto,
+                                Subtotal = detalle.Cantidad * detalle.PrecioProducto,
+                                Total = venta.Total,
+                                pagacon = venta.Paga,
+                                cambio = venta.Cambio,
+                                NombreSucursal = sucursal.Nombre // Supone que `Sucursal` tiene un atributo `Nombre`
+
+                            }).ToList();
+
+                return ventas;
+        }
+
+    }   
+        // Otros métodos no mostrados para mantener el enfoque..
 }

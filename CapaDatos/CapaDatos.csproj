@@ -54,67 +54,70 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
     <Compile Include="Compra_Entrada.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewModelMansStyle.Context.cs">
+    <Compile Include="ModeloDefinitivoMansStyle.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewModelMansStyle.Context.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewModelMansStyle.cs">
+    <Compile Include="ModeloDefinitivoMansStyle.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewModelMansStyle.Designer.cs">
+    <Compile Include="ModeloDefinitivoMansStyle.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NewModelMansStyle.edmx</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.edmx</DependentUpon>
     </Compile>
     <Compile Include="Producto.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
     <Compile Include="Sucursal.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
     <Compile Include="Vendedor.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venta_Detalles.cs">
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
     <Compile Include="Venta_Factura.cs">
-      <DependentUpon>NewModelMansStyle.tt</DependentUpon>
+      <DependentUpon>ModeloDefinitivoMansStyle.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="InfoDatos.txt" />
-    <Content Include="NewModelMansStyle.Context.tt">
+    <Content Include="ModeloDefinitivoMansStyle.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NewModelMansStyle.edmx</DependentUpon>
-      <LastGenOutput>NewModelMansStyle.Context.cs</LastGenOutput>
+      <DependentUpon>ModeloDefinitivoMansStyle.edmx</DependentUpon>
+      <LastGenOutput>ModeloDefinitivoMansStyle.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="NewModelMansStyle.tt">
+    <Content Include="ModeloDefinitivoMansStyle.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NewModelMansStyle.edmx</DependentUpon>
-      <LastGenOutput>NewModelMansStyle.cs</LastGenOutput>
+      <DependentUpon>ModeloDefinitivoMansStyle.edmx</DependentUpon>
+      <LastGenOutput>ModeloDefinitivoMansStyle.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="NewModelMansStyle.edmx">
+    <EntityDeploy Include="ModeloDefinitivoMansStyle.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NewModelMansStyle.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModeloDefinitivoMansStyle.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="NewModelMansStyle.edmx.diagram">
-      <DependentUpon>NewModelMansStyle.edmx</DependentUpon>
+    <None Include="ModeloDefinitivoMansStyle.edmx.diagram">
+      <DependentUpon>ModeloDefinitivoMansStyle.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

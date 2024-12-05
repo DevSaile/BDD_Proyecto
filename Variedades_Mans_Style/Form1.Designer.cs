@@ -56,6 +56,7 @@
             this.tmExpandirMenu = new System.Windows.Forms.Timer(this.components);
             this.tmContraerMenu = new System.Windows.Forms.Timer(this.components);
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.bntRegistrosVenta = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -262,6 +263,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MenuVertical.Controls.Add(this.bntRegistrosVenta);
             this.MenuVertical.Controls.Add(this.btnCategorias);
             this.MenuVertical.Controls.Add(this.btnTrabajadores);
             this.MenuVertical.Controls.Add(this.btnCompras);
@@ -346,7 +348,7 @@
             this.btnRegistros.Name = "btnRegistros";
             this.btnRegistros.Size = new System.Drawing.Size(333, 49);
             this.btnRegistros.TabIndex = 4;
-            this.btnRegistros.Text = "Registros";
+            this.btnRegistros.Text = "Registros Compra";
             this.btnRegistros.UseVisualStyleBackColor = true;
             this.btnRegistros.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
@@ -427,6 +429,24 @@
             this.tmFechaHora.Enabled = true;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
+            // bntRegistrosVenta
+            // 
+            this.bntRegistrosVenta.FlatAppearance.BorderSize = 0;
+            this.bntRegistrosVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.bntRegistrosVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntRegistrosVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntRegistrosVenta.ForeColor = System.Drawing.Color.White;
+            this.bntRegistrosVenta.Image = ((System.Drawing.Image)(resources.GetObject("bntRegistrosVenta.Image")));
+            this.bntRegistrosVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntRegistrosVenta.Location = new System.Drawing.Point(0, 550);
+            this.bntRegistrosVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.bntRegistrosVenta.Name = "bntRegistrosVenta";
+            this.bntRegistrosVenta.Size = new System.Drawing.Size(333, 49);
+            this.bntRegistrosVenta.TabIndex = 8;
+            this.bntRegistrosVenta.Text = "Registro ventas";
+            this.bntRegistrosVenta.UseVisualStyleBackColor = true;
+            this.bntRegistrosVenta.Click += new System.EventHandler(this.bntRegistrosVenta_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -483,6 +503,7 @@
         private System.Windows.Forms.Timer tmContraerMenu;
         private System.Windows.Forms.Timer tmFechaHora;
         private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Button bntRegistrosVenta;
     }
 }
 

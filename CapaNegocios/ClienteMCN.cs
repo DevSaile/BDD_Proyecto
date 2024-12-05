@@ -79,6 +79,16 @@ namespace CapaNegocios
             return cliente ?? string.Empty;
         }
 
+        public string DevolveNombrecliente(int? idclienselec) // obtiene la Marca que le pertence al prodcuto en ese momento
+        {
+            var sucu = (from c in db.Cliente
+                       where c.ID_Cliente == idclienselec
+                       select c.Nombre).FirstOrDefault();
+
+            //String devolver = sucu == 0 ? "Tienda Principal" : "Tienda Primaria";
+
+            return sucu ?? string.Empty;
+        }
 
         public bool ActualizarCliente(ClienteDTO actualCliente)
         {

@@ -45,7 +45,6 @@ namespace Variedades_Man_s_Style
         }
 
 
-
         private void label16_Click(object sender, EventArgs e)
         {
 

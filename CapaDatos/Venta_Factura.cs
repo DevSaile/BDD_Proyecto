@@ -14,10 +14,15 @@ namespace CapaDatos
     
     public partial class Venta_Factura
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Venta_Factura()
+        {
+            this.Venta_Detalles = new HashSet<Venta_Detalles>();
+        }
+    
         public int ID_Venta { get; set; }
         public Nullable<int> Estado { get; set; }
         public Nullable<int> ID_Cliente { get; set; }
-        public Nullable<int> ID_Producto { get; set; }
         public Nullable<int> ID_Vendedor { get; set; }
         public Nullable<System.DateTime> Fecha_Venta { get; set; }
         public Nullable<int> Cantidad { get; set; }
@@ -28,7 +33,8 @@ namespace CapaDatos
         public Nullable<decimal> Cambio { get; set; }
     
         public virtual Cliente Cliente { get; set; }
-        public virtual Producto Producto { get; set; }
         public virtual Vendedor Vendedor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta_Detalles> Venta_Detalles { get; set; }
     }
 }

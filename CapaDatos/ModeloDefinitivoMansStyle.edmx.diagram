@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c2a5e3447b09411181e20cd4ef75ac8b" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Categoria" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Cliente" Width="1.5" PointX="9" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Compra_Entrada" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Producto" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Rol" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Sucursal" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Vendedor" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Venta_Detalles" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MansStyle_BDDModel.Venta_Factura" Width="1.5" PointX="11.25" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Producto__ID_Cat__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Venta_Fac__ID_Cl__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Compra_En__ID_Pr__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Producto__ID_Suc__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Venta_Det__ID_Pr__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Vendedor__ID_Rol__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Vendedor__ID_Suc__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Venta_Fac__ID_Ve__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="MansStyle_BDDModel.FK__Venta_Det__ID_Ve__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
